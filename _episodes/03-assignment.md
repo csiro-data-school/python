@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Assignment"
 teaching: 0
 exercises: 0
 questions:
@@ -9,7 +9,14 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
+
+- Assigning 42 to x
+- Assigning 42 to y
+- Assigning x to z
+- print(x)
+- print(y)
+- print(z)
+- assert x == y
 
 {% include links.md %}
 
