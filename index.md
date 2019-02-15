@@ -9,7 +9,7 @@ for people with little or no previous programming experience.
 It uses file processing as the motivating example,
 and is designed to be used in both [Data Carpentry]({{ site.dc_site }})
 and [Software Carpentry]({{ site.swc_site }}) workshops.
-This lesson assumes that you will be working from the command-line with Python files and the command-line Python interpreter.
+This lesson assumes that you will be working from the command-line with Python files and the Python interpreter.
 The exercises could be completed in other environments such as [Jupyter][jupyter] or an [IDE][python_ide], but this may require some small adaptations to the exercises.
 
 > ## Why Python 3?
