@@ -1,8 +1,6 @@
-# FIXME Lesson title
+# Introduction to Programming with Python
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
-
-FIXME
 
 ## Contributing
 
@@ -15,7 +13,8 @@ how to write new episodes.
 
 ## Maintainer(s)
 
-* FIXME
+* [Daniel Collins](https://github.com/DC23)
+* [Alex Whan](https://github.com/alexwhan)
 
 ## Authors
 
