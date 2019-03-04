@@ -52,6 +52,60 @@ print(type(52))
 ~~~
 {: .output}
 
+~~~
+print(type(fitness))
+~~~
+{: .python}
+~~~
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fitness' is not defined
+~~~
+{: .output}
+~~~
+fitness = 'average'
+print(type(fitness))
+~~~
+{: .python}
+~~~
+<class 'str'>
+~~~
+{: .output}
+
+## Types control what operations can be done on values.
+
+*   A value's type determines what the program can do to it.
+
+~~~
+print(5 - 3)
+~~~
+{: .python}
+~~~
+2
+~~~
+{: .output}
+
+
+~~~
+print('hello' - 'h')
+~~~
+{: .python}
+~~~
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-2-67f5626a1e07> in <module>()
+----> 1 print('hello' - 'h')
+
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+~~~
+{: .error}
+
+
+
+
+
+
+
 
 The types to definitely cover:
 - Int
