@@ -30,8 +30,8 @@ FIXME: episode content.
 The types to definitely cover:
 - Int
 - Float
-- Boolean
 - Strings
+- Boolean
 - Lists
 - None
 
@@ -42,51 +42,23 @@ The types to optionally cover, if there is room in the episode:
 ## Variables, Values and Types
 
 *	Although they may often feel like the same thing, it is helpful to distinguish between variables, values, and types.
-*	**Variables** are symbols (often descriptive words) that can represent or stand in for different values.<br />Variables are named with identifiers.
-*	**Values** are the actual values and data objects stored in memory. 
+*	**Variables** are symbols (often descriptive words) that can represent or stand in for different values.<br />
+	Variables are named with identifiers.
+*	**Values** are the actual values and data objects stored in memory.<br /> 
 	The reason they often feel the same as variables is that in Python you can only access a value through a variable.
-
-
-
-
-## Every value has a type.
-
-*   Every value in a program has a specific type.
-*   Integer (`int`): Counting numbers like 3 or -512.
-*   Floating point number (`float`): Fractional numbers like 3.14159 or -2.5.
-    *   Integers are used to count, floats are used to measure.
-*   Character string (usually just called "string", `str`): text.
-    *   Written in either single quotes or double quotes (as long as they match).
-    *   The quotation marks aren't printed when the string is displayed.
-
-## Use the built-in function `type` to find the type of a value.
-
-*   Use the built-in function `type` to find out what type a value has.
-*   Works on variables as well.
-    *   But remember: the *value* has the type --- the *variable* is just a label.
+*	The **type** of a value indicates what type of value it is and defines the set of legal operations.<br />
+	As well as providing a large range of built-in types (such as `int`, `float`, `str` and `boolean`), <br />
+	Python allows you to define your own types via classes.
 
 ~~~
-print(type(52))
+a = 'a string'
 ~~~
 {: .python}
-~~~
-<class 'int'>
-~~~
-{: .output}
+In this simple line of code, we have the variable or identifier `a`, the value `a string`, and the type `str`.<br />
+You can always check the type through the built-in function `type`:
 
 ~~~
-print(type(fitness))
-~~~
-{: .python}
-~~~
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'fitness' is not defined
-~~~
-{: .error}
-~~~
-fitness = 'average'
-print(type(fitness))
+type(a)
 ~~~
 {: .python}
 ~~~
@@ -94,150 +66,77 @@ print(type(fitness))
 ~~~
 {: .output}
 
-## Types control what operations can be done on values.
-
-*   A value's type determines what the program can do to it.
-
 ~~~
-print(5 - 3)
+a = 7.1
+type(a)
 ~~~
 {: .python}
 ~~~
-2
+<class 'float'>
 ~~~
 {: .output}
 
+## Numbers
+
+*	Integers `int`
+*	Floating point numbers `float`
+*	Complex numbers `complex` ??
+
 ~~~
-print('hello' - 'h')
+myint = 1
+print(myint)
 ~~~
 {: .python}
 ~~~
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for -: 'str' and 'str'
-~~~
-{: .error}
-
-## Strings can be added and multiplied.
-
-*   "Adding" character strings concatenates them.
-
-~~~
-full_name = 'Ahmed' + ' ' + 'Walsh'
-print(full_name)
-~~~
-{: .python}
-~~~
-Ahmed Walsh
+1
 ~~~
 {: .output}
 
-*   Multiplying a character string by an integer replicates it.
-    *   Since multiplication is just repeated addition.
-
+To define a floating point number we must include a decimal point otherwise it is an integer!
 ~~~
-separator = '=' * 10
-print(separator)
+myfloat = 1.0
+print(myfloat)
 ~~~
 {: .python}
 ~~~
-==========
+1.0
 ~~~
 {: .output}
 
-## Strings have a length (but numbers don't).
-
-*   The built-in function `len` counts the number of characters in a string.
-
+Can also convert an `int` to `float` and vice-verse.
 ~~~
-print(len(full_name))
+float(1)
+int(1.0)
 ~~~
 {: .python}
 ~~~
-11
+1.0
+1
 ~~~
 {: .output}
 
-*   But numbers don't have a length (not even zero).
+## Strings
+
+*	Can be defined by single ('') or double ("") quotes
+*	One difference is that double quotes allow for apostrophes, <br />
+	which would otherwise mark the end of the string.
 
 ~~~
-print(len(52))
+string1 = 'hello'
+string2 = "hello"
+string1 == string2
 ~~~
 {: .python}
 ~~~
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: object of type 'int' has no len()
-~~~
-{: .error}
-
-## Must convert numbers to strings or vice versa when operating on them.
-
-*   Cannot add numbers and strings.
-
-~~~
-print(1 + 'A')
-~~~
-{: .python}
-~~~
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
-~~~
-{: .error}
-
-*   This is not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
-*   Some types can be converted to other types by using the type name as a function.
-
-~~~
-print(1 + int('2'))
-print(str(1) + '2')
-~~~
-{: .python}
-~~~
-3
-12
+True
 ~~~
 {: .output}
 
-## Can mix integers and floats freely in operations.
+## Booleans
 
-*   Integers and floating-point numbers can be mixed in arithmetic.
-    *   Python automatically converts integers to floats as needed.
-
-~~~
-print('half is', 1 / 2.0)
-print('three squared is', 3.0 ** 2)
-~~~
-{: .python}
-~~~
-half is 0.5
-three squared is 9.0
-~~~
-{: .output}
-
-## Variables only change value when something is assigned to them.
-
-*   If we make one cell in a spreadsheet depend on another,
-    and update the latter,
-    the former updates automatically.
-*   This does **not** happen in programming languages.
-
-~~~
-first = 1
-second = 5 * first
-first = 2
-print('first is', first, 'and second is', second)
-~~~
-{: .python}
-~~~
-first is 2 and second is 5
-~~~
-{: .output}
-
-*   The computer reads the value of `first` when doing the multiplication,
-    creates a new value, and assigns it to `second`.
-*   After that, `second` does not remember where it came from.
+*	`bool` values are the two constant objects **True** or **False**
+*	In numeric contexts they behave like the integers 0 and 1
+*	Use the built-in function bool() to case any value to a `bool`
 
 > ## Choose a Type
 >
