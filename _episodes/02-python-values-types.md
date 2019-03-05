@@ -39,11 +39,19 @@ The types to optionally cover, if there is room in the episode:
 - Complex
 - Basic operations 4 + 2
 
+## Variables, Values and Types
+
+*	Although they may often feel like the same thing, it is helpful to distinguish between variables, values, and types.
+*	**Variables** are symbols (often descriptive words) that can represent or stand in for different values. Variables are named with identifiers.
+
+
+
+
 ## Every value has a type.
 
 *   Every value in a program has a specific type.
-*   Integer (`int`): counting numbers like 3 or -512.
-*   Floating point number (`float`): fractional numbers like 3.14159 or -2.5.
+*   Integer (`int`): Counting numbers like 3 or -512.
+*   Floating point number (`float`): Fractional numbers like 3.14159 or -2.5.
     *   Integers are used to count, floats are used to measure.
 *   Character string (usually just called "string", `str`): text.
     *   Written in either single quotes or double quotes (as long as they match).
