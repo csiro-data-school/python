@@ -42,8 +42,7 @@ The types to optionally cover, if there is room in the episode:
 ## Variables, Values and Types
 
 *	Although they may often feel like the same thing, it is helpful to distinguish between variables, values, and types.
-*	**Variables** are symbols (often descriptive words) that can represent or stand in for different values. 
-	Variables are named with identifiers.
+*	**Variables** are symbols (often descriptive words) that can represent or stand in for different values.<br />Variables are named with identifiers.
 *	**Values** are the actual values and data objects stored in memory. 
 	The reason they often feel the same as variables is that in Python you can only access a value through a variable.
 
