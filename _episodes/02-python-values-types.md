@@ -27,6 +27,18 @@ keypoints:
 
 FIXME: episode content.
 
+The types to definitely cover:
+- Int
+- Float
+- Boolean
+- Strings
+- Lists
+- None
+
+The types to optionally cover, if there is room in the episode:
+- Complex
+- Basic operations 4 + 2
+
 ## Every value has a type.
 
 *   Every value in a program has a specific type.
@@ -61,7 +73,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'fitness' is not defined
 ~~~
-{: .output}
+{: .error}
 ~~~
 fitness = 'average'
 print(type(fitness))
@@ -85,39 +97,151 @@ print(5 - 3)
 ~~~
 {: .output}
 
-
 ~~~
 print('hello' - 'h')
 ~~~
 {: .python}
 ~~~
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-2-67f5626a1e07> in <module>()
-----> 1 print('hello' - 'h')
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ~~~
 {: .error}
 
+## Strings can be added and multiplied.
 
+*   "Adding" character strings concatenates them.
 
+~~~
+full_name = 'Ahmed' + ' ' + 'Walsh'
+print(full_name)
+~~~
+{: .python}
+~~~
+Ahmed Walsh
+~~~
+{: .output}
 
+*   Multiplying a character string by an integer replicates it.
+    *   Since multiplication is just repeated addition.
 
+~~~
+separator = '=' * 10
+print(separator)
+~~~
+{: .python}
+~~~
+==========
+~~~
+{: .output}
 
+## Strings have a length (but numbers don't).
 
+*   The built-in function `len` counts the number of characters in a string.
 
-The types to definitely cover:
-- Int
-- Float
-- Boolean
-- Strings
-- Lists
-- None
+~~~
+print(len(full_name))
+~~~
+{: .python}
+~~~
+11
+~~~
+{: .output}
 
-The types to optionally cover, if there is room in the episode:
-- Complex
-- Basic operations 4 + 2
+*   But numbers don't have a length (not even zero).
+
+~~~
+print(len(52))
+~~~
+{: .python}
+~~~
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: object of type 'int' has no len()
+~~~
+{: .error}
+
+## Must convert numbers to strings or vice versa when operating on them.
+
+*   Cannot add numbers and strings.
+
+~~~
+print(1 + 'A')
+~~~
+{: .python}
+~~~
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+~~~
+{: .error}
+
+*   This is not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
+*   Some types can be converted to other types by using the type name as a function.
+
+~~~
+print(1 + int('2'))
+print(str(1) + '2')
+~~~
+{: .python}
+~~~
+3
+12
+~~~
+{: .output}
+
+## Can mix integers and floats freely in operations.
+
+*   Integers and floating-point numbers can be mixed in arithmetic.
+    *   Python automatically converts integers to floats as needed.
+
+~~~
+print('half is', 1 / 2.0)
+print('three squared is', 3.0 ** 2)
+~~~
+{: .python}
+~~~
+half is 0.5
+three squared is 9.0
+~~~
+{: .output}
+
+## Variables only change value when something is assigned to them.
+
+*   If we make one cell in a spreadsheet depend on another,
+    and update the latter,
+    the former updates automatically.
+*   This does **not** happen in programming languages.
+
+~~~
+first = 1
+second = 5 * first
+first = 2
+print('first is', first, 'and second is', second)
+~~~
+{: .python}
+~~~
+first is 2 and second is 5
+~~~
+{: .output}
+
+*   The computer reads the value of `first` when doing the multiplication,
+    creates a new value, and assigns it to `second`.
+*   After that, `second` does not remember where it came from.
+
+> ## Choose a Type
+>
+> What type of value (integer, floating point number, or character string)
+> would you use to represent each of the following?
+>
+> 1. Number of days since the start of the year.
+> 2. Time elapsed since the start of the year.
+> 3. Serial number of a piece of lab equipment.
+> 4. A lab specimen's age.
+> 5. Current population of a city.
+> 6. Average population of a city over time.
+{: .challenge}
+
 
 {% include links.md %}
 
