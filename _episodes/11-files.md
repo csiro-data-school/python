@@ -1,7 +1,7 @@
 ---
 title: "Working with Files"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 30
 questions:
 - "How do I work with text files in Python?"
 objectives:
@@ -11,9 +11,23 @@ objectives:
 - "Read lines of text from a file."
 - "Open a text file for writing and write lines of text to it."
 - "Understand the importance of closing files when finished with them."
-- "Apply a useful pattern for line-by-line processing of text files."
+- "Learn some useful patterns for line-by-line processing of text files with
+  Python."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Files are opened with the `open()` function."
+- "The `open()` function returns a file object."
+- "Files need to be closed when they are no longer required by your program."
+- "The `close()` method of the file object closes a file."
+- "The `with` statement provides an elegant and safe way to automatically close
+  your files."
+- "Data can be read from text files a line at a time by the `readline()` file
+  object method."
+- "If you want to process each line of a text file in order, then iteration is
+  useful."
+- "Data can be written to a file with the `write()` file object method."
+- "Patterns are common and repeatable recipes for common problems. The text file
+  sequential processing pattern is simple, robust and efficient."
+
 ---
 
 ## About Files
@@ -37,7 +51,7 @@ keypoints:
 - Python supports working with both binary and text files.
 - We only explore working with text files here.
 
-## Opening files
+## Opening Files
 
 To open a file, we use the `open()` function, which returns a file object:
 
@@ -66,7 +80,7 @@ my_file = open("my_data_file.txt", "r")
 > but thinking about these questions can help us write more robust code.
 {: .discussion}
 
-## Closing files
+## Closing Files
 
 Files need to be closed when they are no longer needed. One reason is that
 operating systems can lock files while they are open, to prevent unexpected
@@ -84,9 +98,9 @@ print(my_file.closed)  # should print True
 ~~~
 {: .language-python}
 
-## Reading from a file
+## Reading from a File
 
-Recall that `open()` returns a file object after successfully open a file. This
+Recall that `open()` returns a file object after successfully opening a file. This
 object can be used to read data from the file. The `readline()` method will be
 most useful to us here. It reads a single line from the file. Repeated calls to
 `readline()` will return subsequent lines in order until the end of the file is
@@ -154,7 +168,7 @@ for line in f:
 
 Iterating a collection where both the data and the index (the line count in our
 case) are required is a very common operation, and Python provides the
-[`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function
+[`enumerate()`][enumerate-function] function
 for just this purpose.
 
 > ## Update your text reading program to use `enumerate`
@@ -162,7 +176,7 @@ for just this purpose.
 > see the same output.
 > > ## Solution
 > > ~~~
-> > f = open("../data/a_few_lines_of_text.txt")
+> > f = open("a_few_lines_of_text.txt")
 > > for count, line in enumerate(f):
 > >     print(count, line)
 > > f.close()
@@ -171,9 +185,65 @@ for just this purpose.
 > {: .solution}
 {: .challenge}
 
-## FIXME
-- Write
-- Context Managers
+## Writing to a File
+
+Text can be written to a text file that has been opened for writing with the
+`write()` method on the file object:
+~~~
+f = open("my_text.txt")
+f.write("this is a line of text.\n")
+f.close()
+~~~
+{: .language-python}
+
+Note that `write()` does not add a newline to the end. If you want a newline or
+carriage return, you need to add it yourself.
+
+## Context Managers
+
+The safest way to open files is to use the [`with`][with-statement] statement.
+This causes your file to be automatically closed as soon as program
+execution leaves the scope of the `with` statement. For example:
+~~~
+with open("a_file.txt", "w") as f:
+    for line in f:
+        print(line)
+~~~
+{: .language-python}
+
+In addition being simpler, this approach is also safer. The file will
+always be closed, even when unexpected exceptions or other errors occur.
+
+This leads us to a robust and useful pattern for sequentially processing every
+line in a text file:
+~~~
+with open("a_file.txt", "w") as f:
+    for line in f:
+        # process the line
+~~~
+{: .language-python}
+
+## Putting it all together
+> ## Reading and writing different files at the same time
+> In this exercise, write a Python program to read lines of text from
+> `a_few_lines_of_text.txt`. For each line, write the line number followed by `": "`
+> and then the input text to a separate file called "numbered_lines_of_text.txt".
+> For example, if the third line of text is
+> "this is the third line" then the third line of
+> the new file would be "2: this is the third line".
+>
+> Your program should close both files when finished, including after any errors
+> are encountered.
+> > ## Solution
+> > ~~~
+> > with open("../data/a_few_lines_of_text.txt") as fin, open("numbered_lines_of_text.txt", "w") as fout:
+> >     for count, line in enumerate(fin):
+> >         fout.write("{0}: {1}".format(count, line))
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 
 ## More Information
 
@@ -183,3 +253,5 @@ For more information on basic file IO in Python, please refer to the [Reading an
 {% include links.md %}
 
 [python-tutorial-files]: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+[with-statement]: https://docs.python.org/3/reference/compound_stmts.html#with
+[enumerate-function]: https://docs.python.org/3/library/functions.html#enumerate
