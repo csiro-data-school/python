@@ -7,8 +7,8 @@ questions:
 objectives:
 - "Understand the difference between text and binary files."
 - "Open a text file."
-- "Read lines of text from a file."
 - "Close a file when processing is finished."
+- "Read lines of text from a file."
 - "Open a text file for writing and write lines of text to it."
 - "Understand the importance of closing files when finished with them."
 - "Apply a useful pattern for line-by-line processing of text files."
@@ -42,7 +42,7 @@ keypoints:
 To open a file, we use the `open()` function, which returns a file object:
 
 ~~~
-my_file = open("my_data_file.txt", "w")
+my_file = open("my_data_file.txt", "r")
 ~~~
 {: .language-python}
 
@@ -66,6 +66,24 @@ my_file = open("my_data_file.txt", "w")
 > but thinking about these questions can help us write more robust code.
 {: .discussion}
 
+## Closing files
+
+Files need to be closed when they are no longer needed. One reason is that
+operating systems can lock files while they are open, to prevent unexpected
+changes while the file is in use.
+
+In Python, closing files is a simple call to the `close()` method on the file
+object. You can check the status of a file with the `closed` property:
+
+~~~
+my_file = open("my_data_file.txt", "r")
+# do some processing
+print(my_file.closed)  # should print False
+my_file.close()
+print(my_file.closed)  # should print True
+~~~
+{: .language-python}
+
 ## Reading from a file
 
 Recall that `open()` returns a file object after successfully open a file. This
@@ -83,29 +101,78 @@ are indicated by the string `"\n"`.
 > `a_few_lines_of_text.txt` and print them one at a time. Prefix each line with
 > the line count. Your program should close the file there are no more lines.
 >
-> Now save the file as `hello-world.py`.
->
-> Next, open up a command-line terminal, and change to the directory that you
-> saved `hello-world.py` to. At the command-line, call the Python interpreter
-> and tell it to run your script:
+> You should see this output:
 >
 > ~~~
-> $ python3 hello-world.py
+> 0 This file contains just a few lines of text.
+>
+> 1 Not a lot.
+>
+> 2 Just a few.
 > ~~~
-> {: .language-bash}
+> {: .source}
 > > ## Solution
-> > You should see this output:
+> > There are many solutions, but one that only uses file operations presented
+> > so far in this episode is:
 > >
 > > ~~~
-> > Hello world!
+> > f = open("a_few_lines_of_text.txt")
+> > count = 0  # initialise the line count
+> > line = f.readline()  # read the first line before entering the loop
+> > while line:  # readline() returns an empty string at end of file
+> >     print(count, line)
+> >     count = count + 1
+> >     line = f.readline()
+> > f.close()
 > > ~~~
-> > {: .source}
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+For reading lines from a file, you can iterate over the file object. This is memory efficient, fast, and leads to simple code:
+~~~
+for line in f:
+    print(line)
+~~~
+{: .language-python}
+
+> ## Update your text reading program to use file iteration
+> Update your previous program to use the file iteration approach. You should
+> see the same output.
+> > ## Solution
+> > ~~~
+> > f = open("a_few_lines_of_text.txt")
+> > count = 0  # initialise the line count
+> > for line in f:
+> >     print(count, line)
+> >     count = count + 1
+> > f.close()
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+Iterating a collection where both the data and the index (the line count in our
+case) are required is a very common operation, and Python provides the
+[`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function
+for just this purpose.
+
+> ## Update your text reading program to use `enumerate`
+> Update your previous program to use the `enumerate()` function. You should
+> see the same output.
+> > ## Solution
+> > ~~~
+> > f = open("../data/a_few_lines_of_text.txt")
+> > for count, line in enumerate(f):
+> >     print(count, line)
+> > f.close()
+> > ~~~
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
 ## FIXME
 - Write
-- Closing
 - Context Managers
 
 ## More Information

@@ -1,5 +1,3 @@
 This file contains just a few lines of text.
 Not a lot.
 Just a few.
-Some may argue that this line makes the count more than a few.
-So be it.
