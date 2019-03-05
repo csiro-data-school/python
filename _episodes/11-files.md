@@ -77,6 +77,32 @@ only omitted on the last line of the file. This means that the end of the file
 is indicated when `readline()` returns an empty string. Blank lines in the file
 are indicated by the string `"\n"`.
 
+> ## Read some text from a file
+>
+> In this exercise, write a Python program to read lines of text from
+> `a_few_lines_of_text.txt` and print them one at a time. Prefix each line with
+> the line count. Your program should close the file there are no more lines.
+>
+> Now save the file as `hello-world.py`.
+>
+> Next, open up a command-line terminal, and change to the directory that you
+> saved `hello-world.py` to. At the command-line, call the Python interpreter
+> and tell it to run your script:
+>
+> ~~~
+> $ python3 hello-world.py
+> ~~~
+> {: .language-bash}
+> > ## Solution
+> > You should see this output:
+> >
+> > ~~~
+> > Hello world!
+> > ~~~
+> > {: .source}
+> {: .solution}
+{: .challenge}
+
 ## FIXME
 - Write
 - Closing
