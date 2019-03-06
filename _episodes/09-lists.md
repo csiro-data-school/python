@@ -136,14 +136,14 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 {: .output}
 
-## The empty list contains no values.
+## The empty list contains no values
 
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values
     (which we will see in future chapters).
 
-## Lists may contain values of different types.
+## Lists may contain values of different types
 
 *   A single list may contain numbers, strings, and anything else.
 
@@ -152,7 +152,7 @@ goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
 {: .python}
 
-## Remember that character strings can be indexed like lists.
+## Remember that character strings can be indexed like lists
 
 *   Get single characters from a character string using indexes in square brackets.
 
@@ -168,7 +168,7 @@ third character: b
 ~~~
 {: .output}
 
-## But unlike lists, character strings are immutable.
+## But unlike lists, character strings are immutable
 
 *   Cannot change the characters in a string after it has been created.
     *   *Immutable*: can't be changed after creation.
@@ -187,7 +187,7 @@ TypeError: 'str' object does not support item assignment
 
 *   Lists and character strings are both *collections*.
 
-## Indexing beyond the end of the collection is an error.
+## Indexing beyond the end of the collection is an error
 
 *   Python reports an `IndexError` if we attempt to access a value that doesn't exist.
     *   This is a kind of runtime error.
@@ -203,7 +203,7 @@ IndexError: string index out of range
 ~~~
 {: .output}
 
-## Slicing python lists.
+## Slicing python lists
 
 Let's start with a normal, everyday list. Nothing crazy, just a normal list with the numbers 1 through 8. Now let's say that we really want the elements 2, 3, and 4 returned in a new list. How do we do that?
 
@@ -220,6 +220,7 @@ mylist[1:4]
 *   Remeber that `1` is the second element of this list because of the 0-based indexing
 
 ## Slice indices have useful defaults
+
 *   An omitted second index defaults to the size of the string being sliced.
 *   An omitted first index defaults to zero.
 
