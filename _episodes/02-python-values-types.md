@@ -5,15 +5,16 @@ exercises: 10
 questions:
 - "What are the basic single-valued data types in Python?"
 - "What are variables?"
-- "What is one way to store a list of values?"
+- "What is one way to store a group of values?"
 
 objectives:
 - "Explain key differences between integers and floating point numbers."
 - "Explain key differences between numbers and character strings."
 - "Use built-in functions to convert between integers, floating point numbers, and strings."
-- "Learn about Python's single-valued data types."
-- "Learn about variables, how to name them and how to assign values to them."
-- "Learn the basics about Python lists."
+- "Explain what a boolean expression is"
+- "Explain how to group items into a list"
+- "Explain when a NoneType object would occur"
+
 keypoints:
 - "Variables are descriptive words that represent objects"
 - "Values are the actual numbers or objects stored in memory"
@@ -21,22 +22,10 @@ keypoints:
 - "Use the built-in function `type` to find the type of a value."
 - "Can mix integers and floats freely in operations."
 - "Booleans are used for comparison"
+- "Lists are used to group objects"
+- "NoneType indicated a varible with no value"
 
 ---
-
-FIXME: episode content.
-
-The types to definitely cover:
-- Int
-- Float
-- Strings
-- Boolean
-- Lists
-- None
-
-The types to optionally cover, if there is room in the episode:
-- Complex
-- Basic operations 4 + 2
 
 ## Variables, Values and Types
 
@@ -46,7 +35,7 @@ The types to optionally cover, if there is room in the episode:
 *	**Values** are the actual values and data objects stored in memory.<br /> 
 	The reason they often feel the same as variables is that in Python you can only access a value through a variable.
 *	The **type** of a value indicates what type of value it is and defines the set of legal operations.<br />
-	As well as providing a large range of built-in types (such as `int`, `float`, `str` and `boolean`), <br />
+	As well as providing a large range of built-in types (such as `int`, `float`, `str` and `bool`), <br />
 	Python allows you to define your own types via classes.
 
 ~~~
@@ -79,7 +68,7 @@ type(a)
 
 *	Integers `int`.
 *	Floating point numbers `float`.
-*	Complex numbers `complex` ??.
+*	To define a floating point number we must include a decimal point otherwise it is an integer!
 
 ~~~
 myint = 1
@@ -91,7 +80,6 @@ print(myint)
 ~~~
 {: .output}
 
-To define a floating point number we must include a decimal point otherwise it is an integer!
 ~~~
 myfloat = 1.0
 print(myfloat)
