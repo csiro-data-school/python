@@ -8,7 +8,11 @@ questions:
 - "How do I use my own functions?"
 - "How do I document my functions?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Explain the benefits of using functions."
+- "Explain and identify the difference between function definition and function call."
+- "Write a function that takes a small, fixed number of arguments and produces a single result."
+- "Explain the difference between required and optional function arguments."
+- "Document your functions with docstrings."
 keypoints:
 - "Don't repeat yourself. Keep your code DRY by using functions."
 - "Break programs down into functions to make them easier to understand."
@@ -288,7 +292,7 @@ Hello Brian
 
 Python functions can contain a special documentation string, known as the docstring. The docstring can contain information about the purpose and use of your function.
 
-- Docstrings allow us to document our code in a standard way. 
+- Docstrings allow us to document our code in a standard way.
 - Following the standard makes our code more easily readable to other
   programmers, and also allows software tools to use our documentation
   automatically.
@@ -338,12 +342,15 @@ def complex(real=0.0, imag=0.0):
     ...
 ~~~
 {: .language-python}
+Note the following features:
 
-## Use doctests to add tests
+- A one-line summary at the start,
+- Followed by a blank line,
+- Further elaboration, in this case a description of the arguments,
+- A final carriage return with the final `"""` on their own line.
 
-## Scope
-
-## Side effects
+> ## Add docstrings to your functions from the previous exercises
+{: .challenge}
 
 ---
 
