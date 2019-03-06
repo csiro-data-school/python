@@ -349,7 +349,33 @@ Note the following features:
 - Further elaboration, in this case a description of the arguments,
 - A final carriage return with the final `"""` on their own line.
 
-> ## Add docstrings to your functions from the previous exercises
+> ## Add a docstring
+> What do you think this function does?
+> Add a docstring to it.
+> ~~~
+> def last_first(first_name, last_name, separator=", "):
+>     result = "{0}{1}{2}".format(last_name, separator, first_name)
+>     return result
+> ~~~
+> {: .language-python}
+> > ## Solution
+> > The function takes a first name and a last name, returning a single string
+> > with the last name first, separated from the first name by the separator
+> > string.
+> > The separator value is optional, with a default value of ", ".
+> > ~~~
+> > def last_first(first_name, last_name, separator=", "):
+> >     """Return a single string in the form "{last_name}{separator}{first_name}".
+> >     Arguments:
+> >     first_name -- the first name
+> >     last_name -- the last name
+> >     separator -- the separator used between first and last names (default ", ")
+> >     """
+> >     result = "{0}{1}{2}".format(last_name, separator, first_name)
+> >     return result
+> > ~~~
+> > {: .language-python}
+> {: .solution}
 {: .challenge}
 
 ---
