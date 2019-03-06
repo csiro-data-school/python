@@ -3,10 +3,10 @@ title: "Python Values and their Type"
 teaching: 15
 exercises: 10
 questions:
-- "What are data types?"
 - "What are the basic single-valued data types in Python?"
-- "What is one way to store a list of values?"
 - "What are variables?"
+- "What is one way to store a list of values?"
+
 objectives:
 - "Explain key differences between integers and floating point numbers."
 - "Explain key differences between numbers and character strings."
@@ -15,14 +15,13 @@ objectives:
 - "Learn about variables, how to name them and how to assign values to them."
 - "Learn the basics about Python lists."
 keypoints:
+- "Variables are descriptive words that represent objects"
+- "Values are the actual numbers or objects stored in memory"
 - "Every value has a type."
 - "Use the built-in function `type` to find the type of a value."
-- "Types control what operations can be done on values."
-- "Strings can be added and multiplied."
-- "Strings have a length (but numbers don't)."
-- "Must convert numbers to strings or vice versa when operating on them."
 - "Can mix integers and floats freely in operations."
-- "Variables only change value when something is assigned to them."
+- "Booleans are used for comparison"
+
 ---
 
 FIXME: episode content.
@@ -78,9 +77,9 @@ type(a)
 
 ## Numbers
 
-*	Integers `int`
-*	Floating point numbers `float`
-*	Complex numbers `complex` ??
+*	Integers `int`.
+*	Floating point numbers `float`.
+*	Complex numbers `complex` ??.
 
 ~~~
 myint = 1
@@ -117,30 +116,84 @@ int(1.0)
 
 ## Strings
 
-*	Can be defined by single ('') or double ("") quotes
+*	Can be defined by single ('') or double ("") quotes.
 *	One difference is that double quotes allow for apostrophes, <br />
 	which would otherwise mark the end of the string.
 
 ~~~
 string1 = 'hello'
 string2 = "hello"
+string3 = '1234'
+string4 = str(56789)
+~~~
+{: .python}
+
+## Boolean Expressions - **True** or **False**
+
+*	Python comparison operators return a `bool` value, **True** or **False** and these can be stored in `bool` variables
+*	Equality is tested with the double-equals (`==`) operator while inequality uses exclamation-mark-equals (`!=`), read as not`!` equals`=`.
+*	In numeric contexts they behave like the integers 0 and 1
+*	Use the built-in function bool() to case any value to a `bool`
+
+~~~
+count = 3
+print(count == 4)
+print(count < 3)
+print(count == 3)
+print(count > 4)
 string1 == string2
 ~~~
 {: .python}
 ~~~
+False
+False
+True
+False
 True
 ~~~
 {: .output}
 
-## Booleans
+## Lists
 
-*	`bool` values are the two constant objects **True** or **False**
-*	In numeric contexts they behave like the integers 0 and 1
-*	Use the built-in function bool() to case any value to a `bool`
+*	Lists are probably the most commonly used container in Python.
+*	Allow multiple values to be grouped together.
+*	Can contain variables of any type.
+*	Lists are **also** themselves values or objects so can nest lists within other lists.
+*	Lists preserve their order allowing us to easily pull values out.
+
+~~~
+mylist = []
+mylist2 = list()
+mylist.append(1)
+mylist.append(2)
+mylist.append(3)
+print(mylist)
+~~~
+{: .python}
+~~~
+[1, 2, 3]
+~~~
+{: .output}
+
+## Special Case - NoneType
+
+*	Type for the `None` object that indicates no value
+*	Is the return value of functions that don't return anything
+
+~~~
+empty = None
+print(empty)
+~~~
+{: .python}
+~~~
+None
+~~~
+{: .output}
+
 
 > ## Choose a Type
 >
-> What type of value (integer, floating point number, or character string)
+> What type of value (integer, floating point number, character string or list)
 > would you use to represent each of the following?
 >
 > 1. Number of days since the start of the year.
@@ -149,8 +202,19 @@ True
 > 4. A lab specimen's age.
 > 5. Current population of a city.
 > 6. Average population of a city over time.
+> 7. The ages of all students in a class.
 {: .challenge}
 
+> ## Identify the outputs
+>
+> What are the outputs from the following commands?
+>
+> 1. print(type(3))
+> 2. print(float(3))
+> 3. print(int(3.9))
+> 4. print(bool(0))
+> 5. print(type(None))
+{: .challenge}
 
 {% include links.md %}
 
