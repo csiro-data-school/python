@@ -66,7 +66,7 @@ fourth item of weights: 176
 
 ~~~
 weights[0] = 265
-print('weights are now:', weights)
+print('weights is now:', weights)
 ~~~
 {: .python}
 ~~~
@@ -141,7 +141,7 @@ primes after removing last item: [2, 3, 5, 7]
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values
-    (which we will see in the [next episode]({{page.root}}/09-for-loops/)).
+    (which we will see in future chapters).
 
 ## Lists may contain values of different types.
 
@@ -152,7 +152,7 @@ goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
 {: .python}
 
-## Character strings can be indexed like lists.
+## Remember that character strings can be indexed like lists.
 
 *   Get single characters from a character string using indexes in square brackets.
 
@@ -168,7 +168,7 @@ third character: b
 ~~~
 {: .output}
 
-## Character strings are immutable.
+## But unlike lists, character strings are immutable.
 
 *   Cannot change the characters in a string after it has been created.
     *   *Immutable*: can't be changed after creation.
@@ -190,7 +190,7 @@ TypeError: 'str' object does not support item assignment
 ## Indexing beyond the end of the collection is an error.
 
 *   Python reports an `IndexError` if we attempt to access a value that doesn't exist.
-    *   This is a kind of [runtime error]({{ page.root }}/05-error-messages/).
+    *   This is a kind of runtime error.
     *   Cannot be detected as the code is parsed
         because the index might be calculated based on data.
 
@@ -202,6 +202,77 @@ print('99th element of element is:', element[99])
 IndexError: string index out of range
 ~~~
 {: .output}
+
+## Slicing python lists.
+
+Let's start with a normal, everyday list. Nothing crazy, just a normal list with the numbers 1 through 8. Now let's say that we really want the elements 2, 3, and 4 returned in a new list. How do we do that?
+
+~~~
+mylist = [1, 2, 3, 4, 5, 6, 7, 8]
+mylist[1:4] 
+~~~
+{: .python}
+~~~
+[2, 3, 4]
+~~~
+{: .output}
+
+*   Remeber that `1` is the second element of this list because of the 0-based indexing
+
+## Slice indices have useful defaults
+*   An omitted second index defaults to the size of the string being sliced.
+*   An omitted first index defaults to zero.
+
+~~~
+mylist[4:] # list elements from position 4 (included) to the end. Start counting from 0!
+~~~
+{: .python}
+~~~
+[5, 6, 7, 8]
+~~~
+{: .output}
+
+~~~
+mylist[:5] # list elements from the beginning to position 5 (excluded)
+~~~
+{: .python}
+~~~
+[1, 2, 3, 4, 5]
+~~~
+{: .output}
+
+*   Lists can also be sliced in reverse order. 
+
+~~~
+mylist[-3:] # characters from the third-last (included) to the end
+~~~
+{: .python}
+~~~
+[6, 7, 8]
+~~~
+{: .output}
+
+> ## Challenge questions
+> 
+> How would you extract the number `7` from `mylist` using reverse indexing?
+> 
+> ~~~
+> mylist[____:____]
+> ~~~
+> {: .python}
+> 
+> ~~~
+> [7]
+> ~~~
+> {: .output}
+>
+> > ## Solution
+> > ~~~
+> > mylist[-2:-1]
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
 > ## Fill in the Blanks
 >
