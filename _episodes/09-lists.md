@@ -22,7 +22,7 @@ keypoints:
 ---
 ## Collections
 
-We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, dictionaries and tuples, which will cover in future lessons. 
+We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, dictionaries and tuples, which we will cover in future lessons. 
 
 ### Lists
 
@@ -33,7 +33,18 @@ We have already encountered some simple Python types like integers, strings and 
     *   Contained within square brackets `[...]`.
     *   Values separated by commas `,`.
 *   Use `len` to find out how many values are in a list.
----
+~~~
+weights = [173, 175, 277, 275, 176]
+print('weights:', weights)
+print('length:', len(weights))
+~~~
+{: .python}
+~~~
+weights: [173, 175, 277, 275, 176]
+length: 5
+~~~
+{: .output}
+
 
 
 - What is a collection
