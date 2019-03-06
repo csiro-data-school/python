@@ -1,5 +1,5 @@
 ---
-title: Conditionals: Making Choices
+title: Conditionals (Making Choices)
 teaching: 30
 exercises: 30
 questions:
