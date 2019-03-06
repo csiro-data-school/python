@@ -1,9 +1,13 @@
 ---
-title: "Writing Functions"
+title: "Functions"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What are functions?"
+- "How do I create and use functions in Python?"
+- "How do I pass data into a function?"
+- "How do I get results out of a function?"
+- "How do I document my functions?"
 objectives:
 - "First learning objective. (FIXME)"
 keypoints:
