@@ -3,7 +3,7 @@ title: "Lists"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can I store many values together?"
 objectives:
 - "First learning objective. (FIXME)"
 keypoints:
