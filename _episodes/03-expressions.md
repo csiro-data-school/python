@@ -145,10 +145,10 @@ False
 >2 + 3 * 4
 >~~~
 >{: .python}
+>## Solution
+>>14
 >~~~
->14
->~~~
->{: .output}
+>{: .solution}
 {: .challenge}
 
 
