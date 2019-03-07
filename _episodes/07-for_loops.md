@@ -18,7 +18,7 @@ keypoints:
 - "Use accumulator structures with a `for` loop to update the value of an existing variable"
 ---
 
-#A *for loop* executes commands once for each value in a collection
+## A *for loop* executes commands once for each value in a collection
 
 *   Doing calculations on the values in a list one by one
     is painful. 
