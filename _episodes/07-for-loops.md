@@ -1,5 +1,5 @@
 ---
-title: Repeating Actions with Loops
+title: Repeating Actions with For Loops
 teaching: 30
 exercises: 30
 questions:
@@ -18,7 +18,7 @@ keypoints:
 - "Use accumulator structures with a `for` loop to update the value of an existing variable"
 ---
 
-## A *for loop* executes commands once for each value in a collection
+## A `for` loop executes commands once for each value in a collection
 
 *   Doing calculations on the values in a list one by one
     is painful. 
@@ -169,7 +169,7 @@ This image conveys how a computer processes and understands this `for` loop, one
 
 ![loop_image](../fig/loops_image.png)
 
-Each character (`char`) in the variable `word` is looped through and printed one character
+Each character `char` in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
 being the first loop, and 6 being the final loop).
 
@@ -223,21 +223,21 @@ for p in primes:
 >
 > 1. 
 > ~~~
-> for word in "Findable, Accessible, Interoperable, Resuable":
+> for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 >     print("FAIR")
 > ~~~
 > {: .language-python}
 >
 > 2. 
 > ~~~
-> for word in "Findable, Accessible, Interoperable, Resuable":
+> for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 >     print(word[0])
 > ~~~
 > {: .language-python}
 >
 > 3.
 > ~~~
-> for word in "Findable, Accessible, Interoperable, Resuable":
+> for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 > print(word)
 > ~~~
 > {: .language-python}
@@ -264,7 +264,7 @@ help you understand your code next time you want to work on it!
 > 3. Can you think of / find a variable name that **doesn't** work?
 {: .challenge}
 
-> ## Reusing variables
+> ## Reusing variable names
 > ~~~
 > letter = 'z'
 > print(letter)
@@ -292,16 +292,41 @@ help you understand your code next time you want to work on it!
 
 Python has a built-in function called `range` that creates a sequence of numbers. 
 
-* *Not* a list: the numbers are produced on demand
-        to make looping over large ranges more efficient.
-* `range(N)` is the numbers 0..N-1. This isExactly the legal indices of a list or character string of length N
+* `range` does *not* return a list: the numbers are produced on demand
+* `range(N)` is the numbers 0..N-1. This is exactly the legal indices of a list or character string of length N.
 
+> ## difference between `range` and `list`
+> Try:
+> ~~~
+> print(range(10))
+> ~~~
+> {: .language-python}
+> Is this what you expected?
+> Now try:
+> ~~~
+> print(list(range(10)))
+> ~~~
+> {: .language-python}
+> Now run and compare the following code snippets:
+> ~~~
+> for i in range(100000000):
+>     pass
+>
+> for i in list(range(100000000)):
+>     pass
+> ~~~
+> {: .language-python}
+> 1. Are the two `for` loops equivalent?
+> 2. What do you notice that is different?
+{: .challenge}
+
+For efficency, the elements in a range are produced on the fly:
 ~~~
-print('a range is not a list: range(0, 3)')
+print('a range is not a list:', range(0, 3))
 for number in range(0,3):
     print(number)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 a range is not a list: range(0, 3)
 0
@@ -322,7 +347,7 @@ a range is not a list: range(0, 3)
    it starts at the first one, ends just before the second one, and increments by the third one.
    For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
 
-> Write a loop that uses `range` to print the first 3 positive integers:
+> ## Write a loop that uses `range` to print the first 3 positive integers:
 >
 > ~~~
 > 1
@@ -340,11 +365,20 @@ a range is not a list: range(0, 3)
 > {: .solution}
 {: .challenge}
 
+> ## Even integers
+> Write a loop that uses `range` to print all even integers between 0 and 100 inclusive.
+> > ## Solution
+> > ~~~
+> > for i in range(0, 101, 2):
+> >     print(i)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
 
 ## The accumulator structure
 
 Here's another loop that repeatedly updates a variable:
-
 ~~~
 length = 0
 for vowel in 'aeiou':
