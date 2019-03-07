@@ -257,6 +257,8 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 ~~~
 {: .output}
 
+## Slice bounds
+
 One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. Then the right edge of the last character of a string of n characters has index n, for example:
 
 ~~~
@@ -267,7 +269,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 -8  -7  -6  -5  -4  -3  -2  -1
 ~~~~
 
-> ## Challenge questions
+> ## Challenge question
 > 
 > How would you extract the letter `f` from `letters` using reverse indexing?
 > 
@@ -357,43 +359,14 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## Working With the End
+> ## Stepping through a list
 >
 > What does the following program print?
 >
 > ~~~
-> element = 'helium'
-> print(element[-1])
-> ~~~
-> {: .python}
->
-> 1.  How does Python interpret a negative index?
-> 2.  If a list or string has N elements,
->     what is the most negative index that can safely be used with it,
->     and what location does that index represent?
-> 3.  If `values` is a list, what does `del values[-1]` do?
-> 4.  How can you display all elements but the last one without changing `values`?
->     (Hint: you will need to combine slicing and negative indexing.)
->
-> > ## Solution
-> > The program prints `m`.
-> > 1. Python interprets a negative index as starting from the end (as opposed to
-> >    starting from the beginning).  The last element is `-1`.
-> > 2. The last index that can safely be used with a list of N elements is element
-> >    `-N`, which represents the first element.
-> > 3. `del values[-1]` removes the last element from the list.
-> > 4. `values[:-1]`
-> {: .solution}
-{: .challenge}
-
-> ## Stepping Through a List
->
-> What does the following program print?
->
-> ~~~
-> element = 'fluorine'
-> print(element[::2])
-> print(element[::-1])
+> elements = ['H', 'He', 'Li', 'B', 'O', 'F', 'Mg', 'P', 'Mn', 'Cu']
+> print(elements[::2])
+> print(elements[::-1])
 > ~~~
 > {: .python}
 >
@@ -403,8 +376,8 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > ## Solution
 > > The program prints
 > > ~~~
-> > furn
-> > eniroulf
+> > ['H', 'Li', 'O', 'Mg', 'Mn']
+> > ['Cu', 'Mn', 'P', 'Mg', 'F', 'O', 'B', 'Li', 'He', 'H']
 > > ~~~
 > > {: .python}
 > > 1. `stride` is the step size of the slice
@@ -415,27 +388,9 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## Slice Bounds
->
-> What does the following program print?
->
-> ~~~
-> element = 'lithium'
-> print(element[0:20])
-> print(element[-1:3])
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > ~~~
-> > lithium
-> > 
-> > ~~~
-> > {: .python}
-> {: .solution}
-{: .challenge}
+## Using functions and methods on lists and strings
 
-> ## Sort and Sorted
+> ## Sort and sorted
 >
 > What do these two programs print?
 > In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
@@ -473,7 +428,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## Copying (or Not)
+> ## Assigning lists to variables 
 >
 > What do these two programs print?
 > In simple terms, explain the difference between `new = old` and `new = old[:]`.
@@ -514,17 +469,36 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
+## Basic operations with lists
 
-- What is a collection
-- Zero based
-- Lists
-- Indexing
-- basic operations
-- Enumerate
-- slicing
-- strings
-- tuples
-- order preserving
+Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
+
+> What do the following commands print?
+>
+> ~~~
+> concatenate = [1, 2, 3] + [4, 5, 6]
+> print('concatenate is:', concatenate)
+> repetition = ['Hi!'] * 4
+> print('repetition is:', repetition)
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > The program prints
+> > ~~~
+> > concatenate is: [1, 2, 3, 4, 5, 6]
+> > repetition is: ['Hi!', 'Hi!', 'Hi!', 'Hi!']
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
+
+## Another type of collection in Python: Tuples 
+
+Similar to lists, tuples are also a collection of python objects or elements. The main difference between tuples and lists is that tuples are immutable. Also, while lists use square brackets, tuples use parentheses `()`. 
+
+
+
 
 
 {% include links.md %}
