@@ -9,8 +9,6 @@ objectives:
 - "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a `for` loop."
-- "Explain what a `while` loop does."
-- "Correctly combine `while` loops with booleans."
 - "Combine `for` loops with conditionals to process collections of data."
 
 keypoints:
@@ -19,117 +17,129 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+#A *for loop* executes commands once for each value in a collection
 
-~~~
-word = 'lead'
-~~~
-{: .language-python}
+*   Doing calculations on the values in a list one by one
+    is painful. 
+*   A *for loop* tells Python to execute some statements once for each value in a list,
+    a character string,
+    or some other collection.
+*   "for each thing in this group, do these operations"
 
-We can access a character in a string using its index. For example, we can get the first
-character of the word `'lead'`, by using `word[0]`. One way to print each character is to use
-four `print` statements:
 
-~~~
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
-~~~
-{: .language-python}
+> ## Printing a column of letters - the hard way
+> Let's say you want to print each letter of the word 'lead' on a separate line, underneath each other. 
+>
+> ~~~
+> word = 'lead'
+> ~~~
+> {: .language-python}
+>
+> With the skills you already have, we could do this by accessing each character in the string using its index.
+> For example, we can get the first character of the word `'lead'`, by using `word[0]`. One way to print each 
+> character is to usefour `print` statements:
+>
+>~~~
+>print(word[0])
+>print(word[1])
+>print(word[2])
+>print(word[3])
+>~~~
+>{: .language-python}
+>
+> ~~~
+> l
+> e
+> a
+> d
+> ~~~
+> {: .output}
+>
+> While this works, it is a bad approach for three reasons:
+>
+> 1.  **Not scalable**. Imagine you need to print the characters of a string that is hundreds
+>     of letters long.  It might be easier just to type them in manually.
+>
+> 2.  **Difficult to maintain**. If we want to decorate each printed character with an
+>    asterix or any other character, we would have to change four lines of code. While
+>    this might not be a problem for short strings, it would definitely be a problem for
+>    longer ones.
 
+> 3.  **Fragile**. If we use it with a word that has more characters than what we initially
+>    envisioned, it will only display part of the word's characters. A shorter string, on
+>    the other hand, will cause an error because it will be trying to display part of the
+>    string that don't exist.
+>
 ~~~
-l
-e
-a
-d
-~~~
-{: .output}
+> word = 'tin'
+> print(word[0])
+> print(word[1])
+> print(word[2])
+> print(word[3])
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> t
+> i
+> n
+> ~~~
+> {: .output}
+>
+> ~~~
+> ---------------------------------------------------------------------------
+> IndexError                                Traceback (most recent call last)
+> <ipython-input-3-7974b6cdaf14> in <module>()
+>       3 print(word[1])
+>       4 print(word[2])
+> ----> 5 print(word[3])
+> 
+> IndexError: string index out of range
+> ~~~
+> {: .error}
+>
+> The alternative way of doing this is to use a `for` loop:
+>
+> ~~~
+> word = 'lead'
+> for char in word:
+>    print(char)
+>
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> l
+> e
+> a
+> d
+> ~~~
+> {: .output}
+>
+> This is shorter --- certainly shorter than something that prints every character in a
+> hundred-letter string --- and more robust as well:
+>
+> ~~~
+> word = 'oxygen'
+> for char in word:
+>    print(char)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> o
+> x
+> y
+> g
+> e
+> n
+> ~~~
+> {: .output}
+>
+> The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
+> to repeat an operation --- in this case, printing --- once for each thing in a sequence.
+{: .callout)
 
-This is a bad approach for three reasons:
-
-1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
-    of letters long.  It might be easier just to type them in manually.
-
-2.  **Difficult to maintain**. If we want to decorate each printed character with an
-    asterix or any other character, we would have to change four lines of code. While
-    this might not be a problem for short strings, it would definitely be a problem for
-    longer ones.
-
-3.  **Fragile**. If we use it with a word that has more characters than what we initially
-    envisioned, it will only display part of the word's characters. A shorter string, on
-    the other hand, will cause an error because it will be trying to display part of the
-    string that don't exist.
-
-~~~
-word = 'tin'
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
-~~~
-{: .language-python}
-
-~~~
-t
-i
-n
-~~~
-{: .output}
-
-~~~
----------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-3-7974b6cdaf14> in <module>()
-      3 print(word[1])
-      4 print(word[2])
-----> 5 print(word[3])
-
-IndexError: string index out of range
-~~~
-{: .error}
-
-Here's a better approach:
-
-~~~
-word = 'lead'
-for char in word:
-    print(char)
-
-~~~
-{: .language-python}
-
-~~~
-l
-e
-a
-d
-~~~
-{: .output}
-
-This is shorter --- certainly shorter than something that prints every character in a
-hundred-letter string --- and more robust as well:
-
-~~~
-word = 'oxygen'
-for char in word:
-    print(char)
-~~~
-{: .language-python}
-
-~~~
-o
-x
-y
-g
-e
-n
-~~~
-{: .output}
-
-The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
-to repeat an operation --- in this case, printing --- once for each thing in a sequence.
 The general form of a loop is:
 
 ~~~
@@ -151,7 +161,46 @@ there must be a colon at the end of the line starting the loop, and we must inde
 want to run inside the loop. Unlike many other languages, there is no command to signify the end
 of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
+> ## anatomy of a `for` loop
+> Consider the following Python code:
+> ~~~
+> for my_int in [1,2,3,4,5,6,7,8,9]:
+>     print(my_int**2)
+> ~~~
+> {: .language-python}
+> 1. What is the variable name?
+> 2. What is the value of the variable at the end of the loop?
+> 3. What is the body of the loop?
+> 4. Which part is the collection?
+> 5. How many times does the body of the loop get executed?
+> 6. What is the final value of `my_int`?
+{: .challenge}
 
+> ## for loop syntax
+> Which of these are valid `for` loops?
+> 1. 
+> ~~~
+> for word in "Findable, Accessible, Interoperable, Resuable":
+>     print("FAIR")
+> ~~~
+> {: .language-python}
+> 2. 
+> ~~~
+> for word in "Findable, Accessible, Interoperable, Resuable":
+>     print(word[0])
+> ~~~
+> {: .language-python}
+> 3.
+> ~~~
+> for word in "Findable, Accessible, Interoperable, Resuable":
+> print(word)
+> ~~~
+> {: .language-python}
+{: .challenge}
+
+## Any valid variable name will work
+In the example above, the loop variable was given the name `word`. There is nothing special
+about this variable name, `word` was chosen as it makes sense in the context. `w` 
 > ## What's in a name?
 >
 >
