@@ -144,13 +144,13 @@ keypoints:
 
 
 The general form of a loop is:
-~~~
-for variable in collection:
-    do things using variable
-~~~
-{: .language-python}
+> ~~~
+> for variable in collection:
+>     do things using variable
+> ~~~
+> {: .language-python}
 
-Our example depmonstrates all the parts of this general `for` loop form:
+Our example demonstrates all the parts of this general `for` loop form:
 
 > ~~~
 > word = 'oxygen'
