@@ -38,7 +38,7 @@ keypoints:
 >
 > With the skills you already have, we could do this by accessing each character in the string using its index.
 > For example, we can get the first character of the word `'lead'`, by using `word[0]`. One way to print each 
-> character is to usefour `print` statements:
+> character is to use four `print` statements:
 >
 >~~~
 >print(word[0])
@@ -65,7 +65,7 @@ keypoints:
 >    asterix or any other character, we would have to change four lines of code. While
 >    this might not be a problem for short strings, it would definitely be a problem for
 >    longer ones.
-
+>
 > 3.  **Fragile**. If we use it with a word that has more characters than what we initially
 >    envisioned, it will only display part of the word's characters. A shorter string, on
 >    the other hand, will cause an error because it will be trying to display part of the
@@ -149,7 +149,8 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Returning to our example:
+Our example depmonstrates all the parts of a `for` loop:
+
 > ~~~
 > word = 'oxygen'
 > for char in word:
@@ -167,17 +168,14 @@ This image conveys how a computer processes and understands this `for` loop, one
 
 ![loop_image](../fig/loops_image.png)
 
-Here, each character (`char`) in the variable `word` is looped through and printed one character
+Each character (`char`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
 being the first loop, and 6 being the final loop).
 
-We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like, but:
+We can call the loop variable anything we like, but:
 
 * there must be a **colon** at the end of the line starting the loop
 * and we must **indent** anything we want to run inside the loop. 
-
-Unlike many other languages, there is no command to signify the end
-of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
 > ## anatomy of a `for` loop
 > Consider the following Python code:
@@ -196,6 +194,9 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 
 
 ## The body of a loop can contain many statements.
+
+Unlike many other languages, there is no command to signify the end
+of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
 *   But no loop should be more than a few lines long.
 *   Hard for human beings to keep larger chunks of code in mind.
@@ -216,20 +217,23 @@ for p in primes:
 {: .output}
 
 
-> ## for loop syntax
+> ## `for` loop syntax
 > Which of these are valid `for` loops?
+>
 > 1. 
 > ~~~
 > for word in "Findable, Accessible, Interoperable, Resuable":
 >     print("FAIR")
 > ~~~
 > {: .language-python}
+>
 > 2. 
 > ~~~
 > for word in "Findable, Accessible, Interoperable, Resuable":
 >     print(word[0])
 > ~~~
 > {: .language-python}
+>
 > 3.
 > ~~~
 > for word in "Findable, Accessible, Interoperable, Resuable":
@@ -238,7 +242,7 @@ for p in primes:
 > {: .language-python}
 {: .challenge}
 
-## Variable names
+## Loop Variables
 In the example above, the loop variable was given the name `word`. There is nothing special
 about this variable name, `word` was chosen as it makes sense in the context. Just `w` or
 even `flibble` would have worked as well; the important thing is to choose a name that will
@@ -271,22 +275,41 @@ help you understand your code next time you want to work on it!
 > Try out this code snippet. Explain the results to your neighbour.
 {: .challenge}
 
-> ## From 1 to N
->
-> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
-> accept 1, 2, or 3 parameters.
->
-> * If one parameter is given, `range` creates an array of that length,
->   starting at zero and incrementing by 1.
->   For example, `range(3)` produces the numbers `0, 1, 2`.
-> * If two parameters are given, `range` starts at
->   the first and ends just before the second, incrementing by one.
->   For example, `range(2, 5)` produces `2, 3, 4`.
-> * If `range` is given 3 parameters,
->   it starts at the first one, ends just before the second one, and increments by the third one.
->   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
->
-> Using write a loop that uses `range` to print the first 3 positive integers:
+## From 1 to N: using `range` for iteration
+
+Python has a built-in function called `range` that creates a sequence of numbers. 
+
+* *Not* a list: the numbers are produced on demand
+        to make looping over large ranges more efficient.
+* `range(N)` is the numbers 0..N-1. This isExactly the legal indices of a list or character string of length N
+
+~~~
+print('a range is not a list: range(0, 3)')
+for number in range(0,3):
+    print(number)
+~~~
+{: .python}
+~~~
+a range is not a list: range(0, 3)
+0
+1
+2
+~~~
+{: .output}
+
+`range` can accept 1, 2, or 3 parameters.
+
+* If one parameter is given, `range` creates an array of that length,
+   starting at zero and incrementing by 1.
+   For example, `range(3)` produces the numbers `0, 1, 2`.
+* If two parameters are given, `range` starts at
+   the first and ends just before the second, incrementing by one.
+   For example, `range(2, 5)` produces `2, 3, 4`.
+* If `range` is given 3 parameters,
+   it starts at the first one, ends just before the second one, and increments by the third one.
+   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+
+> Write a loop that uses `range` to print the first 3 positive integers:
 >
 > ~~~
 > 1
