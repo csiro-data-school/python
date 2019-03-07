@@ -276,6 +276,18 @@ help you understand your code next time you want to work on it!
 > Try out this code snippet. Explain the results to your neighbour.
 {: .challenge}
 
+> ## Persistance of loop variables
+> Run this example `for` loop code:
+> ~~~
+> length = 0
+> for vowel in 'aeiou':
+>    length = length + 1
+> print('There are', length, 'vowels')
+> ~~~
+> {: .language-python}
+> What is the value of `vowel` now? Why?
+{: .challenge}
+
 ## From 1 to N: using `range` for iteration
 
 Python has a built-in function called `range` that creates a sequence of numbers. 
@@ -367,17 +379,7 @@ and the `print` statement on line 4 tells us our final answer.
 In this example, `vowel` is the loop variable, but we don't actually use it in the 
 body of the loop. Despite this, it still exists after the loop has finished.
 
-> ## Persistance of loop variables
-> Run this example `for` loop code:
-> ~~~
-> length = 0
-> for vowel in 'aeiou':
->    length = length + 1
-> print('There are', length, 'vowels')
-> ~~~
-> {: .language-python}
-> What is the value of `vowel` now? Why?
-{: .challenge}
+
 
 In this example, we use a different variable, `length`, within the body of the loop. We first assign `length` to `0`
 outside the loop, before it starts. Then, within the loop, we update the value of `length`, each time we progress through
