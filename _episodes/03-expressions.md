@@ -25,7 +25,7 @@ keypoints:
 
 *	An expression is a combination of values, variables, operators and a calls to a function.
 *	Expressions need to be evaluated.
-*	Operators are `+`, `-`, `*` etc
+*	Operators include `+`, `-`, `/`, `//`, `*`, `**`, `%`, `==`, `!=` plus more!
 
 Use Python as a calculator
 ~~~
@@ -136,8 +136,20 @@ False
 
 ## Evaluation Order
 
-*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction
+*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
 
+>
+> If you had the following expression what is the output?
+>
+~~~
+2 + 3 * 4
+~~~
+{: .python}
+~~~
+14
+~~~
+{: .output}
+{: .challenge}
 
 
 ## Types control what operations can be done on values.
