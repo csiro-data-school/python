@@ -29,6 +29,7 @@ keypoints:
 
 
 > ## Printing a column of letters - the hard way
+>
 > Let's say you want to print each letter of the word 'lead' on a separate line, underneath each other. 
 >
 > ~~~
@@ -40,13 +41,13 @@ keypoints:
 > For example, we can get the first character of the word `'lead'`, by using `word[0]`. One way to print each 
 > character is to use four `print` statements:
 >
->~~~
->print(word[0])
->print(word[1])
->print(word[2])
->print(word[3])
->~~~
->{: .language-python}
+> ~~~
+> print(word[0])
+> print(word[1])
+> print(word[2])
+> print(word[3])
+> ~~~
+> {: .language-python}
 >
 > ~~~
 > l
@@ -71,7 +72,7 @@ keypoints:
 >    the other hand, will cause an error because it will be trying to display part of the
 >    string that don't exist.
 >
-~~~
+> ~~~
 > word = 'tin'
 > print(word[0])
 > print(word[1])
@@ -139,10 +140,10 @@ keypoints:
 >
 > The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
 > to repeat an operation --- in this case, printing --- once for each thing in a sequence.
-{: .callout)
+{: .callout}
+
 
 The general form of a loop is:
-
 ~~~
 for variable in collection:
     do things using variable
