@@ -134,21 +134,21 @@ False
 ~~~
 {: .output}
 
-## Evaluation Order
-
-*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
-
+>## Evaluation Order
+>
+>*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
+>
 >
 > If you had the following expression what is the output?
 >
-~~~
-2 + 3 * 4
-~~~
-{: .python}
-~~~
-14
-~~~
-{: .output}
+>~~~
+>2 + 3 * 4
+>~~~
+>{: .python}
+>~~~
+>14
+>~~~
+>{: .output}
 {: .challenge}
 
 
