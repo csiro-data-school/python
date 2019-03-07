@@ -149,17 +149,34 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Using the oxygen example above, the loop might look like this:
+Returning to our example:
+> ~~~
+> word = 'oxygen'
+> for char in word:
+>    print(char)
+> ~~~
+> {: .language-python}
+
+Here, we have a:
+
+* **collection** `oxygen`
+* **body** `print(char)`
+* **loop variable** `char`
+
+This image conveys how a computer processes and understands this `for` loop, one step at a time:
 
 ![loop_image](../fig/loops_image.png)
 
-where each character (`char`) in the variable `word` is looped through and printed one character
+Here, each character (`char`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
 being the first loop, and 6 being the final loop).
 
-We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like, but
-there must be a colon at the end of the line starting the loop, and we must indent anything we
-want to run inside the loop. Unlike many other languages, there is no command to signify the end
+We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like, but:
+
+* there must be a **colon** at the end of the line starting the loop
+* and we must **indent** anything we want to run inside the loop. 
+
+Unlike many other languages, there is no command to signify the end
 of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
 > ## anatomy of a `for` loop
@@ -176,6 +193,28 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > 5. How many times does the body of the loop get executed?
 > 6. What is the final value of `my_int`?
 {: .challenge}
+
+
+## The body of a loop can contain many statements.
+
+*   But no loop should be more than a few lines long.
+*   Hard for human beings to keep larger chunks of code in mind.
+
+~~~
+primes = [2, 3, 5]
+for p in primes:
+    squared = p ** 2
+    cubed = p ** 3
+    print(p, squared, cubed)
+~~~
+{: .language-python}
+~~~
+2 4 8
+3 9 27
+5 25 125
+~~~
+{: .output}
+
 
 > ## for loop syntax
 > Which of these are valid `for` loops?
@@ -232,6 +271,40 @@ help you understand your code next time you want to work on it!
 > Try out this code snippet. Explain the results to your neighbour.
 {: .challenge}
 
+> ## From 1 to N
+>
+> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
+> accept 1, 2, or 3 parameters.
+>
+> * If one parameter is given, `range` creates an array of that length,
+>   starting at zero and incrementing by 1.
+>   For example, `range(3)` produces the numbers `0, 1, 2`.
+> * If two parameters are given, `range` starts at
+>   the first and ends just before the second, incrementing by one.
+>   For example, `range(2, 5)` produces `2, 3, 4`.
+> * If `range` is given 3 parameters,
+>   it starts at the first one, ends just before the second one, and increments by the third one.
+>   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+>
+> Using write a loop that uses `range` to print the first 3 positive integers:
+>
+> ~~~
+> 1
+> 2
+> 3
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > for i in range(1, 4):
+> >     print(i)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+
 ## The accumulator structure
 
 Here's another loop that repeatedly updates a variable:
@@ -286,58 +359,65 @@ In this example, we use a different variable, `length`, within the body of the l
 outside the loop, before it starts. Then, within the loop, we update the value of `length`, each time we progress through
 the loop. This kind of pattern, where we initialise a variable to 0, then modify its value throughout a loop, is know as an **accumulator**. 
 
-
-
-Note also that finding the length of a string is such a common operation
-that Python actually has a built-in function to do it called `len`:
-
-~~~
-print(len('aeiou'))
-~~~
-{: .language-python}
-
-~~~
-5
-~~~
-{: .output}
-
-`len` is much faster than any function we could write ourselves,
-and much easier to read than a two-line loop;
-it will also give us the length of many other things that we haven't met yet,
-so we should always use it when we can.
-
-> ## From 1 to N
+> ## Practice Accumulating
 >
-> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
-> accept 1, 2, or 3 parameters.
->
-> * If one parameter is given, `range` creates an array of that length,
->   starting at zero and incrementing by 1.
->   For example, `range(3)` produces the numbers `0, 1, 2`.
-> * If two parameters are given, `range` starts at
->   the first and ends just before the second, incrementing by one.
->   For example, `range(2, 5)` produces `2, 3, 4`.
-> * If `range` is given 3 parameters,
->   it starts at the first one, ends just before the second one, and increments by the third one.
->   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
->
-> Using write a loop that uses `range` to print the first 3 positive integers:
+> Fill in the blanks in each of the programs below
+> to produce the indicated result.
 >
 > ~~~
-> 1
-> 2
-> 3
+> # Total length of the strings in the list: ["red", "green", "blue"] => 12
+> total = 0
+> for word in ["red", "green", "blue"]:
+>     ____ = ____ + len(word)
+> print(total)
 > ~~~
 > {: .language-python}
 >
-> > ## Solution
-> > ~~~
-> > for i in range(1, 4):
-> >     print(i)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
+> ~~~
+> # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+> lengths = ____
+> for word in ["red", "green", "blue"]:
+>     lengths.____(____)
+> print(lengths)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> # Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+> words = ["red", "green", "blue"]
+> result = ____
+> for ____ in ____:
+>     ____
+> print(result)
+> ~~~~
+> {: .language-python}
+>
+> ~~~
+> # Create acronym: ["red", "green", "blue"] => "RGB"
+> # write the whole thing
+> ~~~
+> {: .language-python}
 {: .challenge}
+
+> ## Cumulative Sum
+>
+> Reorder and properly indent the lines of code below
+> so that they print an array with the cumulative sum of data.
+> The result should be `[1, 3, 5, 10]`.
+>
+> ~~~
+> cumulative += [sum]
+> for number in data:
+> cumulative = []
+> sum += number
+> print(cumulative)
+> data = [1,2,2,5]
+> ~~~
+> {: .language-python}
+{: .challenge}
+
+
+
 
 > ## Computing Powers With Loops
 >
@@ -430,15 +510,6 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-
-
-- Movivating example
-- Boolean conditions
-- While condition: Block
-- range()
-- For var in List
-- Accumulation, reduction
-- Continue, Break
 
 {% include links.md %}
 
