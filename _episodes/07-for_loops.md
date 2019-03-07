@@ -200,36 +200,25 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 
 ## Any valid variable name will work
 In the example above, the loop variable was given the name `word`. There is nothing special
-about this variable name, `word` was chosen as it makes sense in the context. `w` 
+about this variable name, `word` was chosen as it makes sense in the context. Just `w` or
+even `flibble` would have worked as well; the important thing is to choose a name that will
+help you understand your code next time you want to work on it!
+
 > ## What's in a name?
 >
->
-> In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.
-> We can choose any name we want for variables. We might just as easily have chosen the name
-> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
-> the loop:
->
+> Consider the `for` loop from the last exercise:
+> 
 > ~~~
-> word = 'oxygen'
-> for banana in word:
->     print(banana)
+> for word in "Findable, Accessible, Interoperable, Resuable":
+>     print(word)
 > ~~~
 > {: .language-python}
->
-> ~~~
-> o
-> x
-> y
-> g
-> e
-> n
-> ~~~
-> {: .output}
->
-> It is a good idea to choose variable names that are meaningful, otherwise it would be more
-> difficult to understand what the loop is doing.
-{: .callout}
+> 
+> 1. Change the variable name to `x`. How many times do you need to replace `word`? 
+> 2. Now change it again, to something of your choosing. 
+> 3. Can you think of / find a variable name that **doesn't** work?
+{: .challenge}
+
 
 Here's another loop that repeatedly updates a variable:
 
