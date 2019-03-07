@@ -138,7 +138,7 @@ keypoints:
 > ~~~
 > {: .output}
 >
-> The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
+> The improved version uses a `for` loop
 > to repeat an operation --- in this case, printing --- once for each thing in a sequence.
 {: .callout}
 
@@ -150,7 +150,7 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Our example depmonstrates all the parts of a `for` loop:
+Our example depmonstrates all the parts of this general `for` loop form:
 
 > ~~~
 > word = 'oxygen'
@@ -161,7 +161,7 @@ Our example depmonstrates all the parts of a `for` loop:
 
 Here, we have a:
 
-* **collection** `oxygen`
+* **collection** `word`
 * **body** `print(char)`
 * **loop variable** `char`
 
