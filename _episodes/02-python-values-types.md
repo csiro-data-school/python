@@ -11,9 +11,9 @@ objectives:
 - "Explain key differences between integers and floating point numbers."
 - "Explain key differences between numbers and character strings."
 - "Use built-in functions to convert between integers, floating point numbers, and strings."
-- "Explain what a boolean expression is"
-- "Explain how to group items into a list"
-- "Explain when a NoneType object would occur"
+- "Explain what a boolean expression is."
+- "Explain how to group items into a list."
+- "Explain when a NoneType object would occur."
 
 keypoints:
 - "Variables are descriptive words that represent objects"
@@ -21,9 +21,9 @@ keypoints:
 - "Every value has a type."
 - "Use the built-in function `type` to find the type of a value."
 - "Can mix integers and floats freely in operations."
-- "Booleans are used for comparison"
-- "Lists are used to group objects"
-- "NoneType indicated a varible with no value"
+- "Booleans are used for comparison."
+- "Lists are used to group objects."
+- "NoneType indicated a varible with no value."
 
 ---
 

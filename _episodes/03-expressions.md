@@ -1,11 +1,14 @@
 ---
 title: "Expressions"
-teaching: 0
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
-- "Key question (FIXME)"
+- "What are expressions"
+- "What are Operators"
+- ""
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand that types determine the type of operations that can be done on a value"
+- ""
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
@@ -18,10 +21,129 @@ keypoints:
 - Boolean
 - String
 
+## Operators and Expressions
+
+*	An expression is a combination of values, variables, operators and a calls to a function.
+*	Expressions need to be evaluated.
+*	Operators are `+`, `-`, `*` etc
+
+Use Python as a calculator
+~~~
+5 - 3
+~~~
+{: .python}
+~~~
+2
+~~~
+{: .output}
+
+In this case the above expression is 5 - 3. This expression can be broken down into operators and operands.<br/>
+The operator is the `-` and the data are the operands!
+
+~~~
+2 * 3
+~~~
+{: .python}
+~~~
+6
+~~~
+{: .output}
+
+~~~
+2 ** 3
+~~~
+{: .python}
+~~~
+8
+~~~
+{: .output}
+
+~~~
+13 / 3
+~~~
+{: .python}
+~~~
+4.333333333333333
+~~~
+{: .output}
+
+~~~
+13 // 3
+~~~
+{: .python}
+~~~
+4
+~~~
+{: .output}
+Rounds the answer down to the nearest integer value, note if one of the values is a float you will get back a float.
+
+~~~
+13 % 3
+~~~
+{: .python}
+~~~
+1
+~~~
+{: .output}
+`%` modulo give the remainder of the division.
+
+~~~
+6 < 3
+~~~
+{: .python}
+~~~
+False
+~~~
+{: .output}
+Returns a boolean.
+
+~~~
+6 > 3
+~~~
+{: .python}
+~~~
+True
+~~~
+{: .output}
+
+~~~
+3 = 3
+~~~
+{: .python}
+~~~
+File "<stdin>", line 1
+SyntaxError: can't assign to literal
+~~~
+{: .error}
+
+~~~
+3 == 3
+~~~
+{: .python}
+~~~
+True
+~~~
+{: .output}
+
+~~~
+3 != 3
+~~~
+{: .python}
+~~~
+False
+~~~
+{: .output}
+
+## Evaluation Order
+
+*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction
+
+
 
 ## Types control what operations can be done on values.
 
 *   A value's type determines what the program can do to it.
+*	
 
 ~~~
 print(5 - 3)
