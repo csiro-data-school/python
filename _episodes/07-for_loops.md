@@ -15,6 +15,7 @@ keypoints:
 - "Use `for variable in sequence` to process the elements of a sequence one at a time."
 - "The body of a `for` loop must be indented."
 - "Use `len(thing)` to determine the length of something that contains other values."
+- "Use accumulator structures with a `for` loop to update the value of an existing variable"
 ---
 
 #A *for loop* executes commands once for each value in a collection
@@ -198,7 +199,7 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > {: .language-python}
 {: .challenge}
 
-## Any valid variable name will work
+## Variable names
 In the example above, the loop variable was given the name `word`. There is nothing special
 about this variable name, `word` was chosen as it makes sense in the context. Just `w` or
 even `flibble` would have worked as well; the important thing is to choose a name that will
@@ -219,6 +220,19 @@ help you understand your code next time you want to work on it!
 > 3. Can you think of / find a variable name that **doesn't** work?
 {: .challenge}
 
+> ## Reusing variables
+> ~~~
+> letter = 'z'
+> print(letter)
+> for letter in 'abc':
+>     print(letter)
+> print('after the loop, letter is', letter)
+> ~~~
+> {: .language-python}
+> Try out this code snippet. Explain the results to your neighbour.
+{: .challenge}
+
+## The accumulator structure
 
 Here's another loop that repeatedly updates a variable:
 
@@ -253,25 +267,26 @@ since there is nothing left in `'aeiou'` for Python to process,
 the loop finishes
 and the `print` statement on line 4 tells us our final answer.
 
-Note that a loop variable is just a variable that's being used to record progress in a loop.
-It still exists after the loop is over,
-and we can re-use variables previously defined as loop variables as well:
+In this example, `vowel` is the loop variable, but we don't actually use it in the 
+body of the loop. Despite this, it still exists after the loop has finished.
 
-~~~
-letter = 'z'
-for letter in 'abc':
-    print(letter)
-print('after the loop, letter is', letter)
-~~~
-{: .language-python}
+> ## Persistance of loop variables
+> Run this example `for` loop code:
+> ~~~
+> length = 0
+> for vowel in 'aeiou':
+>    length = length + 1
+> print('There are', length, 'vowels')
+> ~~~
+> {: .language-python}
+> What is the value of `vowel` now? Why?
+{: .challenge}
 
-~~~
-a
-b
-c
-after the loop, letter is c
-~~~
-{: .output}
+In this example, we use a different variable, `length`, within the body of the loop. We first assign `length` to `0`
+outside the loop, before it starts. Then, within the loop, we update the value of `length`, each time we progress through
+the loop. This kind of pattern, where we initialise a variable to 0, then modify its value throughout a loop, is know as an **accumulator**. 
+
+
 
 Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
