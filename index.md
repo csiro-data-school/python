@@ -33,7 +33,7 @@ The exercises could be completed in other environments such as [Jupyter][jupyter
 >    please download and unzip the file
 >    [introduction_to_python_data.zip]({{page.root}}/files/introduction_to_python_data.zip).
 >
->    Please see [the setup instructions]({{ page.root }}/setup/)
+>    Please see [the setup instructions]({{ page.root }}/setup.html)
 >    for details.
 {: .prereq}
 
