@@ -46,7 +46,7 @@ length: 5
 
 ## Use an item's index to fetch it from a list.
 
-*   To get the first element of this list we use the index 0 because python is a 0-based indexing lamnguage. 
+*   To get the first element of this list we use the index 0 because python is a 0-based indexing language. 
 *   Indexes are written within square brackets `[]`.
 
 ~~~
@@ -205,63 +205,63 @@ IndexError: string index out of range
 
 ## Slicing python lists
 
-Let's start with a normal, everyday list. Nothing crazy, just a normal list with the numbers 1 through 8. Now let's say that we really want the elements 2, 3, and 4 returned in a new list. How do we do that?
+Let's create a normal, everyday list. Nothing crazy, just a normal list with letters from a to h. Now let's say that we really want the elements b, c, and d returned in a new list. How do we do that?
 
 ~~~
-mylist = [1, 2, 3, 4, 5, 6, 7, 8]
-mylist[1:4] 
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+letters[1:4] 
 ~~~
 {: .python}
 ~~~
-[2, 3, 4]
+['b', 'c', 'd']
 ~~~
 {: .output}
 
-*   Remeber that `1` is the second element of this list because of the 0-based indexing
+*   Remeber that `b` is the second element of this list because of the 0-based indexing
 
 ## Slice indices have useful defaults
 
-*   An omitted second index defaults to the size of the string being sliced.
+*   An omitted second index defaults to the size of the list being sliced.
 *   An omitted first index defaults to zero.
 
 ~~~
-mylist[4:] # list elements from position 4 (included) to the end. Start counting from 0!
+letters[4:] # list elements from position 4 (included) onwards ... start counting from 0!
 ~~~
 {: .python}
 ~~~
-[5, 6, 7, 8]
+['e', 'f', 'g', 'h']
 ~~~
 {: .output}
 
 ~~~
-mylist[:5] # list elements from the beginning to position 5 (excluded)
+letters[:5] # list elements from the beginning to position 5 (excluded)
 ~~~
 {: .python}
 ~~~
-[1, 2, 3, 4, 5]
+['a', 'b', 'c', 'd', 'e']
 ~~~
 {: .output}
 
 *   Lists can also be sliced in reverse order. 
 
 ~~~
-print(mylist[-1])    # last item in the array
-print(mylist[-2:])   # last two items in the array
-print(mylist[:-2])   # everything except the last two items
+print('last item in the list:', letters[-1])
+print('last two items in the list:', letters[-2:])   
+print('everything except the last two items:', letters[:-2])   
 ~~~
 {: .python}
 ~~~
-8
-[7, 8]
-[1, 2, 3, 4, 5, 6]
+last item in the list: h
+last two items in the list: ['g', 'h']
+everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 ~~~
 {: .output}
 
-One way to remember how slices work is to think of the indices as pointing *between* characters, with the left edge of the  first character numbered 0. Then the right edge of the last character of a string of n characters has index n, for example:
+One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. Then the right edge of the last character of a string of n characters has index n, for example:
 
 ~~~
  +---+---+---+---+---+---+---+---+
- | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+ | a | b | c | d | e | f | g | h |
  +---+---+---+---+---+---+---+---+
  0   1   2   3   4   5   6   7   8
 -8  -7  -6  -5  -4  -3  -2  -1
@@ -269,21 +269,16 @@ One way to remember how slices work is to think of the indices as pointing *betw
 
 > ## Challenge questions
 > 
-> How would you extract the number `7` from `mylist` using reverse indexing?
+> How would you extract the letter `f` from `letters` using reverse indexing?
 > 
 > ~~~
 > mylist[____:____]
 > ~~~
 > {: .python}
-> 
-> ~~~
-> [7]
-> ~~~
-> {: .output}
 >
 > > ## Solution
 > > ~~~
-> > mylist[-2:-1]
+> > letters[-3:-2]
 > > ~~~
 > > {: .python}
 > {: .solution}
@@ -291,7 +286,8 @@ One way to remember how slices work is to think of the indices as pointing *betw
 
 > ## Fill in the Blanks
 >
-> Fill in the blanks so that the program below produces the output shown.
+> Fill in the blanks using methods of lists and slicing so that the program below produces the output shown. 
+> *Tip: start with an empty list*
 >
 > ~~~
 > values = ____
@@ -324,7 +320,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## How Large is a Slice?
+> ## How large is a slice?
 >
 > If 'low' and 'high' are both non-negative integers,
 > how long is the list `values[low:high]`?
@@ -337,7 +333,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## From Strings to Lists and Back
+> ## From strings to lists and back
 >
 > Given this:
 >
