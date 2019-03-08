@@ -28,16 +28,6 @@ keypoints:
 - "The [PEP 8 Python Style Guidelines](https://www.python.org/dev/peps/pep-0008/) provide more code layout and convention details"
 ---
 
-## Notes
-
-Also keywords, identifiers, expressions. As seen in previous episodes. Including line continuation.
-
-https://www.tutorialsteacher.com/python/python-basic-syntax
-
-https://realpython.com/python-comments-guide/
-
-https://developer.rhino3d.com/guides/rhinopython/python-statements/
-
 ## Syntax
 Every language has grammatical rules. The syntax of any language dictates the construction of "legal" sentences.
 
