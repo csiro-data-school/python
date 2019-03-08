@@ -77,7 +77,7 @@ weights are now: [0.265, 0.275, 0.277, 0.275, 0.276]
 {: .output}
 
 
-## Appending items to a list
+## List methods
 
 *   Use `list_name.append` to add items to the end of a list.
 
@@ -98,10 +98,9 @@ primes has become: [2, 3, 5, 7, 9]
 *   `append` is a *method* of lists.
     *   Like a function, but tied to a particular object.
 *   Use `object_name.method_name` to call methods.
-    *   Deliberately resembles the way we refer to things in a library.
-*   We will meet other methods of lists as we go along.
-    *   Use `help(list)` for a preview.
-*   `extend` is similar to `append`, but it allows you to combine two lists.  For example:
+*   `extend` is similar to `append`, but it allows you to combine two lists.  
+
+For example:
 
 ~~~
 teen_primes = [11, 13, 17, 19]
@@ -121,6 +120,29 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 {: .output}
 
 Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
+
+*   Another useful list method is `.count` which counts the instances of certain object. 
+
+For example: 
+
+~~~
+a = ['spam', 'spam', 'eggs', 'spam']
+print(a.count('spam'))
+print(a.count('eggs'))
+print(a.count('bacon'))
+print(a.count(5))
+~~~
+{: .python}
+~~~
+3
+1
+0
+0
+~~~
+{: .output}
+
+*   We will meet other methods of lists as we go along.
+    *   Use `help(list)` for a preview.
 
 
 ## Use `del` to remove items from a list
