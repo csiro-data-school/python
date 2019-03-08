@@ -118,11 +118,28 @@ This script outputs Hello World
 Multi-line comments, or doc strings, are used to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes.
 
 ## Keywords, identifiers, expressions, statements 
+Mostly covered elsewhere, but broadly...
 
 ## Indentation and Code Blocks
+
+Python uses indentation level to determine the start and end of code blocks - unlike many languages which use braces ({ and }), or others that use keywords such as begin and end. The main thing to notice is that 
+
+> ## Code Block Examples
+>
+> ~~~
+> if 3 > 2:
+>    print("inside the block")  # this line is indented four spaces
+> ~~~
+> {: .language-python}
+
+You will find a colon (:) at the end of a line that preceeds an indented code block.
+
+Python aware editors (e.g. Visual Code, vim) help in maintaining consistent indenting levels. Jupyter notebook code cells are indentation aware.
 
 ## Line continuation
 
 ## Brackets
+
+## Quotes
 
 {% include links.md %}
