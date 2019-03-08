@@ -10,15 +10,15 @@ objectives:
 keypoints:
 - "A list stores many values in a single structure."
 - "Use an item's index to fetch it from a list."
-- "Lists' values can be replaced by assigning to them."
+- "Lists are mutable: list values can be replaced by assigning to them."
 - "Appending items to a list lengthens it."
 - "Use `del` to remove items from a list entirely."
 - "The empty list contains no values."
 - "Lists may contain values of different types."
 - "Character strings can be indexed like lists."
-- "Character strings are immutable."
 - "Python uses 0-based indexing. The first index is zero, the second index is one, and so forth"
 - "Indexing beyond the end of the collection is an error."
+- "Tuples are another type of collection, but unlike lists, tuples are immutable."
 ---
 ## Lists are collections of data 
 
