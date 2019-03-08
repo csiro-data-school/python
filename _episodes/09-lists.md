@@ -195,11 +195,14 @@ TypeError: 'str' object does not support item assignment
         because the index might be calculated based on data.
 
 ~~~
-print('99th element of element is:', element[99])
+random_chr = ['±', '!', '@', '#', '$', '%', '^', '&', '*', '(', '>', '?', '<']
+print("length of random_chr:", len(random_chr))
+print("get the 20th element of random_chr:", random_chr[20]) 
 ~~~
 {: .python}
 ~~~
-IndexError: string index out of range
+length of random_chr: 13
+IndexError: list index out of range
 ~~~
 {: .output}
 
