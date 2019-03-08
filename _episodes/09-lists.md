@@ -1,7 +1,7 @@
 ---
 title: "Lists"
-teaching: 0
-exercises: 0
+teaching: 20 minutes
+exercises: 20 minutes
 questions:
 - "How can I store multiple values?"
 objectives:
@@ -44,6 +44,7 @@ length: 5
 ~~~
 {: .output}
 
+
 ## Use an item's index to fetch it from a list.
 
 *   To get the first element of this list we use the index 0 because python is a 0-based indexing language. 
@@ -60,6 +61,7 @@ fourth item of weights: 176
 ~~~
 {: .output}
 
+
 ## Lists' values can be replaced by assigning to them.
 
 *   Use an index expression on the left of assignment to replace a value.
@@ -73,6 +75,7 @@ print('weights is now:', weights)
 weights are now: [0.265, 0.275, 0.277, 0.275, 0.276]
 ~~~
 {: .output}
+
 
 ## Appending items to a list lengthens it.
 
@@ -119,6 +122,7 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 
 Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
 
+
 ## Use `del` to remove items from a list entirely.
 
 *   `del list_name[index]` removes an item from a list and shortens the list.
@@ -136,12 +140,14 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 {: .output}
 
+
 ## The empty list contains no values
 
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values, like an empty container.
     (this is will be very useful in future chapters).
+    
 
 ## Lists may contain values of different types
 
@@ -151,6 +157,7 @@ primes after removing last item: [2, 3, 5, 7]
 goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
 {: .python}
+
 
 ## Remember that character strings can be indexed like lists
 
@@ -167,6 +174,7 @@ zeroth character: c
 third character: b
 ~~~
 {: .output}
+
 
 ## But unlike lists, character strings are immutable
 
@@ -187,6 +195,7 @@ TypeError: 'str' object does not support item assignment
 
 *   Lists and character strings are both *collections*.
 
+
 ## Indexing beyond the end of the collection is an error
 
 *   Python reports an `IndexError` if we attempt to access a value that doesn't exist.
@@ -206,6 +215,7 @@ IndexError: list index out of range
 ~~~
 {: .output}
 
+
 ## Slicing python lists
 
 Let's create a normal, everyday list with letters from `a` to `h`. Now let's say that we really want the elements `b`, `c`, and `d` returned in a new list. How do we do that?
@@ -221,6 +231,7 @@ letters[1:4]
 {: .output}
 
 *   Remeber that `b` is the second element of this list because of the 0-based indexing
+
 
 ## Slice indices have useful defaults
 
@@ -261,6 +272,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 ~~~
 {: .output}
 
+
 ## Slice bounds
 
 One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. Then the right edge of the last character of a string of n characters has index n, for example:
@@ -272,6 +284,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
  0   1   2   3   4   5   6   7   8
 -8  -7  -6  -5  -4  -3  -2  -1
 ~~~~
+
 
 > ## Using reverse indexing.
 > 
@@ -289,6 +302,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > {: .python}
 > {: .solution}
 {: .challenge}
+
 
 > ## Fill in the blanks
 >
@@ -325,6 +339,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > {: .python}
 > {: .solution}
 {: .challenge}
+
 
 > ## How large is a slice?
 >
@@ -364,6 +379,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
+
 > ## Stepping through a list
 >
 > What does the following program print?
@@ -392,6 +408,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > >    (i.e., selects every second element).
 > {: .solution}
 {: .challenge}
+
 
 ## Using functions and methods on lists and strings
 
@@ -432,6 +449,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > `letters` in-place and does not return anything.
 > {: .solution}
 {: .challenge}
+
 
 > ## More on assigning lists to variables 
 >
@@ -474,6 +492,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
+
 ## Basic operations with lists
 
 Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
@@ -498,6 +517,7 @@ Similar to strings, lists respond to the + and * operators. These operators also
 > {: .solution}
 {: .challenge}
 
+
 ## Another type of collections in Python: Tuples 
 
 In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets, tuples use parentheses `()`. 
@@ -513,6 +533,7 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 > > 4. Tuple are better for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.
 > {: .solution}
 {: .challenge}
+
 
 ## Creating a Tuple 
 
