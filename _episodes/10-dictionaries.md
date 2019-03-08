@@ -3,9 +3,10 @@ title: "Dictionaries"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What is a dictionary?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Create dictionaries."
+- "Add and retrieve values from a dictionary, and test for membership."
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
