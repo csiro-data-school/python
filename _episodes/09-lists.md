@@ -537,7 +537,7 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 > {: .solution}
 {: .challenge}
 
-Another advantage of tuples is that they contain immutable elements that can be used as keys for a dictionary. With list, this is not possible. We will learn more about keys and dictionaries in our next chapter. 
+Another advantage of tuples is that they contain immutable elements that can be used as `keys` for a `dictionary`. With list, this is not possible. We will learn more about keys and dictionaries in our next chapter. 
 
 {% include links.md %}
 
