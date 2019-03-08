@@ -1,7 +1,7 @@
 ---
 title: "Python Syntax"
-teaching: 20
-exercises: 20
+teaching: 30
+exercises: 30
 questions:
 - "What constitutes a legal Python program (script)?"
 - "What are keywords, identifiers, expressions, statements?"
@@ -10,17 +10,13 @@ questions:
 - "What kinds of brackets are used in Python code?"
 - "Where can I find out more about Python style guidelines?"
 objectives:
-- "Learn about the different kinds of Python comments"
-- "Understand the significance of indentation in Python code"
-- "Know when line continuation characters are required"
-- "Learn about key aspects of Python syntax"
-- "Understand the different kinds of 'brackets' in Python"
+- "Learn about the key aspects of Python syntax"
 keypoints:
 - "Legal Python code follows rules of syntax"
 - "A Python keyword is a symbol that has special meaning in a Python script"
 - "Python provides for single and multiple line comments"
 - "An identifier names a value, e.g. as in the assignment statement: x = 21"
-- "A Python script consists of sequence of statements that make use of keywords, identifiers and expressions"
+- "A Python script consists of a sequence of statements that make use of keywords, identifiers and expressions"
 - "Indentation introduces a code block"
 - "`[` and `]` are used to surround literal list values"
 - "`{` and `}` are used to surround literal dictionary values"
@@ -29,16 +25,16 @@ keypoints:
 ---
 
 ## Syntax
-Every language has grammatical rules. The syntax of any language dictates the construction of "legal" sentences.
+The grammatical rules or syntax of any language dictate the construction of "legal" sentences.
 
-The syntax of a programming language determines what counts as a legal or well-formed program (or script).
+The syntax of a programming language determines what counts as a legal or well-formed program (script).
 
 A Python program consists of a sequence of syntactically correct "sentences" entered at a Python interpreter prompt (or into Jupyter notebook cells) or contained within files.
 
 This episode introduces the following Python syntax elements, many of which are elaborated upon in other episodes: keywords, identifiers, expressions, statements, comments, indentation and code blocks, brackets and quotes.
 
 ## Keywords 
-In Python, keywords are special words used in core language constructs. An example of a Python keyword is `if`, used within so-called conditional statements.
+In Python, keywords are special words used for core language constructs. An example of a Python keyword is `if`, used within so-called conditional statements.
 
 > ## Keywords
 >
@@ -79,7 +75,7 @@ In Python, keywords are special words used in core language constructs. An examp
 
 Try entering one or more keywords at the "help>" prompt to get a brief description of what they are used for.
 
-Spaces and tabs separate keywords, identifiers and expressions. They also play a special role in indentation levels in code blocks, which is covered next. 
+Spaces and tabs separate keywords, identifiers and expressions. They also play a special role in indentation levels in code blocks, which is covered later in this episode. 
 
 ## Identifiers
 A Python identifier is a name used to identify a variable, function, class, module or other object. An identifier can start with a letter (a to z, A to Z) or an underscore (_) but may contain letters, underscores and digits (0 to 9) thereafter.
@@ -106,7 +102,7 @@ The following asks whether this expression has the value we think it should:
 The "Expressions" episode provides more detail.
 
 ## Statements
-Python statements make use of keywords, identifiers, and expressions. The following statement assigns the value of the `42` expression from the last section to the variable designated by the identifier `meaning_of_life`:
+Python statements make use of keywords, identifiers, and expressions. The following statement assigns the value of the `42` yielding expression from the last section to the variable designated by the identifier `meaning_of_life`:
 
 > ~~~
 > meaning_of_life = 3 * 10 + 12
@@ -135,7 +131,7 @@ An example of another statement is:
 > ~~~
 > {: .language-python}
 
-which asserts that the variable `meaning_of_life` is assumed to equal `42`. If not, an error will be generated. The notion of assertions will be further explored in other episodes, the "Testing" epiode in particular.
+which asserts that the variable `meaning_of_life` is assumed to equal `42`. If not, an error will be generated. The notion of assertions will be further explored in other episodes, the "Testing" episode in particular.
 
 ## Comments
 Comments are annotations embedded in code to summarise and explain the programmer's intent.
@@ -176,7 +172,7 @@ Anything that follows a `#` symbol on a line is considered a comment. The `#` ma
 {: .challenge}
 
 ## Multiple Line Comments
-Triple single `'` or double `"` quotes begin and end a multi-line string, but if you don't assign that string to a variable, then any code within it has no effect and is effectively commented out.
+Triple single `'` or double `"` quotes begin and end a multi-line string, but if you don't assign this string to a variable, then any code within it has no effect and is effectively commented out.
 
 > ## Write code containing multiple-line comments
 >
@@ -208,7 +204,7 @@ Triple single `'` or double `"` quotes begin and end a multi-line string, but if
 > {: .solution}
 {: .challenge}
 
-Multi-line comments, or doc strings, are used to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes.
+Multi-line comments can be used as "doc strings" to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes, e.g. "Writing Functions".
 
 ## Indentation and Code Blocks
 Python uses indentation level to determine the start and end of code blocks - unlike many languages which use braces (`{` and `}`), or others that use keywords such as `begin` and `end`.
@@ -301,7 +297,7 @@ Parentheses are used in Python to:
 
 Square brackets are used to begin and end a list value, e.g. `first5Primes = [2,3,5,7,11]`.
 
-Braces (sometimes called "curly braces") are used to delimit a dictionary value, e.g. `ages = {"Fred":42, "David":55, "Jack":31}`
+Braces (sometimes called "curly braces") are used to delimit the key-value pairs in a dictionary, e.g. `ages = {"Fred":42, "David":55, "Jack":31}`
 
 There are two different quote characters for delimiting strings:
 * Single: `'`
@@ -338,8 +334,8 @@ Both are used to delimit string values, e.g. `'abc'`, `"abc"`. When quotes of ei
 > It is possible to "escape" quote characters within a string using the `\` character, e.g. `'David\'s' favourite programming language is X'`.
 {: .callout}
 
-We have also seen how triple quotes can be used for multi-line comments (or string values assigned to a variable). These may use single or double quotes. 
+We have also seen how triple quotes can be used for multi-line comments (or string values assigned to a variable).
 
-See episodes such as "Python Values and their Type", "Expressions", "Lists", "Writing Functions", "Dictionaries" for additional examples of brackets and quotes.
+See episodes such as "Python Values and their Type", "Expressions", "Lists", "Writing Functions", and "Dictionaries" for additional examples of brackets and quotes.
 
 {% include links.md %}
