@@ -45,7 +45,7 @@ length: 5
 {: .output}
 
 
-## Use an item's index to fetch it from a list.
+## Use an item's index to fetch it from a list
 
 *   To get the first element of this list we use the index 0 because python is a 0-based indexing language. 
 *   Indexes are written within square brackets `[]`.
@@ -62,7 +62,7 @@ fourth item of weights: 176
 {: .output}
 
 
-## Lists' values can be replaced by assigning to them.
+## List values can be replaced in place
 
 *   Use an index expression on the left of assignment to replace a value.
 
@@ -77,7 +77,7 @@ weights are now: [0.265, 0.275, 0.277, 0.275, 0.276]
 {: .output}
 
 
-## Appending items to a list lengthens it.
+## Appending items to a list
 
 *   Use `list_name.append` to add items to the end of a list.
 
@@ -123,7 +123,7 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
 
 
-## Use `del` to remove items from a list entirely.
+## Use `del` to remove items from a list
 
 *   `del list_name[index]` removes an item from a list and shortens the list.
 *   Not a function or a method, but a statement in the language.
@@ -518,7 +518,7 @@ Similar to strings, lists respond to the + and * operators. These operators also
 {: .challenge}
 
 
-## Another type of collections in Python: Tuples 
+## Another type of collection: Tuples 
 
 In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets, tuples use parentheses `()`. 
 
