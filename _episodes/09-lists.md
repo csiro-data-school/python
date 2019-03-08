@@ -376,32 +376,6 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## From strings to lists and back
-> Using functions and methods
->
-> Given this:
->
-> ~~~
-> print('string to list:', list('tin'))
-> print('list to string:', ''.join(['g', 'o', 'l', 'd']))
-> ~~~
-> {: .python}
-> ~~~
-> ['t', 'i', 'n']
-> 'gold'
-> ~~~
-> {: .output}
->
-> 1.  Explain in simple terms what `list('some string')` does.
-> 2.  What does `'hello'.join(['x','y'])` generate?
->
-> > ## Solution
-> > 1. `list('some string')` "splits" a string into a list of its characters.
-> > 2. `'xhelloy'`
-> {: .solution}
-{: .challenge}
-
-
 > ## Stepping through a list
 >
 > What does the following program print?
@@ -434,9 +408,33 @@ One way to remember how slices work is to think of the indices as pointing *betw
 
 ## Using functions and methods on lists and strings
 
+> ## From strings to lists and back
+> Using functions and methods
+>
+> Given this:
+>
+> ~~~
+> print('string to list:', list('tin'))
+> print('list to string:', ''.join(['g', 'o', 'l', 'd']))
+> ~~~
+> {: .python}
+> ~~~
+> ['t', 'i', 'n']
+> 'gold'
+> ~~~
+> {: .output}
+>
+> 1.  Explain in simple terms what `list('some string')` does.
+> 2.  What does `'hello'.join(['x','y'])` generate?
+>
+> > ## Solution
+> > 1. `list('some string')` "splits" a string into a list of its characters.
+> > 2. `'xhelloy'`
+> {: .solution}
+{: .challenge}
 > ## Sort and sorted
 >
-> What do these two programs print?
+> ## What do these two programs print?
 > In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
 >
 > ~~~
