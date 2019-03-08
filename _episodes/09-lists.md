@@ -205,7 +205,7 @@ IndexError: string index out of range
 
 ## Slicing python lists
 
-Let's create a normal, everyday list. Nothing crazy, just a normal list with letters from a to h. Now let's say that we really want the elements b, c, and d returned in a new list. How do we do that?
+Let's create a normal, everyday list with letters from `a` to `h`. Now let's say that we really want the elements `b`, `c`, and `d` returned in a new list. How do we do that?
 
 ~~~
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
@@ -222,7 +222,6 @@ letters[1:4]
 ## Slice indices have useful defaults
 
 *   An omitted second index defaults to the size of the list being sliced.
-*   An omitted first index defaults to zero.
 
 ~~~
 letters[4:] # list elements from position 4 (included) onwards ... start counting from 0!
@@ -232,6 +231,8 @@ letters[4:] # list elements from position 4 (included) onwards ... start countin
 ['e', 'f', 'g', 'h']
 ~~~
 {: .output}
+
+*   An omitted first index defaults to zero.
 
 ~~~
 letters[:5] # list elements from the beginning to position 5 (excluded)
