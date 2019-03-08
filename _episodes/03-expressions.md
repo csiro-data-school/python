@@ -3,8 +3,9 @@ title: "Expressions"
 teaching: 10
 exercises: 10
 questions:
-- "What are expressions"
-- "What are Operators"
+- "What are expressions?"
+- "What are operators?"
+- "What are comparisons?"
 - ""
 objectives:
 - "Understand that types determine the type of operations that can be done on a value"
@@ -88,25 +89,6 @@ Rounds the answer down to the nearest integer value, note if one of the values i
 `%` modulo give the remainder of the division.
 
 ~~~
-6 < 3
-~~~
-{: .python}
-~~~
-False
-~~~
-{: .output}
-Returns a boolean.
-
-~~~
-6 > 3
-~~~
-{: .python}
-~~~
-True
-~~~
-{: .output}
-
-~~~
 3 = 3
 ~~~
 {: .python}
@@ -115,6 +97,11 @@ File "<stdin>", line 1
 SyntaxError: can't assign to literal
 ~~~
 {: .error}
+
+## Comparisons, Membership Tests and Identity Tests
+
+*	Always returns a `bool`
+*	`in`, `not in`, `is`, `is not`, `<`, `<=`, `>`, `>=`, `!=`, `==`
 
 ~~~
 3 == 3
@@ -134,6 +121,26 @@ False
 ~~~
 {: .output}
 
+~~~
+6 < 3
+~~~
+{: .python}
+~~~
+False
+~~~
+{: .output}
+Returns a boolean.
+
+~~~
+list1 = [1, 2, 3, 4]
+2 in list1
+~~~
+{: .python}
+~~~
+True
+~~~
+{: .output}
+
 >## Evaluation Order
 >
 >*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
@@ -145,12 +152,17 @@ False
 >2 + 3 * 4
 >~~~
 >{: .python}
->## Solution
->>14
->~~~
+>
+>>## Solution
+>> Answer: 14
 >{: .solution}
 {: .challenge}
 
+
+> > ## Solution
+> > Answer: 1 and 4
+> {: .solution}
+{: .challenge}
 
 ## Types control what operations can be done on values.
 
