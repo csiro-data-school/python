@@ -409,7 +409,6 @@ One way to remember how slices work is to think of the indices as pointing *betw
 ## Using functions and methods on lists and strings
 
 > ## From strings to lists and back
-> Using functions and methods
 >
 > Given this:
 >
@@ -464,51 +463,10 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > letters is ['d', 'g', 'l', 'o'] and result is None
 > > ~~~
 > > {: .python}
+> >
 > > `sorted(letters)` returns a sorted copy of the list `letters` (the original
 > > list `letters` remains unchanged), while `letters.sort()` sorts the list
 > > `letters` in-place and does not return anything.
-> {: .solution}
-{: .challenge}
-
-
-> ## More on assigning lists to variables 
->
-> What do these two programs print?
-> In simple terms, explain the difference between `new = old` and `new = old[:]`.
->
-> ~~~
-> # Program A
-> old = list('gold')
-> new = old      # simple assignment
-> new[0] = 'D'
-> print('new is', new, 'and old is', old)
-> ~~~
-> {: .python}
->
-> ~~~
-> # Program B
-> old = list('gold')
-> new = old[:]   # assigning a slice
-> new[0] = 'D'
-> print('new is', new, 'and old is', old)
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > Program A prints
-> > ~~~
-> > new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']
-> > ~~~
-> > Program B prints
-> > ~~~
-> > new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
-> > ~~~
-> > {: .python}
-> > `new = old` makes `new` a reference to the list `old`; `new` and `old` point
-> > towards the same object.
-> > 
-> > `new = old[:]` however creates a new list object `new` containing all elements
-> > from the list `old`; `new` and `old` are different objects.
 > {: .solution}
 {: .challenge}
 
