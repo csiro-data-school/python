@@ -117,7 +117,7 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 ~~~
 {: .output}
 
-Note that while `extend` maintains the "flat" structure of the list, appending a list to a list makes the result two-dimensional.
+Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
 
 ## Use `del` to remove items from a list entirely.
 
@@ -140,8 +140,8 @@ primes after removing last item: [2, 3, 5, 7]
 
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
-*   Helpful as a starting point for collecting values
-    (which we will see in future chapters).
+*   Helpful as a starting point for collecting values, like an empty container.
+    (this is will be very useful in future chapters).
 
 ## Lists may contain values of different types
 
@@ -273,7 +273,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 -8  -7  -6  -5  -4  -3  -2  -1
 ~~~~
 
-> ## Challenge question
+> ## Using reverse indexing.
 > 
 > How would you extract the letter `f` from `letters` using reverse indexing?
 > 
@@ -290,7 +290,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## Fill in the Blanks
+> ## Fill in the blanks
 >
 > Fill in the blanks using methods of lists and slicing so that the program below produces the output shown. 
 > *Tip: start with an empty list*
@@ -340,6 +340,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 {: .challenge}
 
 > ## From strings to lists and back
+> Using functions and methods
 >
 > Given this:
 >
@@ -355,11 +356,11 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .output}
 >
 > 1.  Explain in simple terms what `list('some string')` does.
-> 2.  What does `'-'.join(['x', 'y'])` generate?
+> 2.  What does `'hello'.join(['x','y'])` generate?
 >
 > > ## Solution
 > > 1. `list('some string')` "splits" a string into a list of its characters.
-> > 2. `x-y`
+> > 2. `'xhelloy'`
 > {: .solution}
 {: .challenge}
 
