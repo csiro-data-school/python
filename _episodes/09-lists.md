@@ -428,7 +428,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > {: .solution}
 {: .challenge}
 
-> ## Assigning lists to variables 
+> ## More on assigning lists to variables 
 >
 > What do these two programs print?
 > In simple terms, explain the difference between `new = old` and `new = old[:]`.
@@ -473,7 +473,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 
 Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
 
-> What do the following commands print?
+> ## What do the following commands print?
 >
 > ~~~
 > concatenate = [1, 2, 3] + [4, 5, 6]
@@ -493,13 +493,46 @@ Similar to strings, lists respond to the + and * operators. These operators also
 > {: .solution}
 {: .challenge}
 
-## Another type of collection in Python: Tuples 
+## Another type of collections in Python: Tuples 
 
-Similar to lists, tuples are also a collection of python objects or elements. The main difference between tuples and lists is that tuples are immutable. Also, while lists use square brackets, tuples use parentheses `()`. 
+In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets, tuples use parentheses `()`. 
 
+> ## Challenge question
+> Can you think of any advantages of using tuples over lists? 
+> Some of these concepts will become clearer in future chapters.
+>
+> > ## Solution
+> > 1. If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
+> > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is > > iterate through it, use a tuple instead of a list. 
+> > 3. One good thing about tuples is that they use less memory. Lists use more memory.
+> > 4. Tuple are better for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.
+> {: .solution}
+{: .challenge}
 
+## Creating a Tuple 
 
+*   A tuple is created by placing all the items (elements) inside a parentheses `()`, separated by commas. 
+*   A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
+*   Similar to lists, tuples can also be sliced and indexed, and respond to basic operations. 
 
+> ## What would be the ouput of the following commands? 
+> 
+> ~~~
+> tupl1 = ('d','a','t','a')
+> tupl2 = tupl1 + tuple('is') + (tuple('fun') * 3)
+> print(tupl2) 
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > ('d', 'a', 't', 'a', 'i', 's', 'f', 'u', 'n', 'f', 'u', 'n', 'f', 'u', 'n')
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
+
+Another advantage of tuples is that they contain immutable elements that can be used as keys for a dictionary. With list, this is not possible. We will learn more about keys and dictionaries in our next chapter. 
 
 {% include links.md %}
 
