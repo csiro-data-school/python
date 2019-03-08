@@ -8,8 +8,9 @@ questions:
 - "What are comparisons?"
 - ""
 objectives:
+- "Understand how different types of operators function"
 - "Understand that types determine the type of operations that can be done on a value"
-- ""
+- "Know how to use the in-built function `len`"
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
@@ -26,9 +27,9 @@ keypoints:
 
 *	An expression is a combination of values, variables, operators and a calls to a function.
 *	Expressions need to be evaluated.
-*	Operators include `+`, `-`, `/`, `//`, `*`, `**`, `%`, `==`, `!=` plus more!
+*	Operators include `+`, `-`, `/`, `//`, `*`, `**`, `%`, `==`, `!=` plus more..
 
-Use Python as a calculator
+## Use Python as a calculator on `numbers`
 ~~~
 5 - 3
 ~~~
@@ -39,8 +40,9 @@ Use Python as a calculator
 {: .output}
 
 In this case the above expression is 5 - 3. This expression can be broken down into operators and operands.<br/>
-The operator is the `-` and the data are the operands!
+The operator is the `-` and the data are the operands.
 
+Multiplication
 ~~~
 2 * 3
 ~~~
@@ -50,6 +52,7 @@ The operator is the `-` and the data are the operands!
 ~~~
 {: .output}
 
+Exponent
 ~~~
 2 ** 3
 ~~~
@@ -59,6 +62,7 @@ The operator is the `-` and the data are the operands!
 ~~~
 {: .output}
 
+Division
 ~~~
 13 / 3
 ~~~
@@ -68,6 +72,7 @@ The operator is the `-` and the data are the operands!
 ~~~
 {: .output}
 
+Floor Division
 ~~~
 13 // 3
 ~~~
@@ -78,6 +83,7 @@ The operator is the `-` and the data are the operands!
 {: .output}
 Rounds the answer down to the nearest integer value, note if one of the values is a float you will get back a float.
 
+Modulo
 ~~~
 13 % 3
 ~~~
@@ -86,8 +92,31 @@ Rounds the answer down to the nearest integer value, note if one of the values i
 1
 ~~~
 {: .output}
-`%` modulo give the remainder of the division.
+`%` returns the remainder of the division.
 
+## Can mix integers and floats freely in operations.
+
+*   Integers and floating-point numbers can be mixed in arithmetic.
+    *   Python automatically converts integers to floats as needed.
+
+~~~
+print('half is', 1 / 2.0)
+print('three squared is', 3.0 ** 2)
+~~~
+{: .python}
+~~~
+half is 0.5
+three squared is 9.0
+~~~
+{: .output}
+
+## Comparisons, Membership Tests and Identity Tests
+
+*	Always returns a `bool`
+*	`<`, `<=`, `>`, `>=`, `!=`, `==`, `in`, `not in`, `is`, `is not`
+
+
+Comparison?
 ~~~
 3 = 3
 ~~~
@@ -97,11 +126,6 @@ File "<stdin>", line 1
 SyntaxError: can't assign to literal
 ~~~
 {: .error}
-
-## Comparisons, Membership Tests and Identity Tests
-
-*	Always returns a `bool`
-*	`in`, `not in`, `is`, `is not`, `<`, `<=`, `>`, `>=`, `!=`, `==`
 
 ~~~
 3 == 3
@@ -129,7 +153,6 @@ False
 False
 ~~~
 {: .output}
-Returns a boolean.
 
 ~~~
 list1 = [1, 2, 3, 4]
@@ -159,15 +182,9 @@ True
 {: .challenge}
 
 
-> > ## Solution
-> > Answer: 1 and 4
-> {: .solution}
-{: .challenge}
-
 ## Types control what operations can be done on values.
 
 *   A value's type determines what the program can do to it.
-*	
 
 ~~~
 print(5 - 3)
@@ -191,7 +208,7 @@ TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
 ## Strings can be added and multiplied.
 
-*   "Adding" character strings concatenates them.
+*   In Python string concatenation is done with the addition `+` operator.
 
 ~~~
 full_name = 'Ahmed' + ' ' + 'Walsh'
@@ -203,16 +220,16 @@ Ahmed Walsh
 ~~~
 {: .output}
 
-*   Multiplying a character string by an integer replicates it.
-    *   Since multiplication is just repeated addition.
+*   Multiplying a character string by an integer replicates it.<br/>
+	Since multiplication is just repeated addition.
 
 ~~~
-separator = '=' * 10
-print(separator)
+'spam' * 5
+
 ~~~
 {: .python}
 ~~~
-==========
+'spamspamspamspamspam'
 ~~~
 {: .output}
 
@@ -228,8 +245,6 @@ print(len(full_name))
 11
 ~~~
 {: .output}
-
-*   But numbers don't have a length (not even zero).
 
 ~~~
 print(len(52))
@@ -271,23 +286,48 @@ print(str(1) + '2')
 ~~~
 {: .output}
 
-## Can mix integers and floats freely in operations.
-
-*   Integers and floating-point numbers can be mixed in arithmetic.
-    *   Python automatically converts integers to floats as needed.
-
-~~~
-print('half is', 1 / 2.0)
-print('three squared is', 3.0 ** 2)
-~~~
-{: .python}
-~~~
-half is 0.5
-three squared is 9.0
-~~~
-{: .output}
-
-
+> ## Division Types
+>
+>
+> ~~~
+> print('5 // 3:', 5//3)
+> print('5 % 3:', 5%3)
+> ~~~
+> {: .python}
+>
+>>## Solution
+>> 5 // 3: 1
+>> 5 % 3: 2
+>{: .solution}
+>
+> If `num_subjects` is the number of subjects taking part in a study,
+> and `num_per_survey` is the number that can take part in a single survey,
+> write an expression that calculates the number of surveys needed
+> to reach everyone once.
+>>## Solution
+>> First test if the number of subjects per survey divides evenly by the number of subjects using the `%` operator.
+>> ~~~
+>> num_subjects = 600
+>> num_per_survey = 42
+>> remainder = num_subjects % num_per_survey
+>> num_surveys = num_subjects // num_per_survey
+>> 
+>> print(remainder)
+>> print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys + 1, 'surveys needed')
+>> ~~~
+>> {: .python}
+>> 
+>> ~~~
+>> 12
+>> 600 subjects, 42 per survey: 15 surveys needed
+>> ~~~
+>> {: .output}
+>{: .solution}
+{: .challenge}
+>
+>>## Solution
+>> Answer: 14
+>{: .solution}
 
 
 
