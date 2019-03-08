@@ -3,9 +3,9 @@ title: "Python Syntax"
 teaching: 20
 exercises: 20
 questions:
-- "What constitutes legal Python code?"
-- "How can code be commented?"
+- "What constitutes a legal Python program (script)?"
 - "What are keywords, identifiers, expressions, statements?"
+- "How can code be commented?"
 - "What is indentation used for in Python?"
 - "What kinds of brackets are used in Python code?"
 - "Where can I find out more about Python style guidelines?"
@@ -17,14 +17,14 @@ objectives:
 - "Understand the different kinds of 'brackets' in Python"
 keypoints:
 - "Legal Python code follows rules of syntax"
-- "Python allows single and multiple line comments"
 - "A Python keyword is a symbol that has special meaning in a Python script"
+- "Python provides for single and multiple line comments"
 - "An identifier names a value, e.g. as in the assignment statement: x = 21"
 - "A Python script consists of sequence of statements that make use of keywords, identifiers and expressions"
 - "Indentation introduces a code block"
 - "`[` and `]` are used to surround literal list values"
 - "`{` and `}` are used to surround literal dictionary values"
-- "`(` and `)` are used surround function parameters and to change the priority of expression evaluation order"
+- "`(` and `)` are used for function parameters, to change expression evaluation order, and to specify tuple values"
 - "The [PEP 8 Python Style Guidelines](https://www.python.org/dev/peps/pep-0008/) provide more code layout and convention details"
 ---
 
@@ -45,80 +45,7 @@ The syntax of a programming language determines what counts as a legal or well-f
 
 A Python program consists of a sequence of syntactically correct "sentences" entered at a Python interpreter prompt (or into Jupyter notebook cells) or contained within files.
 
-This episode introduces the following Python syntax elements, many of which are elaborated upon in other episodes: comments, keywords, identifiers, expressions, statements, indentation and code blocks, brackets and quotes.
-
-## Comments
-Comments are annotations embedded in code to summarise and explain the programmer's intent.
-
-In Python there are two styles of comment: single line and multiple line.
-
-## Single Line Comments
-Anything that follows a `#` symbol on a line is considered a comment. The `#` may appear anywhere on a line. 
-
-> ## Write code containing single-line comments
->
-> Open up your text editor, entering the following Python code:
->
-> ~~~
-> print("Hello")
-> # print("Again")
-> print("World")  # trailing comment
-> ~~~
-> {: .language-python}
->
-> Save the file as `hello-world-single.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 hello-world-single.py
-> ~~~
-> {: .language-bash}
-> > ## Solution
-> > You should see this output:
-> >
-> > ~~~
-> > Hello
-> > World
-> > ~~~
-> > {: .source}
-> > 
-> > Notice that since the second `print` was commented, `Again` did not appear in the output. Note also that the text `trailing comment` was ignored by the Python interpreter.
-> {: .solution}
-{: .challenge}
-
-## Multiple Line Comments
-Triple single `'` or double `"` quotes begin and end a multi-line string, but if you don't assign that string to a variable, then any code within it has no effect and is effectively commented out.
-
-> ## Write code containing multiple-line comments
->
-> Open up your text editor, entering the following Python code:
->
-> ~~~
-> """
-> This script outputs Hello World
-> """
-> print("Hello World")
-> ~~~
-> {: .language-python}
->
-> Save the file as `hello-world-multiple.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 hello-world-multiple.py
-> ~~~
-> {: .language-bash}
-> > ## Solution
-> > You should see this output:
-> >
-> > ~~~
-> > Hello World
-> > ~~~
-> > {: .source}
-> > 
-> > Notice that the triple-quoted section at the top is ignored.
-> {: .solution}
-{: .challenge}
-
-Multi-line comments, or doc strings, are used to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes.
+This episode introduces the following Python syntax elements, many of which are elaborated upon in other episodes: keywords, identifiers, expressions, statements, comments, indentation and code blocks, brackets and quotes.
 
 ## Keywords 
 In Python, keywords are special words used in core language constructs. An example of a Python keyword is `if`, used within so-called conditional statements.
@@ -220,6 +147,79 @@ An example of another statement is:
 
 which asserts that the variable `meaning_of_life` is assumed to equal `42`. If not, an error will be generated. The notion of assertions will be further explored in other episodes, the "Testing" epiode in particular.
 
+## Comments
+Comments are annotations embedded in code to summarise and explain the programmer's intent.
+
+In Python there are two styles of comment: single line and multiple line.
+
+## Single Line Comments
+Anything that follows a `#` symbol on a line is considered a comment. The `#` may appear anywhere on a line. 
+
+> ## Write code containing single-line comments
+>
+> Open up your text editor, entering the following Python code:
+>
+> ~~~
+> print("Hello")
+> # print("Again")
+> print("World")  # trailing comment
+> ~~~
+> {: .language-python}
+>
+> Save the file as `hello-world-single.py` and run it from command-line terminal with:
+>
+> ~~~
+> $ python3 hello-world-single.py
+> ~~~
+> {: .language-bash}
+> > ## Solution
+> > You should see this output:
+> >
+> > ~~~
+> > Hello
+> > World
+> > ~~~
+> > {: .source}
+> > 
+> > Notice that since the second `print` was commented, `Again` did not appear in the output. Note also that the text `trailing comment` was ignored by the Python interpreter.
+> {: .solution}
+{: .challenge}
+
+## Multiple Line Comments
+Triple single `'` or double `"` quotes begin and end a multi-line string, but if you don't assign that string to a variable, then any code within it has no effect and is effectively commented out.
+
+> ## Write code containing multiple-line comments
+>
+> Open up your text editor, entering the following Python code:
+>
+> ~~~
+> """
+> This script outputs Hello World
+> """
+> print("Hello World")
+> ~~~
+> {: .language-python}
+>
+> Save the file as `hello-world-multiple.py` and run it from command-line terminal with:
+>
+> ~~~
+> $ python3 hello-world-multiple.py
+> ~~~
+> {: .language-bash}
+> > ## Solution
+> > You should see this output:
+> >
+> > ~~~
+> > Hello World
+> > ~~~
+> > {: .source}
+> > 
+> > Notice that the triple-quoted section at the top is ignored.
+> {: .solution}
+{: .challenge}
+
+Multi-line comments, or doc strings, are used to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes.
+
 ## Indentation and Code Blocks
 Python uses indentation level to determine the start and end of code blocks - unlike many languages which use braces (`{` and `}`), or others that use keywords such as `begin` and `end`.
 
@@ -296,40 +296,60 @@ In Python, the line continuation character `\` must be used at the end of each l
 >             0.001813 * (T * T * T)
 > ~~~
 
-## Brackets
+## Brackets and Quotes
+In Python, special characters denote the beginning and end of literal values of particular types.
 
-## Quotes
+There are 3 different enclosing bracket types used in Python:
+* Parentheses: `(` `)`
+* Square brackets: `[` `]`
+* Braces: `{` `}`
 
-> ~~~
-> ???
-> ~~~
-> {: .language-python}
+Parentheses are used in Python to:
+* change the order of evaluation of an expression, e.g. `12 + 2 * 6` vs `(12 + 2) * 6`. See the "Expressions" episode for more detail;
+* specify a list of function parameters, e.g. `f(2, 3, 5, 7)`; 
+* denote a tuple value, e.g. `x = (1,2,3)`.
 
-> ## ???
+Square brackets are used to begin and end a list value, e.g. `first5Primes = [2,3,5,7,11]`.
+
+Braces (sometimes called "curly braces") are used to delimit a dictionary value, e.g. `ages = {"Fred":42, "David":55, "Jack":31}`
+
+There are two different quote characters for delimiting strings:
+* Single: `'`
+* Double: `"`
+
+Both are used to delimit string values, e.g. `'abc'`, `"abc"`. When quotes of either type must be included within a string, the opposite type can be used to delimit the string value.
+
+> ## Quotes within Quotes
 >
-> This 
-> Open up your text editor, entering the following Python code:
+> Run the Python interpreter from a command-line terminal with:
 >
 > ~~~
-> ???
-> ~~~
-> {: .language-python}
->
-> Save the file as `???.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 ???.py
+> $ python3
 > ~~~
 > {: .language-bash}
+>
+> Then enter:
+> ~~~
+> print("David's favourite programming language is X")
+> ~~~
+> {: .language-python}
+> 
 > > ## Solution
-> > You should see this output:
+> > You should see the following output:
 > >
 > > ~~~
-> > ???
+> > David's favourite programming language is X 
 > > ~~~
 > > {: .source}
-> >
 > {: .solution}
 {: .challenge}
+
+> ## If the delimiting quotes in the print statement above are changed from `"` to `'`, why does a syntax error occur?
+> It is possible to "escape" quote characters within a string using the `\` character, e.g. `'David\'s' favourite programming language is X'`.
+{: .callout}
+
+We have also seen how triple quotes can be used for multi-line comments (or string values assigned to a variable). These may use single or double quotes. 
+
+See episodes such as "Python Values and their Type", "Expressions", "Lists", "Writing Functions", "Dictionaries" for additional examples of brackets and quotes.
 
 {% include links.md %}
