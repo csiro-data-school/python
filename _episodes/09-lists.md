@@ -27,7 +27,7 @@ We have already encountered some simple Python types like integers, strings and 
 *   A list stores many values in a single structure.
 *   Doing calculations with a hundred variables called `weight_001`, `weight_002`, etc.,
     would be at least as slow as doing them by hand.
-*   Use a *list* to store many values together.
+*   Use a **list** to store many values together.
     *   Contained within square brackets `[...]`.
     *   Values separated by commas `,`.
 *   Use `len` to find out how many values are in a list.
