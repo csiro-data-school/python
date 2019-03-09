@@ -23,14 +23,14 @@ For example, a phonebook can be created with:
 
 ~~~
 phonebook = {}
-phonebook["Chapman"] = 55512341
-phonebook["Cleese"] = 55512342
-phonebook["Gilliam"] = 55512343
-print(phonebook)
+phonebook["Carolina"] = 55512341
+phonebook["Rhys"] = 55512342
+phonebook["Christian"] = 55512343
+phonebook
 ~~~
 {: .python}
 ~~~
-{'Chapman': 55512341, 'Rhys': 55512342, 'Gilliam': 55512343}
+{'Carolina': 55512341, 'Rhys': 55512342, 'Christian': 55512343}
 ~~~
 {: .output}
 
@@ -38,14 +38,65 @@ Alternatively, the following (key : value) shorthand can be used to initialise a
 
 ~~~
 phonebook = {
-    "Chapman" : 55512341,
+    "Carolina" : 55512341,
     "Rhys" : 55512342,
-    "Gilliam" : 55512343
+    "Christian" : 55512343
 }
+phonebook
 ~~~
 {: .python}
+~~~
+{'Carolina': 55512341, 'Rhys': 55512342, 'Christian': 55512343}
+~~~
+{: .output}
 
+A **key** can be a string, number, or any hashable object (which roughly means no lists or other mutable containers).
 
+You can even mix key types in a single dictionary although it tends to be confusing (you often wish to sort on the keys later!):
+
+~~~
+phrasebook = {
+    1 : "Is 1 a page number?",
+    "My tank is full of smolts" : "Vamos a la playa!",
+    2 : "Does 2 come before or after 'my tank'?",
+    (2, '9-12') : "sacred relic"
+}
+phrasebook
+~~~
+{: .python}
+~~~
+{1: 'Is 1 a page number?',
+ 'My tank is full of smolts': 'Vamos a la playa!',
+ 2: "Does 2 come before or after 'my tank'?",
+ (2, '9-12'): 'sacred relic'}
+~~~
+{: .output}
+
+## Removing a dictionary value
+
+To remove a specific element from a dictionary, you can use `del` and index the element using its `key`.
+
+> ## Remove a word from this dictionary
+>
+> Remove the word 'Cat' from this English-Spanish dictionary.
+> ~~~
+> mydict = {
+>    "Cat" : "Gato",
+>    "Dog" : "Perro",
+>    "Apple" : "Manzana",
+>    "Computer" : "Computador" }
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > del mydict['Cat']
+> > ~~~
+> > {: .python}
+> > Alternatively, if we want to return the value of the entry being removed we can use the method `.pop`, you can try this by 
+> > typing `mydict.pop("Dog")`. 
+> {: .solution}
+{: .challenge}
 
 
 
