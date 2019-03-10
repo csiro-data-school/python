@@ -211,18 +211,51 @@ Age in three years: 45
 
 > ## Swapping Values
 >
-> Draw a table showing the values of the variables in this program
-> after each statement is executed.
-> In simple terms, what do the last three lines of this program do?
+> Fill the table showing the values of the variables in this program
+> *after* each statement is executed.
 >
 > ~~~
-> lowest = 1.0
-> highest = 3.0
-> temp = lowest
-> lowest = highest
-> highest = temp
+> # Command  # Value of x   # Value of y   # Value of swap #
+> x = 1.0    #              #              #               #
+> y = 3.0    #              #              #               #
+> swap = x   #              #              #               #
+> x = y      #              #              #               #
+> y = swap   #              #              #               #
 > ~~~
-> {: .source}
+> {: .language-python}
+> > ## Solution
+> >
+> > ~~~
+> > # Command  # Value of x   # Value of y   # Value of swap #
+> > x = 1.0    # 1.0          # not defined  # not defined   #
+> > y = 3.0    # 1.0          # 3.0          # not defined   #
+> > swap = x   # 1.0          # 3.0          # 1.0           #
+> > x = y      # 3.0          # 3.0          # 1.0           #
+> > y = swap   # 3.0          # 1.0          # 1.0           #
+> > ~~~
+> > {: .output}
+> > 
+> > These three lines exchange the values in `x` and `y` using the `swap`
+> > variable for temporary storage. This is a fairly common programming idiom.
+>{: .solution}
+{: .challenge}
+
+> ## Choosing a Name
+>
+> Which is a better variable name, `m`, `min`, or `minutes`?
+> Why?
+> Hint: think about which code you would rather inherit
+> from someone who is leaving the lab:
+>
+> 1. `ts = m * 60 + s`
+> 2. `tot_sec = min * 60 + sec`
+> 3. `total_seconds = minutes * 60 + seconds`
+>
+> > ## Solution
+> >
+> > `minutes` is better because `min` might mean something like "minimum"
+> > (and actually does in Python, but we haven't seen that yet).
+> {: .solution}
 {: .challenge}
 
 > ## Predicting Values
@@ -265,7 +298,46 @@ first is 2 and second is 5
     creates a new value, and assigns it to `second`.
 *   After that, `second` does not remember where it came from.
 
+> ## Check Your Understanding
+>
+> What values do the variables `mass` and `age` have after each statement in the following program?
+> Test your answers by executing the commands.
+>
+> ~~~
+> mass = 47.5
+> age = 122
+> mass = mass * 2.0
+> age = age - 20
+> print(mass, age)
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > 95.0 102
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
+> ## Sorting Out References
+>
+> What does the following program print out?
+>
+> ~~~
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print(third, fourth)
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > Hopper Grace
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}
 
