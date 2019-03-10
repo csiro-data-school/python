@@ -228,6 +228,13 @@ m4
 > >     print(items)
 > > ~~~
 > > {: .python}
+> > ~~~
+> > ('m1', 'AGTTGC')
+> > ('m2', 'TTTGCG')
+> > ('m3', 'GTGTAA')
+> > ('m4', 'AAATGC')
+> > ~~~
+> > {: .output}
 > > Alternatively, if we want to return the keys and values as separate items we can use:
 > > ~~~
 > > for key, value in motifs.items():
