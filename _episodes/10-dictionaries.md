@@ -19,6 +19,11 @@ Each value in the dictionary is looked up using a key and new entries can be add
 
 Dictionaries are created with `{}`, instead of `[]` for lists, or `()` for tuples.
 
+## Using dictionaries
+
+### Creating dictionaries
+Dictionaries are created with `{}`, instead of `[]` for lists, or `()` for tuples.
+
 For example, a phonebook can be created with:
 
 ~~~
@@ -72,31 +77,124 @@ phrasebook
 ~~~
 {: .output}
 
-## Removing a dictionary value
+### Adding and modifying values in a dictionary 
 
-To remove a specific element from a dictionary, you can use `del` and index the element using its `key`.
+You can assign to an individual dictionary entry to add it or modify it using the following syntax: 
+`mydict[key] = "value"`
 
-> ## Remove a word from this dictionary
->
-> Remove the word 'Cat' from this English-Spanish dictionary.
+> ## Adding and changing entries in the phonebook 
+> 
+> Add your phone number to the following phonebook, and then change the entry for "Christian". 
 > ~~~
-> mydict = {
->    "Cat" : "Gato",
->    "Dog" : "Perro",
->    "Apple" : "Manzana",
->    "Computer" : "Computador" }
+> phonebook = {
+>    "Carolina" : 55512341,
+>    "Rhys" : 55512342,
+>    "Christian" : 55512343
+> }
 > ~~~
 > {: .python}
 >
 > > ## Solution
 > > ~~~
-> > del mydict['Cat']
+> > phonebook['My_number'] = 55567676
+> > phonebook['Christian'] = 55534343
+> > phonebook
+> > ~~~
+> > {: .python}
+> > ~~~
+> > {'Carolina': 55512341,
+> > 'Rhys': 55512342,
+> > 'Christian': 55534343,
+> > 'My_number': 55567676}
+> > ~~~
+> > {: .output}
+> > We can check the length of our updated dictionary using the function `len`. 
+> {: .solution}
+{: .challenge}
+
+### Retrieving and removing values from a dictionary
+
+Lets create a English-Spanish dictionary. 
+
+~~~
+ESdict = {
+    "Cat" : "Gato",
+    "Dog" : "Perro",
+    "Apple" : "Manzana",
+    "Table" : "Mesa"
+}
+ESdict
+~~~
+{: .python}
+~~~
+{'Cat': 'Gato', 'Dog': 'Perro', 'Apple': 'Manzana', 'Table': 'Mesa'}
+~~~
+{: .output}
+
+To **retrieve** a value for a specific key we use the method `.get`
+
+~~~
+print(ESdict.get('Cat'))
+print(ESdict.get('Dog'))
+~~~
+{: .python}
+~~~
+Gato
+Perro
+~~~
+{: .output}
+
+To **remove** a specific element from a dictionary, you can use function `del` and index the element using its `key`.
+
+> ## Remove a word from this dictionary
+>
+> Remove the word 'Cat' from the English-Spanish dictionary.
+> ~~~
+> ESdict = {
+>    "Cat" : "Gato",
+>    "Dog" : "Perro",
+>    "Apple" : "Manzana",
+>    "Table" : "Mesa" }
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > del ESdict['Cat']
 > > ~~~
 > > {: .python}
 > > Alternatively, if we want to return the value of the entry being removed we can use the method `.pop`, you can try this by 
 > > typing `mydict.pop("Dog")`. 
 > {: .solution}
 {: .challenge}
+
+### Testing membership (is my item in the dictionary or not?)
+
+Check if a key exists in a given dictionary by using the `in` operator like this:
+
+~~~
+motifs = {
+    "m1" : "AGTTGC",
+    "m2" : "TTTGCG",
+    "m3" : "GTGTAA",
+    "m4" : "AAATGC"}
+
+print('m1' in motifs)
+print('m3' in motifs)
+print('m5' in motifs)
+~~~
+{: .python}
+~~~
+True
+True
+False
+~~~
+{: .output}
+
+We can also test for membership for all keys by *iterating* over a dictionary using a `for loop`. 
+
+### Iterating over a dictionary
+
 
 
 
