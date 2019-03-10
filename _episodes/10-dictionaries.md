@@ -191,9 +191,58 @@ False
 ~~~
 {: .output}
 
-We can also test for membership for all keys by *iterating* over a dictionary using a `for loop`. 
 
 ### Iterating over a dictionary
+
+We can iterate over a dictionary using a `for loop` to get both `keys` and `keys:values`. Going back to our `motifs` dictionary, iterate over the dictionary to get all the keys. 
+
+~~~
+for key in motifs:
+    print(key)
+~~~
+{: .python}
+~~~
+m1
+m2
+m3
+m4
+~~~
+{: .output}
+
+> ## How to iterate over a dictionary to get all key,value pairs
+>
+> Construct a for loop to extract both keys and values from the `motifs` dictionary. 
+> *Hint: you will need to use a dictionary method*
+> ~~~
+> motifs = {
+>    "m1" : "AGTTGC",
+>    "m2" : "TTTGCG",
+>    "m3" : "GTGTAA",
+>    "m4" : "AAATGC"}
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > for item in motifs.items():
+> >     print(items)
+> > ~~~
+> > {: .python}
+> > Alternatively, if we want to return the keys and values as separate items we can use:
+> > ~~~
+> > for key, value in motifs.items():
+> >     print(key, ":", value)
+> > ~~~
+> > {: .python}
+> > ~~~
+> > m1 : AGTTGC
+> > m2 : TTTGCG
+> > m3 : GTGTAA
+> > m4 : AAATGC
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
 
 
