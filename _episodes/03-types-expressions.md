@@ -544,8 +544,11 @@ print(str(1) + '2')
 > and `num_per_survey` is the number that can take part in a single survey,
 > write a series of expressions that calculates the number of surveys needed
 > to reach everyone once.
+>
 > Hint: you may need to use `//` and `%`
+>
 > Test your expressions with `num_subjects` = 600 and `num_per_survey` = 20.
+>
 > Now test again with `num_per_survey` = 42.
 >>## Solution
 >> First test if the number of subjects per survey divides evenly by the number of subjects using the `%` operator.
