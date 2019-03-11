@@ -268,8 +268,9 @@ m4
 
 ### How to create a set?
 
-*   A set is created by placing all the items (elements) inside curly braces {}, separated by comma or by using the built-in function set().
-*   It can have any number of items and they may be of different types (integer, float, tuple, string etc.).
+A set is created by placing all the items (elements) inside curly braces {}, separated by comma or by using the built-in function set().
+
+It can have any number of items and they may be of different types (integer, float, tuple, string etc.).
 
 ~~~
 # set of integers
@@ -292,7 +293,7 @@ print(my_set)
 ~~~
 {: .output}
 
-*   A `set` cannot have a mutable element, like a `list`. 
+A `set` cannot have a mutable element, like a `list`. 
 
 ~~~
 # here [3, 4] is a mutable list
