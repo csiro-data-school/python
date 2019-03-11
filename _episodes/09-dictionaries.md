@@ -283,7 +283,7 @@ my_set = {1.0, "Hello", (1, 2, 3)}
 print(my_set)
 
 # set do not have duplicates
-my_set = {1,2,3,4,3,2}
+my_set = {1, 2, 3, 4, 3, 2}
 print(my_set)
 ~~~
 {: .python}
@@ -297,7 +297,6 @@ print(my_set)
 A `set` cannot have a mutable element, like a `list`. 
 
 ~~~
-# set cannot have mutable items
 # here [3, 4] is a mutable list
 # the following command will cause an error:
 # my_set = {1, 2, [3, 4]}
@@ -306,7 +305,7 @@ A `set` cannot have a mutable element, like a `list`.
 ~~~
 TypeError: unhashable type: 'list'
 ~~~
-{: .output}
+{: .error}
 
 ### How to change a set in Python?
 
@@ -347,7 +346,7 @@ Sets can be used to carry out mathematical set operations like union, intersecti
 
 *   **Union** is performed using `|` operator, or the method `union()`.
 *   **Intersection** is performed using `&` operator,or using the method `intersection()`.
-*   **Difference** of A and B (A - B) is a set of elements that are only in A but not in B. Similarly, B - A is a set of element in B but not in A. Difference is performed using `-` operator, or the method `difference()`.
+*   **Set Difference** of A and B (A - B) is a set of elements that are only in A but not in B. Similarly, B - A is a set of element in B but not in A. Difference is performed using `-` operator, or the method `difference()`.
 *   **Symmetric Difference** of A and B is a set of elements in both A and B except those that are common in both. Symmetric difference is performed using `^` operator, or the method `symmetric_difference()`.
 
 > ## Python set operation exercises
@@ -360,6 +359,8 @@ Sets can be used to carry out mathematical set operations like union, intersecti
 > print(A ^ B)
 > print(A.union(B) & B.intersection(A))
 > print(B.intersection(A) - A.union(B))
+> ~~~
+> {: .python}
 > > ## Solution
 > > ~~~
 > > {1, 2, 3, 4, 11}
