@@ -25,9 +25,8 @@ A dictionary is a data structure similar to a list, but that uses keys instead o
 
 Each value in the dictionary is looked up using a key and new entries can be added by assigning to a non-existent key.
 
-## Using dictionaries
-
 ### Creating dictionaries
+
 Dictionaries are created with `{}`, instead of `[]` for lists, or `()` for tuples.
 
 For example, a phonebook can be created with:
