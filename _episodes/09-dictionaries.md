@@ -9,7 +9,15 @@ objectives:
 - "Add and retrieve values from a dictionary, and test for membership."
 - "Iterate over a dictionary."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "A dictionary is a data structure similar to a list, but that uses keys instead of indexes."
+- "Dictionaries are created with `{}`, instead of `[]` for lists, or `()` for tuples."
+- "A dictionary `key` can be a string, a number, or any hashable object."
+- "To retrieve a value for a specific key we use the method `.get`."
+- "Check if a key exists in a given dictionary by using the `in` operator."
+- "We can iterate over a dictionary using a `for loop` to get both `keys` and `keys:values`."
+- "A set is an unordered collection of items. Every element is unique and immutable."
+- "Sets can be used to perform mathematical set operations like union, intersection, symmetric difference."
+
 ---
 ## What is a dictionary?
 
@@ -249,7 +257,7 @@ m4
 > {: .solution}
 {: .challenge}
 
-**Note**: As of Python 3.7, iterating over items in a dictionary is now done in the *order* in which they were inserted as a "feature" of the language.
+*Note: As of Python 3.7, iterating over items in a dictionary is now done in the *order* in which they were inserted as a "feature" of the language.*
 
 ## Sets
 
