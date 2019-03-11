@@ -22,12 +22,11 @@ keypoints:
 ---
 ## Lists are collections of data 
 
-We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, dictionaries and tuples, which we will cover in future lessons. 
+We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, tuples and dictionaries, which we will cover in future lessons. 
 
-*   A list stores many values in a single structure.
 *   Doing calculations with a hundred variables called `weight_001`, `weight_002`, etc.,
     would be at least as slow as doing them by hand.
-*   Use a **list** to store many values together.
+*   A **list** can store many values in a single structure.
     *   Contained within square brackets `[...]`.
     *   Values separated by commas `,`.
 *   Use `len` to find out how many values are in a list.
@@ -47,7 +46,7 @@ length: 5
 
 ## Use an item's index to fetch it from a list
 
-*   To get the first element of this list we use the index 0 because python is a 0-based indexing language. 
+*   To get the first element of this list we use the index 0 because Python is a 0-based indexing language. 
 *   Indexes are written within square brackets `[]`.
 
 ~~~
@@ -72,7 +71,7 @@ print('weights is now:', weights)
 ~~~
 {: .python}
 ~~~
-weights are now: [0.265, 0.275, 0.277, 0.275, 0.276]
+weights is now: [265, 175, 277, 275, 176]
 ~~~
 {: .output}
 
@@ -151,6 +150,7 @@ print(a.count(5))
 *   Not a function or a method, but a statement in the language.
 
 ~~~
+primes = [2, 3, 5, 7, 9]
 print('primes before removing last item:', primes)
 del primes[4]
 print('primes after removing last item:', primes)
@@ -168,7 +168,7 @@ primes after removing last item: [2, 3, 5, 7]
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values, like an empty container.
-    (this is will be very useful in future chapters).
+    (empty lists will be very useful in future chapters when we need an *empty container* to collect values).
     
 
 ## Lists may contain values of different types
@@ -226,13 +226,13 @@ TypeError: 'str' object does not support item assignment
         because the index might be calculated based on data.
 
 ~~~
-random_chr = ['±', '!', '@', '#', '$', '%', '^', '&', '*', '(', '>', '?', '<']
+random_chr = ['±', '!', '@', '#', '$', '%']
 print("length of random_chr:", len(random_chr))
 print("get the 20th element of random_chr:", random_chr[20]) 
 ~~~
 {: .python}
 ~~~
-length of random_chr: 13
+length of random_chr: 6
 IndexError: list index out of range
 ~~~
 {: .output}
@@ -260,7 +260,7 @@ letters[1:4]
 *   An omitted second index defaults to the size of the list being sliced.
 
 ~~~
-letters[4:] # list elements from position 4 (included) onwards ... start counting from 0!
+letters[4:] # list elements from position 4 (included) onwards ... counting from 0!
 ~~~
 {: .python}
 ~~~
@@ -297,7 +297,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 
 ## Slice bounds
 
-One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. Then the right edge of the last character of a string of n characters has index n, for example:
+One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. 
 
 ~~~
  +---+---+---+---+---+---+---+---+
@@ -329,7 +329,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > ## Fill in the blanks
 >
 > Fill in the blanks using methods of lists and slicing so that the program below produces the output shown. 
-> *Tip: start with an empty list*
+> *Hint: start with an empty list*
 >
 > ~~~
 > values = ____
@@ -386,6 +386,8 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > print(elements[::-1])
 > ~~~
 > {: .python}
+>
+> Answer the following questions.
 >
 > 1.  If we write a slice as `low:high:stride`, what does `stride` do?
 > 2.  What expression would select all of the even-numbered items from a collection?
@@ -498,7 +500,7 @@ Similar to strings, lists respond to the + and * operators. These operators also
 
 ## Another type of collection: Tuples 
 
-In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets, tuples use parentheses `()`. 
+In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets `[]`, tuples use parentheses `()`. 
 
 > ## Challenge question
 > Can you think of any advantages of using tuples over lists? 
@@ -506,7 +508,8 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 >
 > > ## Solution
 > > 1. If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
-> > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is > > iterate through it, use a tuple instead of a list. 
+> > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is  
+> > iterate through it, use a tuple instead of a list. 
 > > 3. One good thing about tuples is that they use less memory. Lists use more memory.
 > > 4. Tuple are better for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.
 > {: .solution}
@@ -536,7 +539,7 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 > {: .solution}
 {: .challenge}
 
-Another advantage of tuples is that they contain immutable elements that can be used as `keys` for a `dictionary`. With list, this is not possible. We will learn more about keys and dictionaries in our next chapter. 
+Another advantage of tuples is that they contain immutable elements that can be used as `keys` for a `dictionary`. With list, this is not possible. We will learn more about keys and dictionaries in a future chapter. 
 
 {% include links.md %}
 
