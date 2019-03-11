@@ -256,7 +256,7 @@ m4
 > {: .solution}
 {: .challenge}
 
-*Note: As of Python 3.7, iterating over items in a dictionary is now done in the *order* in which they were inserted as a "feature" of the language.*
+*Note: As of Python 3.7, iterating over items in a dictionary is now done in the order in which they were inserted as a "feature" of the language.*
 
 ## Sets
 
