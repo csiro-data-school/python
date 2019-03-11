@@ -308,6 +308,64 @@ Set does not support it.
 
 We can add single element using the `add()` method and multiple elements using the `update()` method. The `update()` method can take tuples, lists, strings or other sets as its argument. In all cases, duplicates are avoided.
 
+~~~
+# create a set
+my_set = {1,3}
+print(my_set)
+
+# add an element
+my_set.add(2)
+print(my_set)
+
+# add multiple elements
+my_set.update([2,3,4])
+print(my_set)
+
+# add list and set
+my_set.update([4,5,1,1], {1,6,7,8}) 
+print(my_set)
+~~~
+{: .python}
+~~~
+{1, 3}
+{1, 2, 3}
+{1, 2, 3, 4}
+{1, 2, 3, 4, 5, 6, 7, 8}
+~~~
+{: .output}
+
+### Python set operations
+
+Sets can be used to carry out mathematical set operations like union, intersection, difference and symmetric difference. We can do this with operators or methods:
+
+*   **Union** is performed using `|` operator, or the method `union()`.
+*   **Intersection** is performed using `&` operator,or using the method `intersection()`.
+*   **Difference** of A and B (A - B) is a set of elements that are only in A but not in B. Similarly, B - A is a set of element in B but not in A. Difference is performed using `-` operator, or the method `difference()`.
+*   **Symmetric Difference** of A and B is a set of elements in both A and B except those that are common in both. Symmetric difference is performed using `^` operator, or the method `symmetric_difference()`.
+
+> ## Python set operation exercises
+> 
+> Solve the following operations:
+> ~~~
+> print(A - B)
+> print(B - A)
+> print(A.intersection(B))
+> print(A ^ B)
+> print(A.union(B) & B.intersection(A))
+> print(B.intersection(A) - A.union(B))
+> > ## Solution
+> > ~~~
+> > {1, 2, 3, 4, 11}
+> > {7, 8, 9, 10, 15}
+> > {13, 5, 6, 14}
+> > {1, 2, 3, 4, 7, 8, 9, 10, 11, 15}
+> > {5, 13, 6, 14}
+> > set()
+> > ~~~
+> > {: .output}
+> > Note that `set()` represents an empty set. 
+> {: .solution}
+{: .challenge}
 
 
 
