@@ -127,6 +127,8 @@ NameError: name 'Weight' is not defined
 *   The values passed to the function are called 'arguments'
 
 ~~~
+first_name = Ahmed
+age = 42
 print(first_name, 'is', age, 'years old')
 ~~~
 {: .python}
@@ -148,7 +150,14 @@ Ahmed is 42 years old
     as far as Python is concerned,
     all of the source code is one long set of instructions.
 
-
+~~~
+print(first_name, 'weighs', weight, 'kg')
+~~~
+{: .language-python}
+~~~
+Ahmed weighs 60 kg
+~~~
+{: .output}
 
 
 ## Use meaningful variable names.
@@ -161,10 +170,28 @@ flabadab = 42
 ewr_422_yY = 'Ahmed'
 print(ewr_422_yY, 'is', flabadab, 'years old')
 ~~~
-{: .python}
+{: .language-python}
 
 *   Use meaningful variable names to help other people understand what the program does.
 *   The most important "other person" is your future self.
+
+> ## Choosing a Name
+>
+> Which is a better variable name, `m`, `min`, or `minutes`?
+> Why?
+> Hint: think about which code you would rather inherit
+> from someone who is leaving the lab:
+>
+> 1. `ts = m * 60 + s`
+> 2. `tot_sec = min * 60 + sec`
+> 3. `total_seconds = minutes * 60 + seconds`
+>
+> > ## Solution
+> >
+> > `minutes` is better because `min` might mean something like "minimum"
+> > (and actually does in Python, but we haven't seen that yet).
+> {: .solution}
+{: .challenge}
 
 ## Variables can be used in calculations.
 
@@ -180,6 +207,31 @@ print('Age in three years:', age)
 Age in three years: 45
 ~~~
 {: .output}
+
+Exercise?
+
+## Variables only change value when something is assigned to them.
+
+*   If we make one cell in a spreadsheet depend on another,
+    and update the latter,
+    the former updates automatically.
+*   This does **not** happen in programming languages.
+
+~~~
+first = 1
+second = 5 * first
+first = 2
+print('first is', first, 'and second is', second)
+~~~
+{: .python}
+~~~
+first is 2 and second is 5
+~~~
+{: .output}
+
+*   The computer reads the value of `first` when doing the multiplication,
+    creates a new value, and assigns it to `second`.
+*   After that, `second` does not remember where it came from.
 
 > ## Swapping Values
 >
@@ -212,23 +264,7 @@ Age in three years: 45
 >{: .solution}
 {: .challenge}
 
-> ## Choosing a Name
->
-> Which is a better variable name, `m`, `min`, or `minutes`?
-> Why?
-> Hint: think about which code you would rather inherit
-> from someone who is leaving the lab:
->
-> 1. `ts = m * 60 + s`
-> 2. `tot_sec = min * 60 + sec`
-> 3. `total_seconds = minutes * 60 + seconds`
->
-> > ## Solution
-> >
-> > `minutes` is better because `min` might mean something like "minimum"
-> > (and actually does in Python, but we haven't seen that yet).
-> {: .solution}
-{: .challenge}
+
 
 > ## Predicting Values
 >
@@ -247,28 +283,7 @@ Age in three years: 45
 
 
 
-## Variables only change value when something is assigned to them.
 
-*   If we make one cell in a spreadsheet depend on another,
-    and update the latter,
-    the former updates automatically.
-*   This does **not** happen in programming languages.
-
-~~~
-first = 1
-second = 5 * first
-first = 2
-print('first is', first, 'and second is', second)
-~~~
-{: .python}
-~~~
-first is 2 and second is 5
-~~~
-{: .output}
-
-*   The computer reads the value of `first` when doing the multiplication,
-    creates a new value, and assigns it to `second`.
-*   After that, `second` does not remember where it came from.
 
 > ## Check Your Understanding
 >
