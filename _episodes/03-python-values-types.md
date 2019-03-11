@@ -1,5 +1,5 @@
 ---
-title: "Python Values and their Type"
+title: "Data 'types' and expressions"
 teaching: 15
 exercises: 10
 questions:
