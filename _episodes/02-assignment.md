@@ -64,6 +64,60 @@ This means that, for example:
 >
 {: .callout}
 
+## Variables must be created before they are used.
+
+*   If a variable doesn't exist yet, or if the name has been mis-spelled,
+    Python reports an error.
+    *   Unlike some languages, which "guess" a default value.
+
+~~~
+last_name
+~~~
+{: .python}
+~~~
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-c1fbb4e96102> in <module>()
+----> 1 last_name
+
+NameError: name 'last_name' is not defined
+~~~
+{: .error}
+
+*   The last line of an error message is usually the most informative.
+*   We will look at error messages in detail [later]({{ site.github.url }}/05-error-messages/).
+
+
+## Python is case-sensitive.
+
+*   Python thinks that upper- and lower-case letters are different,
+    so `Name` and `name` are different variables.
+*   There are conventions for using upper-case letters at the start of variable names
+    so we will use lower-case letters for now.
+    
+
+~~~
+weight
+~~~
+{: .language-python}
+~~~
+60
+~~~
+{: .output}
+
+~~~
+Weight
+~~~
+{: .language-python}
+~~~
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-4-4ab70f7f1bf7> in <module>()
+----> 1 Weight
+
+NameError: name 'Weight' is not defined
+~~~
+{: .error}
 
 ## Use `print` to display values.
 
@@ -84,6 +138,7 @@ Ahmed is 42 years old
 *   `print` automatically puts a single space between items to separate them.
 *   And wraps around to a new line at the end.
 
+
 ## Variables persist between cells.
 
 *   Variables defined in one cell exist in all other cells once executed, 
@@ -93,35 +148,8 @@ Ahmed is 42 years old
     as far as Python is concerned,
     all of the source code is one long set of instructions.
 
-## Variables must be created before they are used.
 
-*   If a variable doesn't exist yet, or if the name has been mis-spelled,
-    Python reports an error.
-    *   Unlike some languages, which "guess" a default value.
 
-~~~
-print(last_name)
-~~~
-{: .python}
-~~~
----------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-<ipython-input-1-c1fbb4e96102> in <module>()
-----> 1 print(last_name)
-
-NameError: name 'last_name' is not defined
-~~~
-{: .error}
-
-*   The last line of an error message is usually the most informative.
-*   We will look at error messages in detail [later]({{ site.github.url }}/05-error-messages/).
-
-## Python is case-sensitive.
-
-*   Python thinks that upper- and lower-case letters are different,
-    so `Name` and `name` are different variables.
-*   There are conventions for using upper-case letters at the start of variable names
-    so we will use lower-case letters for now.
 
 ## Use meaningful variable names.
 
