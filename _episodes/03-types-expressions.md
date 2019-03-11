@@ -39,11 +39,11 @@ Technically, the 'expression' is the entire `5 - 3`.This can be broken down into
 The operator is the `-` and the data values (`5` and `3`) are the operands.
 
 
-## Use Python as a calculator on `numbers`
+## Expressions with 'numbers'
 
 We can use many other kinds of operators to construct different expressions:
 
-### Multiplication
+#### Multiplication
 ~~~
 2 * 3
 ~~~
@@ -53,7 +53,7 @@ We can use many other kinds of operators to construct different expressions:
 ~~~
 {: .output}
 
-### Exponent
+#### Exponent
 ~~~
 2 ** 3
 ~~~
@@ -63,7 +63,7 @@ We can use many other kinds of operators to construct different expressions:
 ~~~
 {: .output}
 
-### Division
+#### Division
 ~~~
 13 / 3
 ~~~
@@ -73,7 +73,7 @@ We can use many other kinds of operators to construct different expressions:
 ~~~
 {: .output}
 
-### Floor Division
+#### Floor Division
 ~~~
 13 // 3
 ~~~
@@ -85,7 +85,7 @@ We can use many other kinds of operators to construct different expressions:
 
 Rounds the answer down to the nearest integer value.
 
-### Modulo
+#### Modulo
 ~~~
 13 % 3
 ~~~
@@ -96,6 +96,19 @@ Rounds the answer down to the nearest integer value.
 {: .output}
 `%` returns the remainder of the division.
 
+> ## Division Types
+> What is the outcome of the following expressions?
+> ~~~
+> print('5 // 3:', 5//3)
+> print('5 % 3:', 5%3)
+> ~~~
+> {: .python}
+>
+>>## Solution
+>> 5 // 3: 1 <br/>
+>> 5 % 3: 2
+>{: .solution}
+{: .challenge}
 
 ## Value 'types'
 
@@ -121,13 +134,10 @@ Data comes in different flavours ... intuitively, we know that we can do differe
 
 Although they may often feel like the same thing, it is helpful to distinguish between variables, values, and types.
 *	**Variables** are symbols (often descriptive words) that can represent or stand in for different values.<br />
-	Variables are named with identifiers.
-*	**Values** are the actual values and data objects stored in memory.<br /> 
-	The reason they often feel the same as variables is that in Python you can only access a value through a variable.
-*	The **type** of a value indicates what type of value it is and defines the set of legal operations.<br />
+*	**Values** are the actual values (i.e. data) stored in memory. <br /> 
+	In Python, you can only access a stored value through a variable. 
+*	The **type** of a value indicates what the nature of the value is, and defines the set of legal operations that can be done on it.<br />
 	As well as providing a large range of built-in types (such as `int`, `float`, `str` and `bool`), <br />
-	Python allows you to define your own types via classes.
-
 
 ~~~
 a = 'a string'
@@ -155,7 +165,7 @@ type(a)
 ~~~
 {: .output}
 
-### Numbers
+### Number types: `Int` and `Float`
 
 *	Integers `int`.
 *	Floating point numbers `float`.
@@ -196,8 +206,7 @@ int(1.0)
 ### Strings
 
 *	Can be defined by single ('') or double ("") quotes.
-*	One difference is that double quotes allow for apostrophes, <br />
-	which would otherwise mark the end of the string.
+*	This allows us to use both `'` and `"` as string characters, without accidentally indicating the end of the string.
 
 ~~~
 string1 = 'hello'
@@ -205,10 +214,12 @@ string2 = "hello"
 string3 = '1234'
 string4 = str(56789)
 string5 = 'x'
+string6 = "Cleese's legacy"
+string7 = 'Another Monty Python quote: "Blue. No, Yellow. Arrghh!"'
 ~~~
 {: .python}
 
-### Boolean Expressions - **True** or **False**
+### Boolean Expressions - `True` or `False`
 
 *	Python comparison operators return a `bool` value, **True** or **False** and these can be stored in `bool` variables
 *	Equality is tested with the double-equals (`==`) operator while inequality uses exclamation-mark-equals (`!=`), read as not`!` equals`=`.
@@ -312,27 +323,29 @@ three squared is 9.0
 ~~~
 {: .output}
 
+
 ## Comparisons, Membership Tests and Identity Tests
 
 *	Always returns a value of type `bool`
 *	`<`, `<=`, `>`, `>=`, `!=`, `==`, `in`, `not in`, `is`, `is not`
 
 
-Comparison?
+Note: a single `=` is for variable *assignment*, **not for comparison**.
 ~~~
 3 = 3
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 File "<stdin>", line 1
 SyntaxError: can't assign to literal
 ~~~
 {: .error}
 
+Double `==` is for comparison:
 ~~~
 3 == 3
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 True
 ~~~
@@ -341,7 +354,7 @@ True
 ~~~
 3 != 3
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 False
 ~~~
@@ -350,7 +363,7 @@ False
 ~~~
 6 < 3
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 False
 ~~~
@@ -407,8 +420,7 @@ Ahmed Walsh
 ~~~
 {: .output}
 
-*   Multiplying a string by an integer replicates it.<br/>
-	Since multiplication is just repeated addition.
+*   Multiplying a string by an integer replicates it. This makes sense, as multiplication is like repeated addition.
 
 ~~~
 'spam' * 5
@@ -420,7 +432,18 @@ Ahmed Walsh
 ~~~
 {: .output}
 
-## Strings have a length (but numbers don't).
+## Built in functions and data types
+
+Python pre-defines a number of core 'functions' as part of the base language. We have already met one of these functions, 
+`print`. We 'call' a function by stating the name of the function, directly followed by some data (a 'value' or 'variable') inside round brackets:
+
+~~~
+print(42)
+print(string7)
+~~~
+{: .language-python}
+
+The built-in function `print` works on all data types. This is not true of all built in functions; many only work on certain kinds of data.
 
 *   The built-in function `len` counts the number of characters in a string.
 
@@ -473,44 +496,6 @@ print(str(1) + '2')
 ~~~
 {: .output}
 
-> ## Division Types
->
-> ~~~
-> print('5 // 3:', 5//3)
-> print('5 % 3:', 5%3)
-> ~~~
-> {: .python}
->
->>## Solution
->> 5 // 3: 1 <br/>
->> 5 % 3: 2
->{: .solution}
->
-> If `num_subjects` is the number of subjects taking part in a study,
-> and `num_per_survey` is the number that can take part in a single survey,
-> write an expression that calculates the number of surveys needed
-> to reach everyone once.
->>## Solution
->> First test if the number of subjects per survey divides evenly by the number of subjects using the `%` operator.
->> ~~~
->> num_subjects = 600
->> num_per_survey = 42
->> remainder = num_subjects % num_per_survey
->> num_surveys = num_subjects // num_per_survey
->> 
->> print(remainder)
->> print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys + 1, 'surveys needed')
->> ~~~
->> {: .python}
->> 
->> ~~~
->> 12
->> 600 subjects, 42 per survey: 15 surveys needed
->> ~~~
->> {: .output}
->{: .solution}
-{: .challenge}
-
 > ## Strings to Numbers
 >
 > `float` will convert a string to a floating point number,
@@ -562,6 +547,34 @@ print(str(1) + '2')
 > > Answer: 1 and 4
 > {: .solution}
 {: .challenge}
+
+
+
+> If `num_subjects` is the number of subjects taking part in a study,
+> and `num_per_survey` is the number that can take part in a single survey,
+> write an expression that calculates the number of surveys needed
+> to reach everyone once.
+>>## Solution
+>> First test if the number of subjects per survey divides evenly by the number of subjects using the `%` operator.
+>> ~~~
+>> num_subjects = 600
+>> num_per_survey = 42
+>> remainder = num_subjects % num_per_survey
+>> num_surveys = num_subjects // num_per_survey
+>> 
+>> print(remainder)
+>> print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys + 1, 'surveys needed')
+>> ~~~
+>> {: .python}
+>> 
+>> ~~~
+>> 12
+>> 600 subjects, 42 per survey: 15 surveys needed
+>> ~~~
+>> {: .output}
+>{: .solution}
+{: .challenge}
+
 
 {% include links.md %}
 
