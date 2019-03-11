@@ -17,9 +17,9 @@ keypoints:
 - "Variables can be used in calculations."
 ---
 
-## Variables
+## Use variables to store values
 
-Any Python interpreter can be used as a calculator:
+You've seen how Python can be used as a calculator:
 ~~~
 3 + 5 * 4
 ~~~
@@ -33,7 +33,7 @@ This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
 In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
 [variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
-For example, to assign value `60` to a variable `weight_kg`, we would execute:
+For example, to assign the value `60` to a variable `weight_kg`, we would execute:
 
 ~~~
 weight_kg = 60
@@ -48,34 +48,13 @@ In Python, variable names:
  - can include letters, digits, and underscores
  - cannot start with a digit
  - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+ - underscores at the start like `__alistairs_real_age` have a special meaning
+    so we won't do that until we understand the convention.
 
 This means that, for example:
  - `weight0` is a valid variable name, whereas `0weight` is not
  - `weight` and `Weight` are different variables
 
-## Use variables to store values.
-
-Remember high school algebra? Then you've seen variables before!
-
-*   Variables are names for values.
-*   In Python the `=` symbol assigns the value on the right to the name on the left.
-*   The variable is created when a value is assigned to it.
-*   Here, Python assigns an age to a variable `age`
-    and a name in quotation marks to a variable `first_name`.
-
-~~~
-age = 42
-first_name = 'Ahmed'
-~~~
-{: .python}
-
-*   Variable names:
-    *   cannot start with a digit
-    *   cannot contain spaces, quotation marks, or other punctuation
-    *   *may* contain an underscore (typically used to separate words in long variable names)
-*   Underscores at the start like `__alistairs_real_age` have a special meaning
-    so we won't do that until we understand the convention.
-    
 > ## Variables as Sticky Notes
 >
 > A variable is analogous to a sticky note with a name written on it:
@@ -83,41 +62,6 @@ first_name = 'Ahmed'
 >
 > ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
 >
-> This means that assigning a value to one variable does **not** change
-> values of other variables.
-> For example, let's store the subject's weight in pounds in its own variable:
->
-> ~~~
-> # There are 2.2 pounds per kilogram
-> weight_lb = 2.2 * weight_kg
-> print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> weight in kilograms: 65.0 and in pounds: 143.0
-> ~~~
-> {: .output}
->
-> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
->
-> Let's now change `weight_kg`:
->
-> ~~~
-> weight_kg = 100.0
-> print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
-> ~~~
-> {: .output}
->
-> ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
->
-> Since `weight_lb` doesn't "remember" where its value comes from,
-> it is not updated when we change `weight_kg`.
 {: .callout}
 
 
