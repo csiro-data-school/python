@@ -208,8 +208,6 @@ Age in three years: 45
 ~~~
 {: .output}
 
-Exercise?
-
 ## Variables only change value when something is assigned to them.
 
 *   If we make one cell in a spreadsheet depend on another,
