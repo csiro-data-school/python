@@ -96,7 +96,7 @@ Rounds the answer down to the nearest integer value.
 {: .output}
 `%` returns the remainder of the division.
 
-> ## Division Types
+> ## Division expressions
 > What is the outcome of the following expressions?
 > ~~~
 > print('5 // 3:', 5//3)
@@ -109,6 +109,32 @@ Rounds the answer down to the nearest integer value.
 >> 5 % 3: 2
 >{: .solution}
 {: .challenge}
+
+## Order of operations
+
+*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
+*	When two operators have the same precedence, *associativity* determines the order of operations.
+*	Associativity is the order in which an expression is evaluated, almost always **left-to-right**.
+
+
+> ## Precedence and Associativity
+> If you had the following expressions what are the outputs?
+>
+>1. 2 + 3 * 4
+>2. 5 * 2 // 3
+>3. 5 * (2 // 3)
+>4. 2 ** 3 ** 2
+>5. (2 ** 3) ** 2
+>
+>>## Solution
+>>1. Answer: 14
+>>2. Answer: 3
+>>3. Answer: 0
+>>4. Answer: 512
+>>5. Answer: 64
+>{: .solution}
+{: .challenge}
+
 
 ## Value 'types'
 
@@ -284,6 +310,33 @@ None
 > 5. print(type(None))
 {: .challenge}
 
+## Comparisons, Membership Tests and Identity Tests
+
+*	Always returns a value of type `bool`
+*	`<`, `<=`, `>`, `>=`, `!=`, `==`, `in`, `not in`, `is`, `is not`
+
+
+Note: a single `=` is for variable *assignment*, **not for comparison**.
+~~~
+3 = 3
+~~~
+{: .language-python}
+~~~
+File "<stdin>", line 1
+SyntaxError: can't assign to literal
+~~~
+{: .error}
+
+Double `==` is for comparison:
+~~~
+3 == 3
+~~~
+{: .language-python}
+~~~
+True
+~~~
+{: .output}
+
 ## Types control how values can be combined in expressions.
 
 ~~~
@@ -324,75 +377,8 @@ three squared is 9.0
 {: .output}
 
 
-## Comparisons, Membership Tests and Identity Tests
-
-*	Always returns a value of type `bool`
-*	`<`, `<=`, `>`, `>=`, `!=`, `==`, `in`, `not in`, `is`, `is not`
 
 
-Note: a single `=` is for variable *assignment*, **not for comparison**.
-~~~
-3 = 3
-~~~
-{: .language-python}
-~~~
-File "<stdin>", line 1
-SyntaxError: can't assign to literal
-~~~
-{: .error}
-
-Double `==` is for comparison:
-~~~
-3 == 3
-~~~
-{: .language-python}
-~~~
-True
-~~~
-{: .output}
-
-~~~
-3 != 3
-~~~
-{: .language-python}
-~~~
-False
-~~~
-{: .output}
-
-~~~
-6 < 3
-~~~
-{: .language-python}
-~~~
-False
-~~~
-{: .output}
-
-
-## Precedence and Associativity
-
-*	Follows **B**rackets, **E**xponents, **D**ivision, **M**ultiplication, **A**ddition, **S**ubtraction **BEDMAS**
-*	When two operators have the same precedence, *associativity* determines the order of operations.
-*	Associativity is the order in which an expression is evaluated, almost always **left-to-right**.
-
-
-> If you had the following expressions what are the outputs?
->
->1. 2 + 3 * 4
->2. 5 * 2 // 3
->3. 5 * (2 // 3)
->4. 2 ** 3 ** 2
->5. (2 ** 3) ** 2
->
->>## Solution
->>1. Answer: 14
->>2. Answer: 3
->>3. Answer: 0
->>4. Answer: 512
->>5. Answer: 64
->{: .solution}
-{: .challenge}
 
 
 ## Strings can be added and multiplied.
@@ -550,10 +536,17 @@ print(str(1) + '2')
 
 
 
+> ## Think like a computer - division
+> Computers cannot intuitively solve problems; the problem must be broken down by the computer into a series of logical steps.
+> How would a computer solve the following problem? 
+> 
 > If `num_subjects` is the number of subjects taking part in a study,
 > and `num_per_survey` is the number that can take part in a single survey,
-> write an expression that calculates the number of surveys needed
+> write a series of expressions that calculates the number of surveys needed
 > to reach everyone once.
+> Hint: you may need to use `//` and `%`
+> Test your expressions with `num_subjects` = 600 and `num_per_survey` = 20.
+> Now test again with `num_per_survey` = 42.
 >>## Solution
 >> First test if the number of subjects per survey divides evenly by the number of subjects using the `%` operator.
 >> ~~~
