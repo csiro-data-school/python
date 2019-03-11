@@ -262,17 +262,14 @@ m4
 
 ### What is a set?
 
-A set is an unordered collection of items. Every element is unique (no duplicates) and must be immutable (which cannot be changed).
-
-However, the set itself is mutable. We can add or remove items from it.
-
-Sets can be used to perform mathematical set operations like union, intersection, symmetric difference etc.
+*   A set is an unordered collection of items. Every element is unique (no duplicates) and must be immutable (which cannot be changed).
+*   However, the set itself is mutable. We can add or remove items from it.
+*   Sets can be used to perform mathematical set operations like union, intersection, symmetric difference etc.
 
 ### How to create a set?
 
-A set is created by placing all the items (elements) inside curly braces {}, separated by comma or by using the built-in function set().
-
-It can have any number of items and they may be of different types (integer, float, tuple, string etc.).
+*   A set is created by placing all the items (elements) inside curly braces {}, separated by comma or by using the built-in function set().
+*   It can have any number of items and they may be of different types (integer, float, tuple, string etc.).
 ~~~
 # set of integers
 my_set = {1, 2, 3}
@@ -294,7 +291,7 @@ print(my_set)
 ~~~
 {: .output}
 
-A `set` cannot have a mutable element, like a `list`. 
+*   A `set` cannot have a mutable element, like a `list`. 
 
 ~~~
 # here [3, 4] is a mutable list
@@ -309,10 +306,10 @@ TypeError: unhashable type: 'list'
 
 ### How to change a set in Python?
 
-Sets are mutable. But since they are unordered, we cannot access or change an element of set using indexing or slicing. 
+*   Sets are mutable. But since they are unordered, we cannot access or change an element of set using indexing or slicing. 
 Set does not support it.
 
-We can add single element using the `add()` method and multiple elements using the `update()` method. The `update()` method can take tuples, lists, strings or other sets as its argument. In all cases, duplicates are avoided.
+*   We can add single element using the `add()` method and multiple elements using the `update()` method. The `update()` method can take tuples, lists, strings or other sets as its argument. In all cases, duplicates are avoided.
 
 ~~~
 # create a set
@@ -374,7 +371,6 @@ Sets can be used to carry out mathematical set operations like union, intersecti
 > > Note that `set()` represents an empty set. 
 > {: .solution}
 {: .challenge}
-
 
 
 {% include links.md %}
