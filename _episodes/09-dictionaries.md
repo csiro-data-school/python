@@ -249,25 +249,66 @@ m4
 > {: .solution}
 {: .challenge}
 
+**Note**: As of Python 3.7, iterating over items in a dictionary is now done in the *order* in which they were inserted as a "feature" of the language.
+
+## Sets
+
+### What is a set?
+
+A set is an unordered collection of items. Every element is unique (no duplicates) and must be immutable (which cannot be changed).
+
+However, the set itself is mutable. We can add or remove items from it.
+
+Sets can be used to perform mathematical set operations like union, intersection, symmetric difference etc.
+
+### How to create a set?
+
+A set is created by placing all the items (elements) inside curly braces {}, separated by comma or by using the built-in function set().
+
+It can have any number of items and they may be of different types (integer, float, tuple, string etc.).
+~~~
+# set of integers
+my_set = {1, 2, 3}
+print(my_set)
+
+# set of mixed datatypes
+my_set = {1.0, "Hello", (1, 2, 3)}
+print(my_set)
+
+# set do not have duplicates
+my_set = {1,2,3,4,3,2}
+print(my_set)
+~~~
+{: .python}
+~~~
+{1, 2, 3}
+{1.0, 'Hello', (1, 2, 3)}
+{1, 2, 3, 4}
+~~~
+{: .output}
+
+A `set` cannot have a mutable element, like a `list`. 
+
+~~~
+# set cannot have mutable items
+# here [3, 4] is a mutable list
+# the following command will cause an error:
+# my_set = {1, 2, [3, 4]}
+~~~
+{: .python}
+~~~
+TypeError: unhashable type: 'list'
+~~~
+{: .output}
+
+### How to change a set in Python?
+
+Sets are mutable. But since they are unordered, we cannot access or change an element of set using indexing or slicing. 
+Set does not support it.
+
+We can add single element using the `add()` method and multiple elements using the `update()` method. The `update()` method can take tuples, lists, strings or other sets as its argument. In all cases, duplicates are avoided.
 
 
 
-* What is a dictionary?
-    * Key-value stores
-    * Differences to list.
-      * When to choose a list or dictionary.
-* Using dictionaries
-  * creating
-  * adding values
-  * retrieving values
-  * testing membership (is my item in the dictionary or not?)
-  * Iterating keys and keys/values
-    * Non-order preserving
-  * Other operations
-* Sets
-  * What are they?
-  * Creating
-  * Using
 
 {% include links.md %}
-
