@@ -1,7 +1,7 @@
 ---
 title: "Dictionaries"
-teaching: 0
-exercises: 0
+teaching: 15
+exercises: 15
 questions:
 - "What is a dictionary?"
 objectives:
@@ -16,8 +16,6 @@ keypoints:
 A dictionary is a data structure similar to a list, but that uses keys instead of indexes. It is the Python implementation of an associative container, or key-value store.
 
 Each value in the dictionary is looked up using a key and new entries can be added by assigning to a non-existent key.
-
-Dictionaries are created with `{}`, instead of `[]` for lists, or `()` for tuples.
 
 ## Using dictionaries
 
@@ -55,7 +53,7 @@ phonebook
 ~~~
 {: .output}
 
-A **key** can be a string, number, or any hashable object (which roughly means no lists or other mutable containers).
+A **key** can be a string, a number, or any hashable object (which roughly means no lists or other mutable containers).
 
 You can even mix key types in a single dictionary although it tends to be confusing (you often wish to sort on the keys later!):
 
@@ -144,7 +142,7 @@ Perro
 ~~~
 {: .output}
 
-To **remove** a specific element from a dictionary, you can use function `del` and index the element using its `key`.
+To **remove** a specific element from a dictionary, you can use the statement `del` and index the element using its `key`.
 
 > ## Remove a word from this dictionary
 >
