@@ -44,7 +44,6 @@ length: 5
 ~~~
 {: .output}
 
-
 ## Use an item's index to fetch it from a list
 
 *   To get the first element of this list we use the index 0 because Python is a 0-based indexing language. 
@@ -100,6 +99,29 @@ weights is now: [265, 175, 277, 275, 176]
 ~~~
 {: .output}
 
+## Basic operations with lists
+
+Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
+
+> ## What do the following commands print?
+>
+> ~~~
+> concatenate = [1, 2, 3] + [4, 5, 6]
+> print('concatenate is:', concatenate)
+> repetition = ['Hi!'] * 4
+> print('repetition is:', repetition)
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > The program prints
+> > ~~~
+> > concatenate is: [1, 2, 3, 4, 5, 6]
+> > repetition is: ['Hi!', 'Hi!', 'Hi!', 'Hi!']
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
 ## List methods
 
@@ -506,29 +528,6 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 {: .challenge}
 
 
-## Basic operations with lists
-
-Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
-
-> ## What do the following commands print?
->
-> ~~~
-> concatenate = [1, 2, 3] + [4, 5, 6]
-> print('concatenate is:', concatenate)
-> repetition = ['Hi!'] * 4
-> print('repetition is:', repetition)
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > The program prints
-> > ~~~
-> > concatenate is: [1, 2, 3, 4, 5, 6]
-> > repetition is: ['Hi!', 'Hi!', 'Hi!', 'Hi!']
-> > ~~~
-> > {: .python}
-> {: .solution}
-{: .challenge}
 
 
 ## Another type of collection: Tuples 
