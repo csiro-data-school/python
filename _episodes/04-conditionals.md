@@ -54,6 +54,21 @@ Only one or the other is ever executed:
 
 ![Executing a Conditional](../fig/python-flowchart-conditional.png)
 
+> ## Tracing Execution
+>
+> What does this program print?
+>
+> ~~~
+> pressure = 71.9
+> if pressure > 50.0:
+>     pressure = 25.0
+> elif pressure <= 50.0:
+>     pressure = 0.0
+> print(pressure)
+> ~~~
+> {: .source}
+{: .challenge}
+
 Conditional statements don't have to include an `else`.
 If there isn't one,
 Python simply does nothing if the test is false:
