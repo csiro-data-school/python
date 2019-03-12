@@ -1,5 +1,5 @@
 ---
-title: "Lists"
+title: "Lists and indexing"
 teaching: 20
 exercises: 20
 questions:
@@ -20,6 +20,7 @@ keypoints:
 - "Indexing beyond the end of the collection is an error."
 - "Tuples are another type of collection, but unlike lists, tuples are immutable."
 ---
+
 ## Lists are collections of data 
 
 We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, tuples and dictionaries, which we will cover in future lessons. 
@@ -29,7 +30,7 @@ We have already encountered some simple Python types like integers, strings and 
 *   A **list** can store many values in a single structure.
     *   Contained within square brackets `[...]`.
     *   Values separated by commas `,`.
-*   Use `len` to find out how many values are in a list.
+*   Use the built-in function `len` to find out how many values are in a list.
 
 ~~~
 weights = [173, 175, 277, 275, 176]
@@ -43,7 +44,6 @@ length: 5
 ~~~
 {: .output}
 
-
 ## Use an item's index to fetch it from a list
 
 *   To get the first element of this list we use the index 0 because Python is a 0-based indexing language. 
@@ -53,13 +53,37 @@ length: 5
 print('zeroth item of weights:', weights[0])
 print('fourth item of weights:', weights[4])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 zeroth item of weights: 173
 fourth item of weights: 176
 ~~~
 {: .output}
 
+## Reverse indexing, from right to left, also works
+
+~~~
+weights[-1]
+weights[-3]
+~~~
+{: .language-python}
+
+> ## Using reverse indexing.
+> 
+> How would you extract the letter `l` from `letters` using reverse indexing?
+> 
+> ~~~
+> mylist[____]
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > letters[-7]
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
 ## List values can be replaced in place
 
@@ -75,6 +99,29 @@ weights is now: [265, 175, 277, 275, 176]
 ~~~
 {: .output}
 
+## Basic operations with lists
+
+Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
+
+> ## What do the following commands print?
+>
+> ~~~
+> concatenate = [1, 2, 3] + [4, 5, 6]
+> print('concatenate is:', concatenate)
+> repetition = ['Hi!'] * 4
+> print('repetition is:', repetition)
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > The program prints
+> > ~~~
+> > concatenate is: [1, 2, 3, 4, 5, 6]
+> > repetition is: ['Hi!', 'Hi!', 'Hi!', 'Hi!']
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
 ## List methods
 
@@ -119,6 +166,25 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 {: .output}
 
 Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
+
+> ## Fill in the blanks
+>
+> Fill in the blanks list methods so that the program below produces the output shown. 
+> *Hint: start with an empty list*
+>
+> ~~~
+> values = ____
+> values.____(1)
+> values.____()
+> values.____()
+> print('new values:', values)
+> ~~~
+> {: .language-python}
+> ~~~
+> new values: [1, 3, 5]
+> ~~~
+> {: .output}
+{: .challenge}
 
 *   Another useful list method is `.count` which counts the instances of certain object. 
 
@@ -168,8 +234,18 @@ primes after removing last item: [2, 3, 5, 7]
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values, like an empty container.
-    (empty lists will be very useful in future chapters when we need an *empty container* to collect values).
-    
+    (Empty lists will be very useful in the next episode when we need an *empty container* to collect values.)
+
+> ## `True` or `False`?
+> 
+> What do you think this evaluates to:
+>
+> ~~~
+> type([])
+> bool([])
+> ~~~
+> {: .language-python}
+{: .challenge}
 
 ## Lists may contain values of different types
 
@@ -178,10 +254,10 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
-{: .python}
+{: .language-python}
 
 
-## Remember that character strings can be indexed like lists
+## Character strings can be indexed like lists
 
 *   Get single characters from a character string using indexes in square brackets.
 
@@ -215,7 +291,7 @@ TypeError: 'str' object does not support item assignment
 ~~~
 {: .error}
 
-*   Lists and character strings are both *collections*.
+*   Lists and character strings are both *sequences*. Lists are also *collections*. 
 
 
 ## Indexing beyond the end of the collection is an error
@@ -252,8 +328,22 @@ letters[1:4]
 ~~~
 {: .output}
 
-*   Remeber that `b` is the second element of this list because of the 0-based indexing
+*   Remember that `b` is the second element of this list because of the 0-based indexing
 
+> ## Slice bounds
+> 
+> One way to remember how slices work is to think of the indices as pointing *between* elements, with 
+> the left edge of the  first character numbered 0. 
+>
+> ~~~
+>   
+> +---+---+---+---+---+---+---+---+
+> | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+> +---+---+---+---+---+---+---+---+
+> 0   1   2   3   4   5   6   7   8
+> -8  -7  -6  -5  -4  -3  -2  -1
+> ~~~~
+{: .callout}
 
 ## Slice indices have useful defaults
 
@@ -295,35 +385,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 {: .output}
 
 
-## Slice bounds
 
-One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. 
-
-~~~
- +---+---+---+---+---+---+---+---+
- | a | b | c | d | e | f | g | h |
- +---+---+---+---+---+---+---+---+
- 0   1   2   3   4   5   6   7   8
--8  -7  -6  -5  -4  -3  -2  -1
-~~~~
-
-
-> ## Using reverse indexing.
-> 
-> How would you extract the letter `f` from `letters` using reverse indexing?
-> 
-> ~~~
-> mylist[____:____]
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > ~~~
-> > letters[-3:-2]
-> > ~~~
-> > {: .python}
-> {: .solution}
-{: .challenge}
 
 
 > ## Fill in the blanks
@@ -332,15 +394,11 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > *Hint: start with an empty list*
 >
 > ~~~
-> values = ____
-> values.____(1)
-> values.____(3)
-> values.____(5)
 > print('first time:', values)
 > values = values[____]
 > print('second time:', values)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > first time: [1, 3, 5]
@@ -350,10 +408,6 @@ One way to remember how slices work is to think of the indices as pointing *betw
 >
 > > ## Solution
 > > ~~~
-> > values = []
-> > values.append(1)
-> > values.append(3)
-> > values.append(5)
 > > print('first time:', values)
 > > values = values[1:]
 > > print('second time:', values)
@@ -361,6 +415,7 @@ One way to remember how slices work is to think of the indices as pointing *betw
 > > {: .python}
 > {: .solution}
 {: .challenge}
+
 
 
 > ## How large is a slice?
@@ -473,29 +528,6 @@ One way to remember how slices work is to think of the indices as pointing *betw
 {: .challenge}
 
 
-## Basic operations with lists
-
-Similar to strings, lists respond to the + and * operators. These operators also mean concatenation and repetition, respectively, except that the result is a new list, not a string.
-
-> ## What do the following commands print?
->
-> ~~~
-> concatenate = [1, 2, 3] + [4, 5, 6]
-> print('concatenate is:', concatenate)
-> repetition = ['Hi!'] * 4
-> print('repetition is:', repetition)
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > The program prints
-> > ~~~
-> > concatenate is: [1, 2, 3, 4, 5, 6]
-> > repetition is: ['Hi!', 'Hi!', 'Hi!', 'Hi!']
-> > ~~~
-> > {: .python}
-> {: .solution}
-{: .challenge}
 
 
 ## Another type of collection: Tuples 
