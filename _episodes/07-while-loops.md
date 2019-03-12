@@ -157,6 +157,8 @@ To interrupt your code, **press 'I' twice quickly**. Note: `pass` is a valid sta
 > print("The sum of the numbers from 1 to", n, "is ", cur_sum)
 > ~~~
 > {: .language-python}
+>
+> ~~~
 > # while loop - summing the numbers 1.1 to 9.9 in steps of 1.1
 > n = 9.9
 > cur_sum = 0
