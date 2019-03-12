@@ -13,6 +13,32 @@ keypoints:
 - "The programmer must provide a condition to end a `while` loop."
 ---
 
+We have seen that `for` loops provide a powerful form of repetition - the ability to repeat the same actions for every unit of data in a collection.
+
+`while` loops facilitate another form of repetition; in this case, repeating a set of commands while a condition is `True`.
+
+~~~
+num_moons = 3
+while num_moons > 0:
+    print(num_moons)
+    num_moons = num_moons - 1
+~~~
+{: .language-python}
+
+`While` loops:
+* start with the keyword `while`
+* are followed by an expressions that evaluates to `True` or `False`
+* the `while` statement (first line of a while loop) ends with a colon `:`
+* code within the `while` loop is indented. This code is performed at each iteration through the loop
+* end when the condition becomes `False`
+
+> ## Assignment operators
+> In the `while` loop above, we updated the value of the variable `num_moons` while the loop was running,
+> by typing the following code:
+> ~~~
+> num_moons = num_moons - 1
+> ~~~
+> This pattern, where reassign a 
 
 # while loop
 n = 10
