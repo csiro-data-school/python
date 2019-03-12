@@ -160,6 +160,42 @@ at least one test is true
 > {: .solution}
 {: .challenge}
 
+## Conditions are tested once, in order.
+
+*   Python steps through the branches of the conditional in order, testing each in turn.
+*   So ordering matters.
+
+~~~
+grade = 85
+if grade >= 70:
+    print('grade is C')
+elif grade >= 80:
+    print('grade is B')
+elif grade >= 90:
+    print('grade is A')
+~~~
+{: .python}
+~~~
+grade is C
+~~~
+{: .output}
+
+*   Does *not* automatically go back and re-evaluate if values change.
+
+~~~
+velocity = 10.0
+if velocity > 20.0:
+    print('moving too fast')
+else:
+    print('adjusting velocity')
+    velocity = 50.0
+~~~
+{: .python}
+~~~
+adjusting velocity
+~~~
+{: .output}
+
 > ## What Is Truth?
 >
 > `True` and `False` booleans are not the only values in Python that are true and false.
