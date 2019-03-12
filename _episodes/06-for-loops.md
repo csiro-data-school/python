@@ -224,18 +224,18 @@ for p in primes:
 > 1. 
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
->     print("FAIR")
+>   print("FAIR")
 > ~~~
 > {: .language-python}
 >
 > 2. 
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
->     print(word[0])
+>   print(word[0])
 > ~~~
 > {: .language-python}
 >
-> 3.
+> 3. 
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 > print(word)
