@@ -152,7 +152,7 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > {: .language-python}
 >
 > ## combining control structures: while and if
-> Fill in the blanks in the following code, so that it 
+> 1. Fill in the blanks in the following code, so that it 
 > prints all the odd numbers from 0 to 10
 > ~~~
 > num = 0
@@ -162,6 +162,8 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 >         ___ += 1
 > ~~~
 > {: .language-python}
+> 2. Now, edit this code so it prints only the even numbers from 0 to 20. 
+> 3. Can you find a simpler way to code this, using just a `while` loop? (i.e. no `if` statement)
 {: .challenge}
 
 > # while loop - summing the numbers 1.1 to 9.9 i. steps of 1.1
