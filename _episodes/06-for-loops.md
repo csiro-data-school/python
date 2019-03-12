@@ -221,21 +221,21 @@ for p in primes:
 > ## `for` loop syntax
 > Which of these are valid `for` loops?
 >
-> 1. 
+> 1.
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 >   print("FAIR")
 > ~~~
 > {: .language-python}
 >
-> 2. 
+> 2.
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 >   print(word[0])
 > ~~~
 > {: .language-python}
 >
-> 3. 
+> 3.
 > ~~~
 > for word in ["Findable", "Accessible", "Interoperable", "Resuable"]:
 > print(word)
