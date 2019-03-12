@@ -1,5 +1,5 @@
 ---
-title: "Lists"
+title: "Lists and indexing"
 teaching: 20
 exercises: 20
 questions:
@@ -29,7 +29,7 @@ We have already encountered some simple Python types like integers, strings and 
 *   A **list** can store many values in a single structure.
     *   Contained within square brackets `[...]`.
     *   Values separated by commas `,`.
-*   Use `len` to find out how many values are in a list.
+*   Use the built-in function `len` to find out how many values are in a list.
 
 ~~~
 weights = [173, 175, 277, 275, 176]
@@ -120,6 +120,25 @@ primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
 
 Note that while `extend` maintains the "flat" structure of the list, `append` a list to a list makes the result two-dimensional.
 
+> ## Fill in the blanks
+>
+> Fill in the blanks list methods so that the program below produces the output shown. 
+> *Hint: start with an empty list*
+>
+> ~~~
+> values = ____
+> values.____(1)
+> values.____()
+> values.____()
+> print('new values:', values)
+> ~~~
+> {: .language-python}
+> ~~~
+> new values: [1, 3, 5]
+> ~~~
+> {: .output}
+{: .challenge}
+
 *   Another useful list method is `.count` which counts the instances of certain object. 
 
 For example: 
@@ -168,8 +187,18 @@ primes after removing last item: [2, 3, 5, 7]
 *   Use `[]` on its own to represent a list that doesn't contain any values.
     *   "The zero of lists."
 *   Helpful as a starting point for collecting values, like an empty container.
-    (empty lists will be very useful in future chapters when we need an *empty container* to collect values).
-    
+    (Empty lists will be very useful in the next episode when we need an *empty container* to collect values.)
+
+> ## `True` or `False`?
+> 
+> What do you think this evaluates to:
+>
+> ~~~
+> type([])
+> bool([])
+> ~~~
+> {: .language-python}
+{: .challenge}
 
 ## Lists may contain values of different types
 
@@ -178,10 +207,10 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
 ~~~
-{: .python}
+{: .language-python}
 
 
-## Remember that character strings can be indexed like lists
+## Character strings can be indexed like lists
 
 *   Get single characters from a character string using indexes in square brackets.
 
@@ -215,7 +244,7 @@ TypeError: 'str' object does not support item assignment
 ~~~
 {: .error}
 
-*   Lists and character strings are both *collections*.
+*   Lists and character strings are both *sequences*. Lists are also *collections*. 
 
 
 ## Indexing beyond the end of the collection is an error
@@ -252,8 +281,22 @@ letters[1:4]
 ~~~
 {: .output}
 
-*   Remeber that `b` is the second element of this list because of the 0-based indexing
+*   Remember that `b` is the second element of this list because of the 0-based indexing
 
+> ## Slice bounds
+> 
+> One way to remember how slices work is to think of the indices as pointing *between* elements, with 
+> the left edge of the  first character numbered 0. 
+>
+> ~~~
+>   
+> +---+---+---+---+---+---+---+---+
+> | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+> +---+---+---+---+---+---+---+---+
+> 0   1   2   3   4   5   6   7   8
+> -8  -7  -6  -5  -4  -3  -2  -1
+> ~~~~
+{: .callout}
 
 ## Slice indices have useful defaults
 
@@ -295,17 +338,6 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 {: .output}
 
 
-## Slice bounds
-
-One way to remember how slices work is to think of the indices as pointing *between* elements, with the left edge of the  first character numbered 0. 
-
-~~~
- +---+---+---+---+---+---+---+---+
- | a | b | c | d | e | f | g | h |
- +---+---+---+---+---+---+---+---+
- 0   1   2   3   4   5   6   7   8
--8  -7  -6  -5  -4  -3  -2  -1
-~~~~
 
 
 > ## Using reverse indexing.
