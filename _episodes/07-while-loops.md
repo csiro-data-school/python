@@ -38,7 +38,15 @@ while num_moons > 0:
 > ~~~
 > num_moons = num_moons - 1
 > ~~~
-> This pattern, where reassign a 
+> {: .language-python}
+> This pattern, where modify the value of a variable using an operator and reassign the new value back to the same
+> variable, is so common that Python has special short-hand **assignment operators** for this task. In the example above, 
+> the equivalent assignment operator looks like this:
+> ~~~
+> num_moons -= 1
+> ~~~
+> {: .language-python}
+{: .callout}
 
 # while loop
 n = 10
