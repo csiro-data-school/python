@@ -38,7 +38,7 @@ phonebook["Rhys"] = 55512342
 phonebook["Christian"] = 55512343
 phonebook
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {'Carolina': 55512341, 'Rhys': 55512342, 'Christian': 55512343}
 ~~~
@@ -54,7 +54,7 @@ phonebook = {
 }
 phonebook
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {'Carolina': 55512341, 'Rhys': 55512342, 'Christian': 55512343}
 ~~~
@@ -73,7 +73,7 @@ phrasebook = {
 }
 phrasebook
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {1: 'Is 1 a page number?',
  'My tank is full of smolts': 'Vamos a la playa!',
@@ -97,7 +97,7 @@ You can assign to an individual dictionary entry to add it or modify it using th
 >    "Christian" : 55512343
 > }
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
@@ -105,7 +105,7 @@ You can assign to an individual dictionary entry to add it or modify it using th
 > > phonebook['Christian'] = 55534343
 > > phonebook
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > ~~~
 > > {'Carolina': 55512341,
 > > 'Rhys': 55512342,
@@ -130,7 +130,7 @@ ESdict = {
 }
 ESdict
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {'Cat': 'Gato', 'Dog': 'Perro', 'Apple': 'Manzana', 'Table': 'Mesa'}
 ~~~
@@ -142,7 +142,7 @@ To **retrieve** a value for a specific key we use the method `.get`
 print(ESdict.get('Cat'))
 print(ESdict.get('Dog'))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Gato
 Perro
@@ -161,13 +161,13 @@ To **remove** a specific element from a dictionary, you can use the statement `d
 >    "Apple" : "Manzana",
 >    "Table" : "Mesa" }
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
 > > del ESdict['Cat']
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > Alternatively, if we want to return the value of the entry being removed we can use the method `.pop`, you can try this by 
 > > typing `mydict.pop("Dog")`. 
 > {: .solution}
@@ -188,7 +188,7 @@ print('m1' in motifs)
 print('m3' in motifs)
 print('m5' in motifs)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 True
 True
@@ -205,7 +205,7 @@ We can iterate over a dictionary using a `for loop` to get both `keys` and `keys
 for key in motifs:
     print(key)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 m1
 m2
@@ -225,7 +225,7 @@ m4
 >    "m3" : "GTGTAA",
 >    "m4" : "AAATGC"}
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
@@ -245,7 +245,7 @@ m4
 > > for key, value in motifs.items():
 > >     print(key, ":", value)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > ~~~
 > > m1 : AGTTGC
 > > m2 : TTTGCG
@@ -285,7 +285,7 @@ print(my_set)
 my_set = {1, 2, 3, 4, 3, 2}
 print(my_set)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {1, 2, 3}
 {1.0, 'Hello', (1, 2, 3)}
@@ -300,7 +300,7 @@ print(my_set)
 # the following command will cause an error:
 # my_set = {1, 2, [3, 4]}
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 TypeError: unhashable type: 'list'
 ~~~
@@ -330,7 +330,7 @@ print(my_set)
 my_set.update([4,5,1,1], {1,6,7,8}) 
 print(my_set)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 {1, 3}
 {1, 2, 3}
@@ -359,7 +359,7 @@ Sets can be used to carry out mathematical set operations like union, intersecti
 > print(A.union(B) & B.intersection(A))
 > print(B.intersection(A) - A.union(B))
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > ~~~
 > > {1, 2, 3, 4, 11}
