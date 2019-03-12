@@ -112,6 +112,37 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
+
+> ## How Many Paths?
+>
+> Consider this code:
+>
+> ~~~
+> if 4 > 5:
+>     print('A')
+> elif 4 == 5:
+>     print('B')
+> elif 4 < 5:
+>     print('C')
+> ~~~
+> {: .language-python}
+>
+> Which of the following would be printed if you were to run this code?
+> Why did you pick this answer?
+>
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
+>
+> > ## Solution
+> > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
+> > but `4 < 5` is true.
+> {: .solution}
+{: .challenge}
+
+# Combining tests with `and` and `or`
+
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
@@ -141,34 +172,38 @@ at least one test is true
 ~~~
 {: .output}
 
+Multi-part `if` statements are evaluated left to right. Evaluation stops once the condition is met:
 
-> ## How Many Paths?
->
-> Consider this code:
->
-> ~~~
-> if 4 > 5:
->     print('A')
-> elif 4 == 5:
->     print('B')
-> elif 4 < 5:
->     print('C')
-> ~~~
-> {: .language-python}
->
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1.  A
-> 2.  B
-> 3.  C
-> 4.  B and C
->
-> > ## Solution
-> > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
-> > but `4 < 5` is true.
-> {: .solution}
-{: .challenge}
+~~~
+x = 5
+if x and y:
+   print('True')
+~~~
+{: .language-python}
+
+~~~
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-6a5c8fabde93> in <module>()
+      1 x = 5
+----> 2 if x and y:
+      3    print('True')
+
+NameError: name 'y' is not defined
+~~~
+{: .output}
+
+~~~
+x = 5
+if x or y:
+    print('True')
+~~~
+{: .language-python}
+~~~
+True
+~~~
+{: .output}
+
 
 ## Conditions are tested once, in order.
 
