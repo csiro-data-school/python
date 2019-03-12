@@ -27,37 +27,31 @@ keypoints:
 ## Syntax
 The grammatical rules or syntax of any language dictate the construction of "legal" sentences.
 
-The syntax of a programming language determines what counts as a legal or well-formed program (script).
+The syntax of a programming language determines what counts as a legal or well-formed program.
 
-A Python program consists of a sequence of syntactically correct "sentences" entered at a Python interpreter prompt (or into Jupyter notebook cells) or contained within files.
+A Python program consists of a sequence of syntactically correct "sentences" entered into Jupyter notebook cells, at a Python interpreter prompt, or contained within files.
 
-This episode introduces the following Python syntax elements, many of which are elaborated upon in other episodes: keywords, identifiers, expressions, statements, comments, indentation and code blocks, brackets and quotes.
+This episode introduces the following Python syntax elements, many of which we have seen in other episodes: keywords, identifiers, expressions, statements, comments, indentation and code blocks, brackets and quotes.
 
 ## Keywords 
 In Python, keywords are special words used for core language constructs. An example of a Python keyword is `if`, used within so-called conditional statements.
 
 > ## Keywords
 >
-> Entering `help()` at a Python command prompt (or in a Jupyter notebook cell), then entering `keywords` at the prompt that follows, will show the available Python keywords.
+> Entering `help()` in a Jupyter notebook cell, then entering `keywords` at the 
+> prompt that follows, will show the available Python keywords.
 >
-> Run the Python interpreter from a command-line terminal with:
->
-> ~~~
-> $ python3
-> ~~~
-> {: .language-bash}
->
-> Then enter:
+> In a new cell, type:
 > ~~~
 > help()
 > ~~~
-> {: .language-bash}
+> {: .language-python}
 > 
 > Then at the "help>" prompt that follows, enter:
 > ~~~
 > keywords
 > ~~~
-> {: .language-bash}
+> {: .language-python}
 >
 > > ## Solution
 > > You should see output like this:
@@ -78,7 +72,7 @@ Try entering one or more keywords at the "help>" prompt to get a brief descripti
 Spaces and tabs separate keywords, identifiers and expressions. They also play a special role in indentation levels in code blocks, which is covered later in this episode. 
 
 ## Identifiers
-A Python identifier is a name used to identify a variable, function, class, module or other object. An identifier can start with a letter (a to z, A to Z) or an underscore (_) but may contain letters, underscores and digits (0 to 9) thereafter.
+A Python identifier is a name or label used to identify a variable or function (identifiers are also used to label `class` and `module` objects, which we will cover in advanced Python). An identifier can start with a letter (a to z, A to Z) but may contain letters, underscores and digits (0 to 9) thereafter. (In some special cases, it can also start with an underscore). 
 
 Additionally, Python is case-sensitive, so `myInt` is not the same identifier as `MyInt`.
 
@@ -112,7 +106,7 @@ Python statements make use of keywords, identifiers, and expressions. The follow
 More than one statement can appear on a single line, each statement separated by a semi-colon, e.g.
 
 > ~~~
-> x=42; print("the meaning of life is {}", x)
+> x=42; print("the meaning of life is ", x)
 > ~~~
 > {: .language-python}
 
@@ -120,18 +114,10 @@ It tends to be less confusing to keep each line as simple as possible however:
 
 > ~~~
 > x=42
-> print("the meaning of life is {}", x)
+> print("the meaning of life is ", x)
 > ~~~
 > {: .language-python}
 
-An example of another statement is:
-
-> ~~~
-> assert meaning_of_life == 42
-> ~~~
-> {: .language-python}
-
-which asserts that the variable `meaning_of_life` is assumed to equal `42`. If not, an error will be generated. The notion of assertions will be further explored in other episodes, the "Testing" episode in particular.
 
 ## Comments
 Comments are annotations embedded in code to summarise and explain the programmer's intent.
@@ -143,7 +129,7 @@ Anything that follows a `#` symbol on a line is considered a comment. The `#` ma
 
 > ## Write code containing single-line comments
 >
-> Open up your text editor, entering the following Python code:
+> In a new cell, enter the following Python code:
 >
 > ~~~
 > print("Hello")
@@ -152,22 +138,7 @@ Anything that follows a `#` symbol on a line is considered a comment. The `#` ma
 > ~~~
 > {: .language-python}
 >
-> Save the file as `hello-world-single.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 hello-world-single.py
-> ~~~
-> {: .language-bash}
-> > ## Solution
-> > You should see this output:
-> >
-> > ~~~
-> > Hello
-> > World
-> > ~~~
-> > {: .source}
-> > 
-> > Notice that since the second `print` was commented, `Again` did not appear in the output. Note also that the text `trailing comment` was ignored by the Python interpreter.
+> > Notice that since the second `print` was commented, `Again` did not appear in the output. Note also that the text `trailing comment` was ignored.
 > {: .solution}
 {: .challenge}
 
@@ -176,22 +147,16 @@ Triple single `'` or double `"` quotes begin and end a multi-line string, but if
 
 > ## Write code containing multiple-line comments
 >
-> Open up your text editor, entering the following Python code:
+> In a new cell, enter the following Python code:
 >
 > ~~~
 > """
-> This script outputs Hello World
+> This code outputs Hello World
 > """
 > print("Hello World")
 > ~~~
 > {: .language-python}
 >
-> Save the file as `hello-world-multiple.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 hello-world-multiple.py
-> ~~~
-> {: .language-bash}
 > > ## Solution
 > > You should see this output:
 > >
@@ -204,12 +169,11 @@ Triple single `'` or double `"` quotes begin and end a multi-line string, but if
 > {: .solution}
 {: .challenge}
 
-Multi-line comments can be used as "doc strings" to add documentation comments to scripts, functions, classes, modules, some of which will be covered in other episodes, e.g. "Writing Functions".
 
 ## Indentation and Code Blocks
 Python uses indentation level to determine the start and end of code blocks - unlike many languages which use braces (`{` and `}`), or others that use keywords such as `begin` and `end`.
 
-Code blocks are used in a number of contexts in Python including `if` statements, loops, functions, and classes. We won't dwell on the details of such constructs in this episode, merely give simple examples of indentation and blocks.
+Code blocks are used in a number of contexts in Python including `if` statements and loops. 
 
 The following shows a simple code block, introduced by a line ending in a colon with subsequent lines (just one in this case) indented by four spaces. Any number of spaces or even tabs can be used within a block, so long as each line within that block is indented to the same level. Four spaces are normally used by convention. The main point is to be consistent.
 
@@ -221,7 +185,7 @@ The following shows a simple code block, introduced by a line ending in a colon 
 
 > ## Code Blocks
 >
-> Open up your text editor, entering the following Python code:
+> In a new cell, enter the following Python code:
 >
 > ~~~
 > if 3 > 2:
@@ -233,12 +197,6 @@ The following shows a simple code block, introduced by a line ending in a colon 
 > ~~~
 > {: .language-python}
 >
-> Save the file as `multiple-blocks.py` and run it from command-line terminal with:
->
-> ~~~
-> $ python3 multiple-blocks.py
-> ~~~
-> {: .language-bash}
 > > ## Solution
 > > You should see this output:
 > >
@@ -257,14 +215,13 @@ You will find a colon (`:`) at the end of a line that preceeds a space-indented 
 
 Python aware editors (e.g. Visual Code, vim) help in maintaining consistent indenting levels. Jupyter notebook code cells are indentation aware.
 
-A code block may also introduce a new "scope" for variables, but the episode "Writing Functions" will cover this.
-
 ## Line Continuation
 Some statements are long enough that it may be necessary, or at least desirable, to spread them over multiple lines. Suppose we have an expression that we would like to split over multiple lines:
 
 > ~~~
 > obliquity = degrees - 46.8150 * T - 0.00059 * (T * T) + 0.001813 * (T * T * T)
 > ~~~
+{: language-python}
 
 The following would lead to a syntax error:
 
@@ -273,7 +230,7 @@ The following would lead to a syntax error:
 >             0.00059 * (T * T) + 
 >             0.001813 * (T * T * T)
 > ~~~
-
+{: language-python}
 In Python, the line continuation character `\` must be used at the end of each line for this to satisfy the rules of syntax:
 
 > ~~~
@@ -281,9 +238,10 @@ In Python, the line continuation character `\` must be used at the end of each l
 >             0.00059 * (T * T) + \
 >             0.001813 * (T * T * T)
 > ~~~
+{: .language-python}
 
 ## Brackets and Quotes
-In Python, special characters denote the beginning and end of literal values of particular types.
+In Python, special characters denote the beginning and end of values of particular types.
 
 There are 3 different enclosing bracket types used in Python:
 * Parentheses: `(` `)`
@@ -295,7 +253,16 @@ Parentheses are used in Python to:
 * specify a list of function parameters, e.g. `f(2, 3, 5, 7)`; 
 * denote a tuple value, e.g. `x = (1,2,3)`.
 
-Square brackets are used to begin and end a list value, e.g. `first5Primes = [2,3,5,7,11]`.
+Square brackets are used to begin and end a list value, e.g. `first5Primes = [2,3,5,7,11]`, or to access the elements of an ordered collection e.g.
+~~~
+`first5Primes[2]`
+~~~
+{: .language-python}
+
+~~~
+5
+~~~
+{: .output}
 
 Braces (sometimes called "curly braces") are used to delimit the key-value pairs in a dictionary, e.g. `ages = {"Fred":42, "David":55, "Jack":31}`
 
@@ -307,14 +274,7 @@ Both are used to delimit string values, e.g. `'abc'`, `"abc"`. When quotes of ei
 
 > ## Quotes within Quotes
 >
-> Run the Python interpreter from a command-line terminal with:
->
-> ~~~
-> $ python3
-> ~~~
-> {: .language-bash}
->
-> Then enter:
+> In a new cell, enter:
 > ~~~
 > print("David's favourite programming language is X")
 > ~~~
@@ -336,6 +296,6 @@ Both are used to delimit string values, e.g. `'abc'`, `"abc"`. When quotes of ei
 
 We have also seen how triple quotes can be used for multi-line comments (or string values assigned to a variable).
 
-See episodes such as "Python Values and their Type", "Expressions", "Lists", "Writing Functions", and "Dictionaries" for additional examples of brackets and quotes.
+See episodes such as "Python Values and their Type", "Expressions", "Lists", and "Dictionaries" for additional examples of brackets and quotes.
 
 {% include links.md %}
