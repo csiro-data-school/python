@@ -20,6 +20,7 @@ keypoints:
 - "Indexing beyond the end of the collection is an error."
 - "Tuples are another type of collection, but unlike lists, tuples are immutable."
 ---
+
 ## Lists are collections of data 
 
 We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, tuples and dictionaries, which we will cover in future lessons. 
@@ -53,13 +54,37 @@ length: 5
 print('zeroth item of weights:', weights[0])
 print('fourth item of weights:', weights[4])
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 zeroth item of weights: 173
 fourth item of weights: 176
 ~~~
 {: .output}
 
+## Reverse indexing, from right to left, also works
+
+~~~
+weights[-1]
+weights[-3]
+~~~
+{: .language-python}
+
+> ## Using reverse indexing.
+> 
+> How would you extract the letter `l` from `letters` using reverse indexing?
+> 
+> ~~~
+> mylist[____]
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > letters[-7]
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
 ## List values can be replaced in place
 
@@ -340,23 +365,6 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 
 
 
-> ## Using reverse indexing.
-> 
-> How would you extract the letter `f` from `letters` using reverse indexing?
-> 
-> ~~~
-> mylist[____:____]
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > ~~~
-> > letters[-3:-2]
-> > ~~~
-> > {: .python}
-> {: .solution}
-{: .challenge}
-
 
 > ## Fill in the blanks
 >
@@ -364,15 +372,11 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 > *Hint: start with an empty list*
 >
 > ~~~
-> values = ____
-> values.____(1)
-> values.____(3)
-> values.____(5)
 > print('first time:', values)
 > values = values[____]
 > print('second time:', values)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > first time: [1, 3, 5]
@@ -382,10 +386,6 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 >
 > > ## Solution
 > > ~~~
-> > values = []
-> > values.append(1)
-> > values.append(3)
-> > values.append(5)
 > > print('first time:', values)
 > > values = values[1:]
 > > print('second time:', values)
@@ -393,6 +393,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 > > {: .python}
 > {: .solution}
 {: .challenge}
+
 
 
 > ## How large is a slice?
