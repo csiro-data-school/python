@@ -141,11 +141,6 @@ at least one test is true
 ~~~
 {: .output}
 
-> ## `True` and `False`
-> `True` and `False` are special words in Python called `booleans`,
-> which represent truth values. A statement such as `1 < 0` returns
-> the value `False`, while `-1 < 0` returns the value `True`.
-{: .callout}
 
 > ## How Many Paths?
 >
@@ -210,6 +205,12 @@ else:
 adjusting velocity
 ~~~
 {: .output}
+
+> ## `True` and `False`
+> We've met `True` and `False` ... special words in Python called `booleans`,
+> which represent truth values. A statement such as `1 < 0` returns
+> the value `False`, while `-1 < 0` returns the value `True`.
+{: .callout}
 
 > ## What Is Truth?
 >
