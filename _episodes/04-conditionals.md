@@ -54,21 +54,6 @@ Only one or the other is ever executed:
 
 ![Executing a Conditional](../fig/python-flowchart-conditional.png)
 
-> ## Tracing Execution
->
-> What does this program print?
->
-> ~~~
-> pressure = 71.9
-> if pressure > 50.0:
->     pressure = 25.0
-> elif pressure <= 50.0:
->     pressure = 0.0
-> print(pressure)
-> ~~~
-> {: .source}
-{: .challenge}
-
 Conditional statements don't have to include an `else`.
 If there isn't one,
 Python simply does nothing if the test is false:
@@ -77,7 +62,7 @@ Python simply does nothing if the test is false:
 num = 53
 print('before conditional...')
 if num > 100:
-    print(num,' is greater than 100')
+    print(num,'is greater than 100')
 print('...after conditional')
 ~~~
 {: .language-python}
@@ -112,6 +97,20 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
+> ## Tracing Execution
+>
+> What does this program print?
+>
+> ~~~
+> pressure = 71.9
+> if pressure > 50.0:
+>     pressure = 25.0
+> elif pressure <= 50.0:
+>     pressure = 0.0
+> print(pressure)
+> ~~~
+> {: .source}
+{: .challenge}
 
 > ## How Many Paths?
 >
