@@ -179,5 +179,19 @@ To interrupt your code, **press 'I' twice quickly**. Note: `pass` is a valid sta
 > {: .solution}
 {: .challenge}
 
+> ## combining control structures: while and if
+> 1. Fill in the blanks in the following code, so that it 
+> prints all the odd numbers from 0 to 10
+> ~~~
+> num = 0
+> while num <= __: 
+>     if (num % 2) __ 1:
+>         print(__)
+>         ___ += 1
+> ~~~
+> {: .language-python}
+> 2. Now, edit this code so it prints only the even numbers from 0 to 20. 
+> 3. Can you find a simpler way to code this, using just a `while` loop? (i.e. no `if` statement)
+{: .challenge}
 
 {% include links.md %}
