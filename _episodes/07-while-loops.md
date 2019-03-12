@@ -28,6 +28,8 @@ while num_moons > 0:
 `While` loops:
 * start with the keyword `while`
 * are followed by an expressions that evaluates to `True` or `False`
+    * here, `num_moons` has be set, or *initialised* to `3` before the loop starts, so the condition is initially `True`
+    * we change the value of `num_moons` within the loop, so that eventually the condition becomes `False`
 * the `while` statement (first line of a while loop) ends with a colon `:`
 * code within the `while` loop is indented. This code is performed at each iteration through the loop
 * end when the condition becomes `False`
@@ -53,11 +55,21 @@ while num_moons > 0:
 num_moons = -3
 while num_moons > 0:
     print(num_moons)
-    num_moons = num_moons - 1
+    num_moons -= 1
 ~~~
 {: .language-python}
 
 ## or they may run infinitely... 
+
+~~~
+forever = 'the infinite while loop'
+while forever:
+    pass
+~~~
+{: .language-python}
+
+To interrupt your code, **press 'I' twice quickly**. Note: `pass` is a valid statement within the body of a `while` loop (or a `for` loop, or an `if` statement). It means 'go onto the next step'.
+
 > ## interrupting execution
 > Try out the following code:
 > ~~~
@@ -68,39 +80,37 @@ while num_moons > 0:
 > {: language-python}
 > What is happening here?
 > 
-> You can for interrupt your code by pressing `Ctrl-c`.
-> Do this now. Now try:
+> Interrupt your code. Now try:
 > ~~~
 > print(counts)
 > ~~~
 > {: .language-python}
 {: .challenge}
-# while loop
-n = 10
-cur_sum = 0
-# sum of n  numbers
-i = 1
-while  i <= n :
-    cur_sum = cur_sum + i
-    i = i + 1
-print("The sum of the numbers from 1 to", n, "is ", cur_sum)
-~~~
-{: .language-python}
 
-~~~
-The sum of the numbers from 1 to 10 is 55
-~~~
-{: .output}
+> ## cumulative sum
+> Calculating the sum of a series of numbers is a common use for a `while` loop.>
+>
+> ~~~
+> n = 10
+> current_sum = 0
+> i = 1
+> while  i <= n :
+>    current_sum += i
+>    i = i + 1
+> print("The sum of the numbers from 1 to", n, "is ", current_sum)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> The sum of the numbers from 1 to 10 is 55
+> ~~~
+> {: .output}
+>
+> 1. How many times is the body of the `while` loop executed?
+> 2. Write out, on paper, a table that describes the values of `n`, `current_sum`, and `i` at each step through the loop.
+> 2. Why didn't we call our variable 'sum' instead of the longer, more cumbersome 'current_sum'?
+{: .challenge}
 
-Points to note:
-
-1.	The condition clause (i <= n) in the while statement can be anything which when evaluated would return a Boolean value of either True of False. Initially i has been set to 1 (before the start of the loop) and therefore the condition is `True`.
-2.	The clause can be made more complex by use of parentheses and `and` and `or`  operators amongst others
-3.	The statements after the while clause are only executed if the condition evaluates as True.
-4.	Within the statements after the while clause there should be something which potentially will make the condition evaluate as `False` next time around. If not the loop will never end.
-5.  In this case the last statement in the loop changes the value of i which is part of the condition clause, so hopefully the loop will end.
-6. We called our variable `cur_sum` and not `sum` because `sum` is a builtin function (try typing it in, notice the editor
-changes it to green).  If we define `sum = 0` now we can't use the function `sum` in this Python session.
 
 > ## Exercise - Things that can go wrong with while loops
 >
@@ -112,11 +122,10 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > # while loop - summing the numbers 1 to 10
 > n = 10
 > cur_sum = 0
-> # sum of n  numbers
 > i = 0
 > while  i <= n :
->     i = i + 1
->     cur_sum = cur_sum + i
+>     i += 1
+>     cur_sum += i
 >     
 > print("The sum of the numbers from 1 to", n, "is ", cur_sum)
 > ~~~
@@ -127,7 +136,6 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > n = 10
 > cur_sum = 0
 > boolvalue = False
-> # sum of n  numbers
 > i = 0
 > while  i <= n and boolvalue:
 >     cur_sum = cur_sum + i
@@ -141,7 +149,6 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > # while loop - summing the numbers 1 to 10
 > n = 10
 > cur_sum = 0
-> # sum of n  numbers
 > i = 0
 > while  i != n :
 >     cur_sum = cur_sum + i
@@ -150,7 +157,8 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > print("The sum of the numbers from 1 to", n, "is ", cur_sum)
 > ~~~
 > {: .language-python}
->
+{: .challenge}
+
 > ## combining control structures: while and if
 > 1. Fill in the blanks in the following code, so that it 
 > prints all the odd numbers from 0 to 10
@@ -164,12 +172,10 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > {: .language-python}
 > 2. Now, edit this code so it prints only the even numbers from 0 to 20. 
 > 3. Can you find a simpler way to code this, using just a `while` loop? (i.e. no `if` statement)
-{: .challenge}
-
-> # while loop - summing the numbers 1.1 to 9.9 i. steps of 1.1
+>
+> # while loop - summing the numbers 1.1 to 9.9 in steps of 1.1
 > n = 9.9
 > cur_sum = 0
-> # sum of n  numbers
 > i = 0
 > while  i != n :
 >     cur_sum = cur_sum + i
@@ -185,7 +191,9 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > > 1. Because i is incremented before the sum, you are summing 1 to 11.
 > > 2. The Boolean value is set to False the loop will never be executed.
 > > 3. When i does equal 10 the expression is False and the loop does not execute so we have only summed 1 to 9
-> > 4. Because you cannot guarantee the internal representation of Float, you should never try to compare them for equality. In this particular case the i never 'equals' n and so the loop never ends. - If you did try running this, you can stop it using <kbd>Ctrl</kbd>+<kbd>c</kbd> in a terminal or going to the kernel menu of a notebook and choosing interrupt.
+> > 4. Because you cannot guarantee the internal representation of Float, you should never try to compare them for equality. In this particular case the i never 'equals' n and so the loop never ends!
 > {: .solution}
 {: .challenge}
 
+
+{% include links.md %}
