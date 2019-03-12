@@ -3,16 +3,17 @@ title: "Data 'types' and expressions"
 teaching: 20
 exercises: 15
 questions:
-- "What are expressions?"
-- "What are operators?"
-- "What are comparisons?"
-- "What are precedence and associativity?"
+- "How does Python categorise data?"
+- "What operations can Python do with data?"
+- "How does Python compare data?"
+- "What order does Python evalute expressions in?"
 objectives:
-- "Understand how different types of operators function."
-- "Understand that types determine the type of operations that can be done on a value."
-- "Know how to use the in-built function `len`."
-- "Understand order of precedence."
-- "Know how to concatinate strings."
+- "Understand how different operators function."
+- "Understand that a value's 'type' determine the kind of operations that can be done."
+- "Convert data between different types." 
+- "Use type-specific built in functions."
+- "Demonstrate operator overloading (e.g. '+' effect on `int` vs `str`)
+- "Understand order of precedence and associativity."
 keypoints:
 - "Types control what operations can be done on values."
 - "Strings can be added and multiplied."
