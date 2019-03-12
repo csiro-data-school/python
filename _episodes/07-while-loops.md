@@ -48,6 +48,33 @@ while num_moons > 0:
 > {: .language-python}
 {: .callout}
 
+## `while` loops can run zero times
+~~~
+num_moons = -3
+while num_moons > 0:
+    print(num_moons)
+    num_moons = num_moons - 1
+~~~
+{: .language-python}
+
+## or they may run infinitely... 
+> ## interrupting execution
+> Try out the following code:
+> ~~~
+> counts = 1
+> while counts:
+>     counts += 1
+> ~~~
+> {: language-python}
+> What is happening here?
+> 
+> You can for interrupt your code by pressing `Ctrl-c`.
+> Do this now. Now try:
+> ~~~
+> print(counts)
+> ~~~
+> {: .language-python}
+{: .challenge}
 # while loop
 n = 10
 cur_sum = 0
