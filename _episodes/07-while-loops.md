@@ -151,7 +151,19 @@ changes it to green).  If we define `sum = 0` now we can't use the function `sum
 > ~~~
 > {: .language-python}
 >
+> ## combining control structures: while and if
+> Fill in the blanks in the following code, so that it 
+> prints all the odd numbers from 0 to 10
 > ~~~
+> num = 0
+> while num <= __: 
+>     if (num % 2) __ 1:
+>         print(__)
+>         ___ += 1
+> ~~~
+> {: .language-python}
+{: .challenge}
+
 > # while loop - summing the numbers 1.1 to 9.9 i. steps of 1.1
 > n = 9.9
 > cur_sum = 0
