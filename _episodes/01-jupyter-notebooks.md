@@ -1,7 +1,7 @@
 ---
 title: "Running Jupyter"
-teaching: 15
-exercises: 5
+teaching: 40
+exercises: 20
 questions:
 - "How can I run Python programs?"
 objectives:
