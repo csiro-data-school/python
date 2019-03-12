@@ -462,22 +462,19 @@ the loop. This kind of pattern, where we initialise a variable to 0, then modify
 > ## Cumulative Sum
 >
 > Reorder and properly indent the lines of code below
-> so that they print an array with the cumulative sum of data.
+> so that they print a list with the cumulative sum of data.
 > The result should be `[1, 3, 5, 10]`.
 >
 > ~~~
-> cumulative += [sum]
+> cumulative = cumulative.append(my_sum)
 > for number in data:
 > cumulative = []
-> sum += number
+> my_sum = my_sum + number
 > print(cumulative)
 > data = [1,2,2,5]
 > ~~~
 > {: .language-python}
 {: .challenge}
-
-
-
 
 > ## Computing Powers With Loops
 >
@@ -541,91 +538,13 @@ the loop. This kind of pattern, where we initialise a variable to 0, then modify
 > > count = 0
 > > for char in sentence:
 > >     if char in vowels:
-> >         count += 1
+> >         count = count + 1
 > >
 > > print("The number of vowels in this string is " + str(count))
 > > ~~~
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
-
-
-> ## Sorting a List Into Buckets
->
-> In our `data` folder, large data sets are stored in files whose names start with
-> "inflammation-" and small data sets -- in files whose names start with "small-". We
-> also have some other files that we do not care about at this point. We'd like to break all
-> these files into three lists called `large_files`, `small_files`, and `other_files`,
-> respectively.
->
-> Add code to the template below to do this. Note that the string method
-> [`startswith`](https://docs.python.org/3/library/stdtypes.html#str.startswith)
-> returns `True` if and only if the string it is called on starts with the string
-> passed as an argument, that is:
->
-> ~~~
-> "String".startswith("Str")
-> ~~~
-> {: .language-python}
-> ~~~
-> True
-> ~~~
-> {: .output}
-> But
-> ~~~
-> "String".startswith("str")
-> ~~~
-> {: .language-python}
-> ~~~
-> False
-> ~~~
-> {: .output}
->Use the following Python code as your starting point:
-> ~~~
-> files = ['inflammation-01.csv',
->          'myscript.py',
->          'inflammation-02.csv',
->          'small-01.csv',
->          'small-02.csv']
-> large_files = []
-> small_files = []
-> other_files = []
-> ~~~
-> {: .language-python}
->
-> Your solution should:
->
-> 1.  loop over the names of the files
-> 2.  figure out which group each filename belongs
-> 3.  append the filename to that list
->
-> In the end the three lists should be:
->
-> ~~~
-> large_files = ['inflammation-01.csv', 'inflammation-02.csv']
-> small_files = ['small-01.csv', 'small-02.csv']
-> other_files = ['myscript.py']
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> > ~~~
-> > for file in files:
-> >     if file.startswith('inflammation-'):
-> >         large_files.append(file)
-> >     elif file.startswith('small-'):
-> >         small_files.append(file)
-> >     else:
-> >         other_files.append(file)
-> >
-> > print('large_files:', large_files)
-> > print('small_files:', small_files)
-> > print('other_files:', other_files)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
 
 > ## Computing the Value of a Polynomial
 >
@@ -671,49 +590,6 @@ the loop. This kind of pattern, where we initialise a variable to 0, then modify
 > {: .solution}
 {: .challenge}
 
-> ## In-Place Operators
->
-> Python provides in-place operators that work like this:
->
-> ~~~
-> x = 1  # original value
-> x += 1 # add one to x, assigning result back to x
-> x *= 3 # multiply x by 3
-> print(x)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 6
-> ~~~
-> {: .output}
->
-> Write some code that sums the positive and negative numbers in a list separately,
-> using in-place operators.
-> Do you think the result is more or less readable
-> than writing the same without in-place operators?
->
-> > ## Solution
-> > ~~~
-> > positive_sum = 0
-> > negative_sum = 0
-> > test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]
-> > for num in test_list:
-> >     if num > 0:
-> >         positive_sum += num
-> >     elif num == 0:
-> >         pass
-> >     else:
-> >         negative_sum += num
-> > print(positive_sum, negative_sum)
-> > ~~~
-> > {: .language-python}
-> >
-> > Here `pass` means "don't do anything".
-> In this particular case, it's not actually needed, since if `num == 0` neither
-> > sum needs to change, but it illustrates the use of `elif` and `pass`.
-> {: .solution}
-{: .challenge}
 
 
 {% include links.md %}
