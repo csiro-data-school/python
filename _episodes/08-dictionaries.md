@@ -119,33 +119,33 @@ You can assign to an individual dictionary entry to add it or modify it using th
 
 ### Retrieving and removing values from a dictionary
 
-Lets create a English-Spanish dictionary. 
+Lets create an English-Aboriginal(Ngunnawal) dictionary. 
 
 ~~~
-ESdict = {
-    "Cat" : "Gato",
-    "Dog" : "Perro",
-    "Apple" : "Manzana",
-    "Table" : "Mesa"
+Abor_dict = {
+    "Bird" : "Bimbi",
+    "Flowers" : "Gamburra",
+    "Moon" : "Kubbadang",
+    "Canoe" : "Mundang"
 }
-ESdict
+Abor_dict
 ~~~
 {: .language-python}
 ~~~
-{'Cat': 'Gato', 'Dog': 'Perro', 'Apple': 'Manzana', 'Table': 'Mesa'}
+{'Bird' : 'Bimbi', 'Flowers' : 'Gamburra', 'Moon' : 'Kubbadang', 'Canoe' : 'Mundang'}
 ~~~
 {: .output}
 
-To **retrieve** a value for a specific key we use the method `.get`
+To **retrieve** a value from a dictionary we use square `[]` brackets with the specific `key`
 
 ~~~
-print(ESdict.get('Cat'))
-print(ESdict.get('Dog'))
+print(Abor_dict['Bird'])
+print(Abor_dict['Canoe'])
 ~~~
 {: .language-python}
 ~~~
-Gato
-Perro
+Bimbi
+Mundang
 ~~~
 {: .output}
 
@@ -153,19 +153,19 @@ To **remove** a specific element from a dictionary, you can use the statement `d
 
 > ## Remove a word from this dictionary
 >
-> Remove the word 'Cat' from the English-Spanish dictionary.
+> Remove the word 'Bird' from the English-Aboriginal(Ngunnawal) dictionary.
 > ~~~
-> ESdict = {
->    "Cat" : "Gato",
->    "Dog" : "Perro",
->    "Apple" : "Manzana",
->    "Table" : "Mesa" }
+>Abor_dict = {
+>    "Bird" : "Bimbi",
+>    "Flowers" : "Gamburra",
+>    "Moon" : "Kubbadang",
+>    "Canoe" : "Mundang"}
 > ~~~
 > {: .language-python}
 >
 > > ## Solution
 > > ~~~
-> > del ESdict['Cat']
+> > del Abor_dict['Bird']
 > > ~~~
 > > {: .language-python}
 > > Alternatively, if we want to return the value of the entry being removed we can use the method `.pop`, you can try this by 
