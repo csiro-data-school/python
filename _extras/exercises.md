@@ -113,7 +113,7 @@ title: Exercises
 > The result should be `[1, 3, 5, 10]`.
 >
 > ~~~
-> cumulative = cumulative.append(my_sum)
+> cumulative.append(my_sum)
 > for number in data:
 > cumulative = []
 > my_sum = my_sum + number
