@@ -7,21 +7,13 @@ questions:
 - "How can I identify errors when they occur?"
 objectives:
 - "Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message."
-- "Correctly describe situations in which SyntaxError, IndentationError, NameError, IndexError, and FileNotFoundError occur."
+- "Correctly describe situations in which `SyntaxError`, `IndentationError`, `NameError`, `IndexError`, and `FileNotFoundError` occur."
 keypoints:
-- "Use comments to add documentation to programs."
 - "Python reports a syntax error when it can't understand the source of a program."
 - "Indentation is meaningful in Python."
 - "Python reports a runtime error when something goes wrong while a program is executing."
 - "Fix syntax errors by reading the source code, and runtime errors by tracing the program's execution."
 ---
-## Use comments to add documentation to programs.
-
-~~~
-# This sentence isn't executed by Python.
-adjustment = 0.5   # Neither is this - anything after '#' is ignored.
-~~~
-{: .python}
 
 ## Python reports a syntax error when it can't understand the source of a program.
 
@@ -73,7 +65,7 @@ SyntaxError: unexpected EOF while parsing
 ## Indentation is meaningful in Python.
 
 *   Python uses indentation to group sections of code together
-    (which we will discuss [later]({{ site.github.url }}/09-for-loops)).
+    (discussed in the [loops episode]({{ site.github.url }}/06-for-loops)).
 *   If the indentation changes in a way that Python does not expect,
     it reports an `IndentationError`
     (which is a more specific kind of syntax error).
@@ -167,7 +159,7 @@ NameError: name 'aege' is not defined
 >    *without* running it.
 > 2. Run the code and read the error message.
 >    What type of `NameError` do you think this is?
->    Is it a string with no quotes, a misspelled variable, or a 
+>    Is it a string with no quotes, a misspelled variable, or a
 >    variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
