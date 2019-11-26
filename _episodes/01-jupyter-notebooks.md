@@ -8,6 +8,7 @@ objectives:
 - "Launch the Jupyter Notebook, create new notebooks, and exit the Notebook."
 - "Create Markdown cells in a notebook."
 - "Create and run Python cells in a notebook."
+- "Get help in Jupyter"
 keypoints:
 - "Python programs are plain text files."
 - "Use the Jupyter Notebook for editing and running Python."
@@ -15,15 +16,16 @@ keypoints:
 - "Use the keyboard and mouse to select and edit cells."
 - "The Notebook will turn Markdown into pretty-printed documentation."
 - "Markdown does most of what HTML does."
+- "?help to get help documentation"
 ---
 
 ## Python programs are plain text files.
 
-*   They have the ".py" extension to let everyone (including the operating system) 
+*   They have the ".py" extension to let everyone (including the operating system)
     know it is a Python program.
     *   This is convention, not a requirement.
 *   It's common to write them using a text editor but we are going to use the Jupyter Notebook.
-*   The bit of extra setup is well worth it because the Notebook provides code completion 
+*   The bit of extra setup is well worth it because the Notebook provides code completion
     and other helpful features.
 *   Notebook files have the extension ".ipynb" to distinguish them from plain-text Python programs.
 
@@ -31,32 +33,34 @@ keypoints:
 
 *   The [Anaconda package manager][anaconda] is an automated way to install the Jupyter notebook.
 *   It also installs all the extra libraries it needs to run.
-*   Once you have installed Python and the Jupyter Notebook requirements, open a shell and type:
 
-    ~~~
-    $ jupyter notebook
-    ~~~
-    {: .source}
+> ## Opening a Jupyter Notebook
+> - Once you have installed Anaconda, search for Jupyter Notebook in the Windows search and click to start it.
+> - Alternately you can open a shell and type:
+> ~~~
+> $ jupyter notebook
+> ~~~
+ {: .source}
+{: .callout}
 
-*   This will start a Jupyter Notebook server and open your default web browser. 
+
+*   Once you have installed Anaconda, search for Jupyter Notebook in the Windows search and click to start it.
+*   This will start a Jupyter Notebook server and open your default web browser.
 *   The server runs locally on your machine only and does not use an internet connection.
 *   The server sends messages to your browser.
 *   The server does the work and the web browser renders the notebook.
-*   You can type code into the browser and see the result when the web page talks to the server.
 *   This has several advantages:
 	- You can easily type, edit, and copy and paste blocks of code.
-	- Tab complete allows you to easily access the names of things you are 
+	- Tab complete allows you to easily access the names of things you are
     using and learn more about them.
-	- It allows you to annotate your code with links, different sized text, bullets, 
+	- It allows you to annotate your code with links, different sized text, bullets,
     etc to make it more accessible to you and your collaborators.
-	- It allows you to display figures next to the code that produces them to 
+	- It allows you to display figures next to the code that produces them to
     tell a complete story of the analysis.
 *   The notebook is stored as JSON but can be saved as a .py file if you would
     like to run it from the bash shell or a python interpreter.
-*   Just like a webpage, the saved notebook looks different to what you see when 
+*   Just like a webpage, the saved notebook looks different to what you see when
     it gets rendered by your browser.
-
-
 
 ## The Notebook has Control and Edit modes.
 
@@ -65,8 +69,8 @@ keypoints:
 
 > ## Code vs. Text
 >
-> We often use the term "code" to mean "the source code of 
-> software written in a language such as Python". 
+> We often use the term "code" to mean "the source code of
+> software written in a language such as Python".
 > A "code cell" in a Notebook is a cell that contains software;
 > a "text cell" is one that contains ordinary prose written for human beings.
 {: .callout}
@@ -82,31 +86,31 @@ keypoints:
     *   The "B" key will make a new cell below the currently selected cell.
     *   The "A" key will make one above.
     *   The "X" key will delete the current cell.
-*   There are lots of shortcuts you can try out and most actions can be 
+*   There are lots of shortcuts you can try out and most actions can be
     done with the menus at the top of the page if you forget the shortcuts.
 *   If you remember the "esc" and "H" shortcut, you will be able to find out all the rest.
 
 ## Use the keyboard and mouse to select and edit cells.
 
-*   Pressing the "return" key turns the surround green to 
+*   Pressing the "return" key turns the surround green to
     signify edit mode and you can type into the cell.
 *   Because we want to be able to write many lines of code in a single cell,
     pressing the "return" key when the border is green moves the cursor to the next line in the cell
     just like in a text editor.
 *   We need some other way to tell the Notebook we want to run what's in the cell.
 *   Pressing the "return" key and the "shift" key together will execute the contents of the cell.
-*   Notice that the "return" and "shift" keys on the 
+*   Notice that the "return" and "shift" keys on the
     right of the keyboard are right next to each other.
 
-Pause for a play. 
+Pause for a play.
 
 ## The Notebook will turn Markdown into pretty-printed documentation.
 
 *   Notebooks can also render [Markdown][markdown].
-    *   A simple plain-text format for writing lists, links, 
+    *   A simple plain-text format for writing lists, links,
         and other things that might go into a web page.
     *   Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-*   Turn the current cell into a Markdown cell by entering 
+*   Turn the current cell into a Markdown cell by entering
     the control mode (esc/grey) and press the "M" key.
 *   `In [ ]:` will disappear to show it is no longer a code cell
     and you will be able to write in Markdown.
