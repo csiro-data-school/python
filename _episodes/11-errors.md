@@ -1,12 +1,13 @@
 ---
 title: "Error Messages"
-teaching: 5
-exercises: 10
+teaching: 10
+exercises: 15
 questions:
 - "What kind of errors can occur in programs?"
 - "How can I identify errors when they occur?"
 objectives:
-- "Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message."
+- "Explain the difference between syntax errors and run-time exceptions."
+- "Understand that Python has built-in exceptions, and where to find information on them."
 - "Correctly describe situations in which `SyntaxError`, `IndentationError`, `NameError`, `IndexError`, and `FileNotFoundError` occur."
 keypoints:
 - "Syntax errors occur because of illegal language constructs. They are detected by
@@ -14,7 +15,6 @@ keypoints:
 - "Runtime errors occur when something goes wrong while a program is executing."
 - "In Python run-time errors raise exceptions."
 - "Indentation is meaningful in Python."
-- "Fix syntax errors by reading the source code, and runtime errors by tracing the program's execution."
 ---
 
 ## Errors Happen
@@ -103,11 +103,11 @@ SyntaxError: unexpected EOF while parsing
 {: .challenge}
 
 The `ZeroDivisionError` is built-in to Python. The next exercise looks at some
-more [built-in exceptions][https://docs.python.org/3/library/exceptions.html#bltin-exceptions].
+more [built-in exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions).
 
 > ## Exploring the Built-in Exceptions
 > Have a look at the documentation for
-> [built-in exceptions][https://docs.python.org/3/library/exceptions.html#bltin-exceptions].
+> [built-in exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions).
 > See if you can find each of the following errors. If have encountered any
 > other errors recently, see if you can find those as well.
 >
