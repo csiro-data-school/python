@@ -18,7 +18,7 @@ keypoints:
 - "Markdown does most of what HTML does."
 - "In Jupyter Notebooks, the `?` command will display the same result as
   `help()` in a separate panel, with formatted text."
-- "[The official Python documentation](python-documentation) is a good reference
+- "[The official Python documentation](https://docs.python.org/3/) is a good reference
   to the core Python language."
 ---
 
