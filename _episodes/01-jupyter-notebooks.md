@@ -16,7 +16,10 @@ keypoints:
 - "Use the keyboard and mouse to select and edit cells."
 - "The Notebook will turn Markdown into pretty-printed documentation."
 - "Markdown does most of what HTML does."
-- "?help to get help documentation"
+- "In Jupyter Notebooks, the `?` command will display the same result as
+  `help()` in a separate panel, with formatted text."
+- "[The official Python documentation](python-documentation) is a good reference
+  to the core Python language."
 ---
 
 ## Python programs are plain text files.
@@ -213,6 +216,20 @@ Or use [named links][data_carpentry].
   </div>
 </div>
 
+## Getting HELP!!
+
+In a [Jupyter Notebook][jupyter], there is another option for the `help()`
+function.  Instead of calling `help()`, simply prepend a Python object with
+`?` to display HTML formatted help in a separate panel. If you are using or
+have access to a Jupyter Notebook, compare the output from the following two
+statements:
+~~~
+help(print)
+
+?print
+~~~
+{: .source}
+
 > ## Creating Lists in Markdown
 >
 > Create a nested list in a Markdown cell in a notebook that looks like this:
@@ -275,5 +292,10 @@ Or use [named links][data_carpentry].
 > What do you think the underscore `_`, circumflex `^`, and dollar sign `$` do?
 {: .challenge}
 
+{% include links.md %}
+
 [anaconda]: https://docs.continuum.io/anaconda/install
 [markdown]: https://en.wikipedia.org/wiki/Markdown
+[python-documentation]: https://docs.python.org/3/
+[python-library]: https://docs.python.org/3/library/index.html
+[jupyter]: https://jupyter.org/
