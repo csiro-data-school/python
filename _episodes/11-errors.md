@@ -12,8 +12,9 @@ objectives:
 keypoints:
 - "Syntax errors occur because of illegal language constructs. They are detected by
   the Python parser."
+- "Sometimes the actual error occurs slightly before the location reported by the Python exception."
 - "Runtime errors occur when something goes wrong while a program is executing."
-- "In Python run-time errors raise exceptions."
+- "In Python, run-time errors raise exceptions."
 - "Indentation is meaningful in Python."
 ---
 
@@ -40,7 +41,7 @@ SyntaxError: invalid syntax
 > > The colon (`:`) that delimits the `for` loop from the loop body is missing.
 > > The reason that the `print` is marked with the caret is that any code
 > > following the `for` statement is invalid unless the statement is
-> > delimited by a colon (`:`). So `print` is the first invalid code even though
+> > preceded by a colon (`:`). So `print` is the first invalid code even though
 > > the actual error occurs earlier.
 > >
 > > The correct code would be:
@@ -66,7 +67,7 @@ SyntaxError: unexpected EOF while parsing
 ~~~
 {: .error}
 
-*   The message indicates a problem on first line of the input ("line 1").
+*   The message indicates a problem on the first line of the input ("line 1").
     *   In this case the "ipython-input" section of the file name tells us that
         we are working with input into IPython,
         the Python interpreter used by the Jupyter Notebook.
@@ -75,7 +76,7 @@ SyntaxError: unexpected EOF while parsing
 *   Next is the problematic line of code,
     indicating the problem with a `^` pointer.
 
-## Runtime errors happens when Python understands what you are saying but something goes wrong while a program is executing.
+## Runtime errors happens when Python understands what you are saying but something goes wrong while a program is executing
 
 > ## Run the following snippet of Python code
 >
