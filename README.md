@@ -15,10 +15,11 @@ how to write new episodes.
 
 * [Daniel Collins](https://github.com/DC23)
 * [Alex Whan](https://github.com/alexwhan)
+* [Jared Raynes](https://github.com/jaredraynes)
 
 ## Authors
 
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+A list of contributors to the lesson can be found in [AUTHORS](https://github.com/jaredraynes/python/blob/gh-pages/AUTHORS)
 
 ## Citation
 

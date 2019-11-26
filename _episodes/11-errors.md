@@ -1,45 +1,58 @@
 ---
 title: "Error Messages"
-teaching: 5
-exercises: 10
+teaching: 10
+exercises: 15
 questions:
 - "What kind of errors can occur in programs?"
 - "How can I identify errors when they occur?"
 objectives:
-- "Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message."
+- "Explain the difference between syntax errors and run-time exceptions."
+- "Understand that Python has built-in exceptions, and where to find information on them."
 - "Correctly describe situations in which `SyntaxError`, `IndentationError`, `NameError`, `IndexError`, and `FileNotFoundError` occur."
 keypoints:
-- "Python reports a syntax error when it can't understand the source of a program."
+- "Syntax errors occur because of illegal language constructs. They are detected by
+  the Python parser."
+- "Runtime errors occur when something goes wrong while a program is executing."
+- "In Python run-time errors raise exceptions."
 - "Indentation is meaningful in Python."
-- "Python reports a runtime error when something goes wrong while a program is executing."
-- "Fix syntax errors by reading the source code, and runtime errors by tracing the program's execution."
 ---
 
-## Python reports a syntax error when it can't understand the source of a program.
+## Errors Happen
 
-*   Won't even try to run the program if it can't be parsed.
-
+You have almost certainly encountered errors in your Python code. For beginners,
+the most common is the syntax error, which occurs when your code is not valid
+Python. For example:
 ~~~
-# Forgot to close the quotation marks around the string.
-name = 'Feng
-~~~
-{: .python}
-~~~
-SyntaxError: EOL while scanning string literal
-~~~
-{: .error}
-
-~~~
-# An extra '=' in the assignment.
-age = = 52
-~~~
-{: .python}
-~~~
+>>> for i in range(10) print(i)
+  File "<stdin>", line 1
+    for i in range(10) print(i)
+                           ^
 SyntaxError: invalid syntax
 ~~~
-{: .error}
+{: .language-python}
 
-*   Look more closely at the error message:
+> ## Why does that example produce a syntax error?
+> The message *"SyntaxError: invalid syntax"* is correct, but not very helpful.
+>
+> Note that the caret (`^`) indicates where Python detected a problem. What do
+> you think the problem is?
+> > ## Solution
+> > The colon (`:`) that delimits the `for` loop from the loop body is missing.
+> > The reason that the `print` is marked with the caret is that any code
+> > following the `for` statement is invalid unless the statement is
+> > delimited by a colon (`:`). So `print` is the first invalid code even though
+> > the actual error occurs earlier.
+> >
+> > The correct code would be:
+> > ~~~
+> > for i in range(10): print(i)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+
+###   Lets look more closely at an error message:
 
 ~~~
 print("hello world"
@@ -61,6 +74,51 @@ SyntaxError: unexpected EOF while parsing
     the error occurred in cell 6 of our Notebook.
 *   Next is the problematic line of code,
     indicating the problem with a `^` pointer.
+
+## Runtime errors happens when Python understands what you are saying but something goes wrong while a program is executing.
+
+> ## Run the following snippet of Python code
+>
+> ~~~
+> numerator = 7
+> denominator = 0
+> result = numerator / denominator
+> ~~~
+> {: .language-python}
+> What happens?
+> > ## Solution
+> > You get a `ZeroDivisionError`. This is the Python exception that indicates
+> > a run-time error caused by a division by zero. Note that the code is
+> > syntactically valid Python, so this is not a syntax error.
+> > ~~~
+> > >>> numerator = 7
+> > >>> denominator = 0
+> > >>> result = numerator / denominator
+> > Traceback (most recent call last):
+> >   File "<stdin>", line 1, in <module>
+> > ZeroDivisionError: division by zero
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+The `ZeroDivisionError` is built-in to Python. The next exercise looks at some
+more [built-in exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions).
+
+> ## Exploring the Built-in Exceptions
+> Have a look at the documentation for
+> [built-in exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions).
+> See if you can find each of the following errors. If have encountered any
+> other errors recently, see if you can find those as well.
+>
+> - `ZeroDivisionError`
+> - `FileNotFoundError`
+> - `TypeError`
+> - `MemoryError`
+> - `IndexError`
+> - `KeyError`
+>
+{: .challenge}
 
 ## Indentation is meaningful in Python.
 
@@ -85,73 +143,6 @@ IndentationError: unexpected indent
 
 *   This error can be fixed by removing the extra spaces
     at the beginning of the second line.
-
-## Python reports a runtime error when something goes wrong while a program is executing.
-
-~~~
-age = 53
-remaining = 100 - aege # mis-spelled 'age'
-~~~
-{: .python}
-~~~
-NameError: name 'aege' is not defined
-~~~
-{: .error}
-
-## Fix syntax errors by reading the source and runtime errors by tracing execution.
-
-> ## Reading Error Messages
->
-> Read the traceback below, and identify the following:
->
-> 1. How many levels does the traceback have?
-> 2. What is the file name where the error occurred?
-> 3. What is the function name where the error occurred?
-> 4. On which line number in this function did the error occurr?
-> 5. What is the type of error?
-> 6. What is the error message?
->
-> ~~~
-> ---------------------------------------------------------------------------
-> KeyError                                  Traceback (most recent call last)
-> <ipython-input-2-e4c4cbafeeb5> in <module>()
->       1 import errors_02
-> ----> 2 errors_02.print_friday_message()
->
-> /Users/ghopper/thesis/code/errors_02.py in print_friday_message()
->      13
->      14 def print_friday_message():
-> ---> 15     print_message("Friday")
->
-> /Users/ghopper/thesis/code/errors_02.py in print_message(day)
->       9         "sunday": "Aw, the weekend is almost over."
->      10     }
-> ---> 11     print(messages[day])
->      12
->      13
->
-> KeyError: 'Friday'
-> ~~~
-> {: .error}
-{: .challenge}
-
-> ## Identifying Syntax Errors
->
-> 1. Read the code below and try to identify what the errors are
->    *without* running it.
-> 2. Run the code and read the error message.
->    Is it a `SyntaxError` or an `IndentationError`?
-> 3. Fix the error.
-> 4. Repeat steps 2 and 3 until you have fixed all the errors.
->
-> ~~~
-> def another_function
->   print("Syntax errors are annoying.")
->    print("But at least python tells us about them!")
->   print("So they are usually not too hard to fix.")
-> ~~~
-> {: .source}
-{: .challenge}
 
 > ## Identifying Variable Name Errors
 >
