@@ -78,31 +78,31 @@ keypoints:
 > a "text cell" is one that contains ordinary prose written for human beings.
 {: .callout}
 
-*   If you press "esc" and "return" alternately,
+*   If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately,
     the outer border of your code cell will change from grey to green.
     *   The difference in color is subtle.
 *   These are the control (grey) and edit (green) modes of your notebook.
-*   If you use the "esc" and "return" keys to make the surround grey
-    and then press the "H" key,
+*   If you use the <kbd>Esc</kbd> and <kbd>Return</kbd> keys to make the surround grey
+    and then press the <kbd>H</kbd> key,
     a list of all the shortcut keys will appear.
 *   When in control mode (esc/grey),
-    *   The "B" key will make a new cell below the currently selected cell.
-    *   The "A" key will make one above.
-    *   The "X" key will delete the current cell.
+    *   The <kbd>B</kbd> key will make a new cell below the currently selected cell.
+    *   The <kbd>A</kbd> key will make one above.
+    *   The <kbd>X</kbd> key will delete the current cell.
 *   There are lots of shortcuts you can try out and most actions can be
     done with the menus at the top of the page if you forget the shortcuts.
-*   If you remember the "esc" and "H" shortcut, you will be able to find out all the rest.
+*   If you remember the <kbd>Esc</kbd> and <kbd>H</kbd> shortcut, you will be able to find out all the rest.
 
 ## Use the keyboard and mouse to select and edit cells.
 
-*   Pressing the "return" key turns the surround green to
+*   Pressing the <kbd>Return</kbd> key turns the surround green to
     signify edit mode and you can type into the cell.
 *   Because we want to be able to write many lines of code in a single cell,
-    pressing the "return" key when the border is green moves the cursor to the next line in the cell
+    pressing the <kbd>Return</kbd> key when the border is green moves the cursor to the next line in the cell
     just like in a text editor.
 *   We need some other way to tell the Notebook we want to run what's in the cell.
-*   Pressing the "return" key and the "shift" key together will execute the contents of the cell.
-*   Notice that the "return" and "shift" keys on the
+*   Pressing the <kbd>Return</kbd> key and the <kbd>Shift</kbd> key together will execute the contents of the cell.
+*   Notice that the <kbd>Return</kbd> and <kbd>Shift</kbd> keys on the
     right of the keyboard are right next to each other.
 
 Pause for a play.
@@ -114,11 +114,11 @@ Pause for a play.
         and other things that might go into a web page.
     *   Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
 *   Turn the current cell into a Markdown cell by entering
-    the control mode (esc/grey) and press the "M" key.
+    the control mode (esc/grey) and press the <kbd>M</kbd> key.
 *   `In [ ]:` will disappear to show it is no longer a code cell
     and you will be able to write in Markdown.
 *   Turn the current cell into a Code cell
-    by entering the control mode (esc/grey) and press the "Y" key.
+    by entering the control mode (esc/grey) and press the <kbd>Y</kbd> key.
 
 ## Markdown does most of what HTML does.
 
@@ -217,6 +217,30 @@ Or use [named links][data_carpentry].
 </div>
 
 ## Getting HELP!!
+
+### Get help inside Python: the `help()` function
+
+Knowing how to find and navigate the online documentation is vital, but there
+are times when looking something up inside an interactive Python session is also
+useful. The built-in `help()` function looks up the documentation for Python
+objects. For example:
+~~~
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+~~~
+{: .language-python}
+
+### Get help easily in a Jupyter Notebook
 
 In a [Jupyter Notebook][jupyter], there is another option for the `help()`
 function.  Instead of calling `help()`, simply prepend a Python object with
