@@ -21,6 +21,8 @@ keypoints:
 - "Arguments in the function call are matched to the parameters in the function definition."
 - "Optional arguments have a default value in the function definition."
 - "Functions return results with the `return` statement."
+- "Functions without explicit `return` values return `None`."
+- "Within a function, `print` communicates with humans, `return` communicates with the computer."
 - "Use docstrings to document your functions in a standard way."
 
 ---
@@ -119,24 +121,32 @@ that do many things are harder to write, harder to debug, and harder to use.
 
 ## Define a function using `def` with a name, parameters, and a block of code
 
-- Begin the definition of a new function with `def`.
-- Followed by the name of the function.
-    - Must obey the same rules as variable names.
-    - A variable name tells you what kind of value the variable contains;
-      a function name should tell you what the function does.
-- Then *parameters* in parentheses.
-    - These are basically variable names, but they are only used in the function.
-        - Again, the same variable naming rules apply.
-    - Empty parentheses if the function doesn't take any inputs.
-- Then a colon.
-- Then an indented block of code.
-    - This is the body of the function.
-
 ~~~
 def print_greeting():
     print('Hello!')
 ~~~
 {: .language-python}
+
+- Begin the definition of a new function with `def` followed by a space.
+- Followed by the name of the function, `print_greeting`.
+    - Must obey the same rules as variable names.
+    - A variable name tells you what kind of value the variable contains;
+      a function name should tell you what the function does.
+- Then parentheses `()` enclose the function's *parameters*.
+    - These are basically variable names, but they are only used in the function.
+        - Again, the same variable naming rules apply.
+    - Empty parentheses if the function doesn't take any inputs.
+- The `def` statement ends with a colon `:`.
+- Hit <kbd>Return</kbd> to produce an indented block of code which is the *body*
+of the function.
+
+> ## Function definition syntax
+> Where have we seen the keyword, colon, code block syntax before?
+{: .discussion}
+
+> ## Function parameters
+> How many parameters does our function have?
+{: .discussion}
 
 > ## Write a Happy Birthday function
 >
@@ -216,21 +226,23 @@ Hello!
       will be matched to parameters in the order the parameters are defined in
       the function.
 
-~~~
-def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
-    print(joined)
+> ## Fill in the blanks
+> ~~~
+> def print_date(year, month, day):
+>     joined = str(____) + '/' + str(____) + '/' + str(____)
+>     print(joined)
+>
+> ________(1871, 3, 19)
+> ~~~
+> {: .language-python}
+> ~~~
+> 1871/3/19
+> ~~~
+> {: .output}
+{: .challenge}
 
-print_date(1871, 3, 19)
-~~~
-{: .language-python}
-~~~
-1871/3/19
-~~~
-{: .output}
-
-Or, we can name the arguments when we call the function, which allows us to
-specify them in any order:
+We can also explicitly match the arguments to parameters when we call a function,
+which allows us to specify them in any order:
 ~~~
 print_date(month=3, day=19, year=1871)
 ~~~
@@ -309,13 +321,22 @@ Hello Brian
 
 ## Functions return results with the `return` statement
 
-- Use `return ...` to give a value back to the caller.
+- Use `return` to give a value back to the caller.
 - May occur anywhere in the function.
 - But functions are easier to understand if `return` occurs:
     - At the start to handle special cases.
     - At the very end, with a final result.
 - Every function returns something. If your function does not explicitly
   `return` a value, then `None` is returned automatically.
+
+> ## Return versus print (again!)
+>
+> Note that `return` and `print` are not interchangeable.
+> `print` is a Python function that *prints* data to the screen.
+> It enables us, *users*, see the data.
+> The `return` statement, on the other hand, makes data visible to the program.
+{: .callout}
+
 
 > ## Averaging numbers
 > Write a function that accepts a list of numbers and returns the average.
@@ -334,7 +355,8 @@ Hello Brian
 
 ## Use docstrings to document your functions in a standard way
 
-Python functions can contain a special documentation string, known as the docstring. The docstring can contain information about the purpose and use of your function.
+Python functions can contain a special documentation string, known as the docstring.
+The docstring can contain information about the purpose and use of your function.
 
 - Docstrings allow us to document our code in a standard way.
 - Following the standard makes our code more easily readable to other
