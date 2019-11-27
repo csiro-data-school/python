@@ -50,9 +50,31 @@ about engines, wheels, and entertainment systems. Each one is a complicated
 system, but we don't need to consider every detail all the time.
 
 Functions serve the same purpose in programs. They chunk some code together so we
-can treat it as a single thing elsewhere. For example, I can use a `sort()` function to
+can treat it as a single thing elsewhere. For example, I can use the inbuilt `sorted()` function to
 order a list of strings without needing to think about the implementation
 details of sorting algorithms.
+
+~~~
+names = ["Mary", "Bob", "Jane", "Luke"]
+print(names)
+~~~
+{: .language-python}
+
+~~~
+['Mary', 'Bob', 'Jane', 'Luke']
+~~~
+{: .output}
+
+~~~
+sorted(names)
+~~~
+{: .language-python}
+
+~~~
+['Bob', 'Jane', 'Luke', 'Mary']
+~~~
+{: .output}
+
 
 Functions allow us to:
 
@@ -65,18 +87,29 @@ Functions allow us to:
 - make our code easier to update,
     - modifying a function is easier than finding and modifying multiple
       sections of duplicated code
-- make our code testable (see the [testing episode]({{ page.root
-  }}/13-testing/)),
+- make our code testable
 - define interfaces so others can use our code.
 
 Additionally, functions provide a convenient focal point for documentation.
 They are at the right level of detail for documenting your code, and Python has
 a number of good tools for generating formatted documentation from functions.
 
-### FIXME: Do I need the next 2 paragraphs?
 Conceptually, functions can be treated as a box of code. When using a function
 it can be a black box. You need only consider the inputs and outputs: what data
-do you supply, and what should you get back. When writing functions they are
+do you supply, and what should you get back. E.g. for the `print` function it
+accepts a value and prints that value to the screen
+
+~~~
+print("hello")
+~~~
+{: .language-python}
+
+~~~
+hello
+~~~
+{: .output}
+
+When writing functions they are
 a white box: you must pay attention to the internal details as well as the
 data flow (inputs and outputs).
 
@@ -120,7 +153,6 @@ def print_greeting():
 
 ## Defining a function does not run it
 
-- Defining a function does not run it.
 - Must call the function to execute the code it contains.
 - Function arguments can either be literal values or variables.
 
@@ -144,7 +176,19 @@ Hello!
 >     print('Hello!')
 > ~~~
 > {: .language-python}
-{: .callout}
+>
+> ~~~
+> TypeError                                 Traceback (most recent call last)
+> <ipython-input-39-07ba6d959a09> in <module>
+> ----> 1 print_greeting("Bruce")
+>       2
+>       3 def print_greeting():
+>       4     print('Hello!')
+>
+> TypeError: print_greeting() takes 0 positional arguments but 1 was given
+> ~~~
+> {: .error}
+>{: .callout}
 
 > ## Call your Happy Birthday function
 >
