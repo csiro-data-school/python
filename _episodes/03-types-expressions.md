@@ -10,7 +10,7 @@ questions:
 objectives:
 - "Understand how different operators function."
 - "Understand that a value's 'type' determine the kind of operations that can be done."
-- "Convert data between different types." 
+- "Convert data between different types."
 - "Use type-specific built in functions."
 - "Demonstrate operator overloading (e.g. '+' effect on `int` vs `str`)."
 - "Understand order of precedence and associativity."
@@ -30,7 +30,7 @@ We have already seen how Python can be used as a calculator:
 ~~~
 {: .language-python}
 
-This is an example of an 'expression'. 
+This is an example of an 'expression'.
 
 *	An expression is a combination of values, variables, and 'operators'.
 *	Operators include `+`, `-`, `/`, `//`, `*`, `**`, `%`, `==`, `!=` plus more..
@@ -161,8 +161,8 @@ Data comes in different flavours ... intuitively, we know that we can do differe
 
 Although they may often feel like the same thing, it is helpful to distinguish between variables, values, and types.
 *	**Variables** are symbols (often descriptive words) that can represent or stand in for different values.<br />
-*	**Values** are the actual values (i.e. data) stored in memory. <br /> 
-	In Python, you can only access a stored value through a variable. 
+*	**Values** are the actual values (i.e. data) stored in memory. <br />
+	In Python, you can only access a stored value through a variable.
 *	The **type** of a value indicates what the nature of the value is, and defines the set of legal operations that can be done on it.<br />
 	As well as providing a large range of built-in types (such as `int`, `float`, `str` and `bool`), <br />
 
@@ -288,7 +288,7 @@ None
 
 > ## Choose a Type
 >
-> What type of value (integer, floating point number, character string or list)
+> What type of value (integer, floating point number or character string)
 > would you use to represent each of the following?
 >
 > 1. Number of days since the start of the year.
@@ -297,7 +297,6 @@ None
 > 4. A lab specimen's age.
 > 5. Current population of a city.
 > 6. Average population of a city over time.
-> 7. The ages of all students in a class.
 {: .challenge}
 
 > ## Identify the outputs
@@ -421,7 +420,7 @@ Ahmed Walsh
 
 ## Built in functions and data types
 
-Python pre-defines a number of core 'functions' as part of the base language. We have already met one of these functions, 
+Python pre-defines a number of core 'functions' as part of the base language. We have already met one of these functions,
 `print`. We 'call' a function by stating the name of the function, directly followed by some data (a 'value' or 'variable') inside round brackets:
 
 ~~~
@@ -539,8 +538,8 @@ print(str(1) + '2')
 
 > ## Think like a computer - division
 > Computers cannot intuitively solve problems; the problem must be broken down by the computer into a series of logical steps.
-> How would a computer solve the following problem? 
-> 
+> How would a computer solve the following problem?
+>
 > If `num_subjects` is the number of subjects taking part in a study,
 > and `num_per_survey` is the number that can take part in a single survey,
 > write a series of expressions that calculates the number of surveys needed
@@ -558,12 +557,12 @@ print(str(1) + '2')
 >> num_per_survey = 42
 >> remainder = num_subjects % num_per_survey
 >> num_surveys = num_subjects // num_per_survey
->> 
+>>
 >> print(remainder)
 >> print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys + 1, 'surveys needed')
 >> ~~~
 >> {: .python}
->> 
+>>
 >> ~~~
 >> 12
 >> 600 subjects, 42 per survey: 15 surveys needed
@@ -574,4 +573,3 @@ print(str(1) + '2')
 
 
 {% include links.md %}
-
