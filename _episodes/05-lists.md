@@ -21,9 +21,9 @@ keypoints:
 - "Tuples are another type of collection, but unlike lists, tuples are immutable."
 ---
 
-## Lists are collections of data 
+## Lists are collections of data
 
-We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, tuples and dictionaries, which we will cover in future lessons. 
+We have already encountered some simple Python types like integers, strings and booleans. Now we will see how we can group multiple values together in a collection – like a list of numbers or a list of names. Collections in Python are containers that are used to store collections of data, and include lists, tuples and dictionaries, which we will cover in future lessons.
 
 *   Doing calculations with a hundred variables called `weight_001`, `weight_002`, etc.,
     would be at least as slow as doing them by hand.
@@ -46,7 +46,7 @@ length: 5
 
 ## Use an item's index to fetch it from a list
 
-*   To get the first element of this list we use the index 0 because Python is a 0-based indexing language. 
+*   To get the first element of this list we use the index 0 because Python is a 0-based indexing language.
 *   Indexes are written within square brackets `[]`.
 
 ~~~
@@ -69,9 +69,9 @@ weights[-3]
 {: .language-python}
 
 > ## Using reverse indexing.
-> 
+>
 > How would you extract the letter `l` from `letters` using reverse indexing?
-> 
+>
 > ~~~
 > mylist[____]
 > ~~~
@@ -169,7 +169,7 @@ Note that while `extend` maintains the "flat" structure of the list, `append` a 
 
 > ## Fill in the blanks
 >
-> Fill in the blanks list methods so that the program below produces the output shown. 
+> Fill in the blanks list methods so that the program below produces the output shown.
 > *Hint: start with an empty list*
 >
 > ~~~
@@ -186,9 +186,9 @@ Note that while `extend` maintains the "flat" structure of the list, `append` a 
 > {: .output}
 {: .challenge}
 
-*   Another useful list method is `.count` which counts the instances of certain object. 
+*   Another useful list method is `.count` which counts the instances of certain object.
 
-For example: 
+For example:
 
 ~~~
 a = ['spam', 'spam', 'eggs', 'spam']
@@ -237,7 +237,7 @@ primes after removing last item: [2, 3, 5, 7]
     (Empty lists will be very useful in the next episode when we need an *empty container* to collect values.)
 
 > ## `True` or `False`?
-> 
+>
 > What do you think this evaluates to:
 >
 > ~~~
@@ -291,7 +291,7 @@ TypeError: 'str' object does not support item assignment
 ~~~
 {: .error}
 
-*   Lists and character strings are both *sequences*. Lists are also *collections*. 
+*   Lists and character strings are both *sequences*. Lists are also *collections*.
 
 
 ## Indexing beyond the end of the collection is an error
@@ -304,7 +304,7 @@ TypeError: 'str' object does not support item assignment
 ~~~
 random_chr = ['±', '!', '@', '#', '$', '%']
 print("length of random_chr:", len(random_chr))
-print("get the 20th element of random_chr:", random_chr[20]) 
+print("get the 20th element of random_chr:", random_chr[20])
 ~~~
 {: .python}
 ~~~
@@ -320,7 +320,7 @@ Let's create a normal, everyday list with letters from `a` to `h`. Now let's say
 
 ~~~
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-letters[1:4] 
+letters[1:4]
 ~~~
 {: .python}
 ~~~
@@ -331,9 +331,9 @@ letters[1:4]
 *   Remember that `b` is the second element of this list because of the 0-based indexing
 
 > ## Slice bounds
-> 
-> One way to remember how slices work is to think of the indices as pointing *between* elements, with 
-> the left edge of the  first character numbered 0. 
+>
+> One way to remember how slices work is to think of the indices as pointing *between* elements, with
+> the left edge of the  first character numbered 0.
 >
 > ~~~
 >   
@@ -369,7 +369,7 @@ letters[:5] # list elements from the beginning to position 5 (excluded)
 ~~~
 {: .output}
 
-*   Lists can also be sliced in reverse order. 
+*   Lists can also be sliced in reverse order.
 
 ~~~
 print('last item in the list:', letters[-1])
@@ -390,7 +390,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 
 > ## Fill in the blanks
 >
-> Fill in the blanks using methods of lists and slicing so that the program below produces the output shown. 
+> Fill in the blanks using methods of lists and slicing so that the program below produces the output shown.
 > *Hint: start with an empty list*
 >
 > ~~~
@@ -413,21 +413,6 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 > > print('second time:', values)
 > > ~~~
 > > {: .python}
-> {: .solution}
-{: .challenge}
-
-
-
-> ## How large is a slice?
->
-> If 'low' and 'high' are both non-negative integers,
-> how long is the list `values[low:high]`?
->
-> > ## Solution
-> > The list `values[low:high]` has `high - low` elements.  For example,
-> > `values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`.
-> > Note that the expression will only work if `high` is less than the total
-> > length of the list `values`.
 > {: .solution}
 {: .challenge}
 
@@ -490,7 +475,7 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 {: .challenge}
 
 > ## Sort and sorted
-> What do these two programs print? 
+> What do these two programs print?
 > In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
 >
 > ~~~
@@ -530,36 +515,36 @@ everything except the last two items: ['a', 'b', 'c', 'd', 'e', 'f']
 
 
 
-## Another type of collection: Tuples 
+## Another type of collection: Tuples
 
-In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets `[]`, tuples use parentheses `()`. 
+In Python programming, a tuple is similar to a list: a collection of data elements. The difference between the two is that tuples are *immutable*, we cannot change the elements of a tuple once it is assigned, whereas a list is *mutable*, elements can be changed in place. Also, while lists use square brackets `[]`, tuples use parentheses `()`.
 
 > ## Challenge question
-> Can you think of any advantages of using tuples over lists? 
+> Can you think of any advantages of using tuples over lists?
 > Some of these concepts will become clearer in future chapters.
 >
 > > ## Solution
 > > 1. If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
 > > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is  
-> > iterate through it, use a tuple instead of a list. 
+> > iterate through it, use a tuple instead of a list.
 > > 3. One good thing about tuples is that they use less memory. Lists use more memory.
 > > 4. Tuple are better for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.
 > {: .solution}
 {: .challenge}
 
 
-## Creating a Tuple 
+## Creating a Tuple
 
-*   A tuple is created by placing all the items (elements) inside a parentheses `()`, separated by commas. 
+*   A tuple is created by placing all the items (elements) inside a parentheses `()`, separated by commas.
 *   A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
-*   Similar to lists, tuples can also be sliced and indexed, and respond to basic operations. 
+*   Similar to lists, tuples can also be sliced and indexed, and respond to basic operations.
 
-> ## What would be the ouput of the following commands? 
-> 
+> ## What would be the ouput of the following commands?
+>
 > ~~~
 > tupl1 = ('d','a','t','a')
 > tupl2 = tupl1 + tuple('is') + (tuple('fun') * 3)
-> print(tupl2) 
+> print(tupl2)
 > ~~~
 > {: .python}
 >
@@ -571,7 +556,6 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 > {: .solution}
 {: .challenge}
 
-Another advantage of tuples is that they contain immutable elements that can be used as `keys` for a `dictionary`. With list, this is not possible. We will learn more about keys and dictionaries in a future chapter. 
+Another advantage of tuples is that they contain immutable elements that can be used as `keys` for a `dictionary`. With list, this is not possible. We will learn more about keys and dictionaries in a future chapter.
 
 {% include links.md %}
-
