@@ -1,7 +1,7 @@
 ---
 title: "Data 'types' and expressions"
-teaching: 20
-exercises: 15
+teaching: 25
+exercises: 20
 questions:
 - "How does Python categorise data?"
 - "What operations can Python do with data?"
