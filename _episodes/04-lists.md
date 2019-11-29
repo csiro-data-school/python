@@ -1,6 +1,6 @@
 ---
 title: "Lists and indexing"
-teaching: 20
+teaching: 35
 exercises: 25
 questions:
 - "How can I store multiple values?"
