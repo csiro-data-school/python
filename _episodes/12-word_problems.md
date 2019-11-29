@@ -3,7 +3,7 @@ title: "Designing Functions"
 teaching: 30
 exercises: 30
 questions:
-- "How do I get from a description of a problem, to a code solution?"
+- "How do I get from a description of a problem to a code solution?"
 objectives:
 - "Extract coding task from word problem"
 - "Identify input and output data"
