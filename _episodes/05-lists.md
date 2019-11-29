@@ -1,7 +1,7 @@
 ---
 title: "Lists and indexing"
 teaching: 20
-exercises: 20
+exercises: 25
 questions:
 - "How can I store multiple values?"
 objectives:
@@ -144,7 +144,7 @@ primes has become: [2, 3, 5, 7, 9]
 *   `append` is a *method* of lists.
     *   Like a function, but tied to a particular object.
 *   Use `object_name.method_name` to call methods.
-*   `extend` is similar to `append`, but it allows you to combine two lists.  
+*   `extend` is similar to `append`, but it allows you to combine two lists.
 
 For example:
 
@@ -336,7 +336,7 @@ letters[1:4]
 > the left edge of the  first character numbered 0.
 >
 > ~~~
->   
+>
 > +---+---+---+---+---+---+---+---+
 > | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 > +---+---+---+---+---+---+---+---+
@@ -373,8 +373,8 @@ letters[:5] # list elements from the beginning to position 5 (excluded)
 
 ~~~
 print('last item in the list:', letters[-1])
-print('last two items in the list:', letters[-2:])   
-print('everything except the last two items:', letters[:-2])   
+print('last two items in the list:', letters[-2:])
+print('everything except the last two items:', letters[:-2])
 ~~~
 {: .python}
 ~~~
@@ -525,7 +525,7 @@ In Python programming, a tuple is similar to a list: a collection of data elemen
 >
 > > ## Solution
 > > 1. If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
-> > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is  
+> > 2. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is
 > > iterate through it, use a tuple instead of a list.
 > > 3. One good thing about tuples is that they use less memory. Lists use more memory.
 > > 4. Tuple are better for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.

@@ -1,7 +1,7 @@
 ---
 title: "Functions"
 teaching: 20
-exercises: 20
+exercises: 25
 questions:
 - "What are functions?"
 - "How do I create my own functions in Python?"

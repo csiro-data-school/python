@@ -1,7 +1,8 @@
 ---
 title: "Working with Files"
+start: true
 teaching: 20
-exercises: 30
+exercises: 40
 questions:
 - "How do I open a file in Python?"
 - "How do I access the data or text inside an open file?"
