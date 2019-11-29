@@ -31,15 +31,19 @@ import a module, we use the `import` command.
 The [full list of built-in modules][python-standard-modules] can be found in the
 Python documentation.
 
-For example:
+For example we can import the `Pandas` library for Data Analysis:
 ~~~
 # import the library
-import os
+import pandas
 
 # use it
-os.listdir()
+data = pandas.read_csv("data.csv")
+data
 ~~~
 {: .language-python}
+
+Following on from the reading files episode, `Pandas` is great for working with
+dataframes.
 
 > ## The `math` module
 >

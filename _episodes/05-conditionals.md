@@ -1,7 +1,7 @@
 ---
 title: Making Choices with Conditionals
 teaching: 30
-exercises: 30
+exercises: 15
 questions:
 - "How can my programs do different things (i.e. make choices) based on data values?"
 objectives:
@@ -21,7 +21,7 @@ keypoints:
 
 How can we use Python to automatically recognise features of our data,
 and take a different action for each? In this lesson, we'll learn how to write code that
-runs only when certain conditions are true. These kinds of "conditional statements" 
+runs only when certain conditions are true. These kinds of "conditional statements"
 form part of the logic of all programming languages.
 
 ## Conditionals
@@ -321,4 +321,3 @@ adjusting velocity
 {: .challenge}
 
 {% include links.md %}
-

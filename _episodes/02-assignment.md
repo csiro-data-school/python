@@ -85,7 +85,7 @@ NameError: name 'last_name' is not defined
 {: .error}
 
 *   The last line of an error message is usually the most informative.
-*   We will look at error messages in detail [later]({{ site.github.url }}/05-error-messages/).
+*   We will look at error messages in detail [later]({{ site.github.url }}/10-errors/).
 
 
 ## Python is case-sensitive.
@@ -94,7 +94,7 @@ NameError: name 'last_name' is not defined
     so `Name` and `name` are different variables.
 *   There are conventions for using upper-case letters at the start of variable names
     so we will use lower-case letters for now.
-    
+
 
 ~~~
 weight
@@ -143,7 +143,7 @@ Ahmed is 42 years old
 
 ## Variables persist between cells.
 
-*   Variables defined in one cell exist in all other cells once executed, 
+*   Variables defined in one cell exist in all other cells once executed,
     so the relative location of cells in the notebook do not matter (i.e., cells
     lower down can still affect those above).
 *   Notebook cells are just a way to organize a program;
@@ -256,7 +256,7 @@ first is 2 and second is 5
 > > y = swap   # 3.0          # 1.0          # 1.0           #
 > > ~~~
 > > {: .output}
-> > 
+> >
 > > These three lines exchange the values in `x` and `y` using the `swap`
 > > variable for temporary storage. This is a fairly common programming idiom.
 >{: .solution}
@@ -325,4 +325,3 @@ first is 2 and second is 5
 {: .challenge}
 
 {% include links.md %}
-
