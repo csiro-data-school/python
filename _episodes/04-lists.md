@@ -73,7 +73,8 @@ weights[-3]
 > How would you extract the letter `l` from `letters` using reverse indexing?
 >
 > ~~~
-> mylist[____]
+> letters = list('letters')
+> letters[____]
 > ~~~
 > {: .python}
 >
