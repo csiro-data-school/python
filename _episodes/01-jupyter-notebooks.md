@@ -254,6 +254,14 @@ help(print)
 ~~~
 {: .source}
 
+> ## The Jupyter Notebook has two other ways to get help.
+>
+> *   Place the cursor inside the parenthesis of the function,
+>    hold down <kbd>Shift</kbd>,
+>    and press <kbd>Tab</kbd>.
+> *   Or type a function name with a question mark after it.
+{: callout}
+
 > ## Creating Lists in Markdown
 >
 > Create a nested list in a Markdown cell in a notebook that looks like this:
