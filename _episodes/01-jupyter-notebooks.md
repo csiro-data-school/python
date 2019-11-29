@@ -1,5 +1,6 @@
 ---
 title: "Running Jupyter"
+start: true
 teaching: 40
 exercises: 20
 questions:
