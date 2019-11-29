@@ -1,5 +1,6 @@
 ---
 title: "Working with Files"
+start: true
 teaching: 20
 exercises: 30
 questions:
