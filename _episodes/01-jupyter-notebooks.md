@@ -1,5 +1,6 @@
 ---
 title: "Running Jupyter"
+start: true
 teaching: 40
 exercises: 20
 questions:
@@ -80,7 +81,7 @@ keypoints:
 
 *   If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately,
     the outer border of your code cell will change from grey to green.
-    *   The difference in color is subtle.
+    *   The difference in colour is subtle.
 *   These are the control (grey) and edit (green) modes of your notebook.
 *   If you use the <kbd>Esc</kbd> and <kbd>Return</kbd> keys to make the surround grey
     and then press the <kbd>H</kbd> key,
@@ -254,12 +255,11 @@ help(print)
 ~~~
 {: .source}
 
-> ## The Jupyter Notebook has two other ways to get help.
+> ## The Jupyter Notebook has another way to get help.
 >
 > *   Place the cursor inside the parenthesis of the function,
 >    hold down <kbd>Shift</kbd>,
 >    and press <kbd>Tab</kbd>.
-> *   Or type a function name with a question mark after it.
 {: callout}
 
 > ## Creating Lists in Markdown
@@ -301,9 +301,9 @@ help(print)
 > ~~~
 > {: .python}
 >
-> And then run it with shift+return to be sure that it works as a code cell.
-> Now go back to the cell and use escape+M to switch the cell to Markdown
-> and "run" it with shift+return.
+> And then run it with `shift+return` to be sure that it works as a code cell.
+> Now go back to the cell and use` escape+M` to switch the cell to Markdown
+> and "run" it with `shift+return`.
 > What happened and how might this be useful?
 {: .challenge}
 
