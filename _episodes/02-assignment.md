@@ -97,7 +97,7 @@ NameError: name 'last_name' is not defined
 
 
 ~~~
-weight
+weight_kg
 ~~~
 {: .language-python}
 ~~~
@@ -106,16 +106,16 @@ weight
 {: .output}
 
 ~~~
-Weight
+Weight_kg
 ~~~
 {: .language-python}
 ~~~
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-4-4ab70f7f1bf7> in <module>()
-----> 1 Weight
+----> 1 Weight_kg
 
-NameError: name 'Weight' is not defined
+NameError: name 'Weight_kg' is not defined
 ~~~
 {: .error}
 
@@ -151,7 +151,7 @@ Ahmed is 42 years old
     all of the source code is one long set of instructions.
 
 ~~~
-print(first_name, 'weighs', weight, 'kg')
+print(first_name, 'weighs', weight_kg, 'kg')
 ~~~
 {: .language-python}
 ~~~
